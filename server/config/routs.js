@@ -4,7 +4,7 @@ var auth = require('./auth'),
  	
 module.exports = function(app) {
 
-
+	app.get('/api/admin' , auth.isInRole('admin'));
 	app.post('/api/users'  , controller.users.createUser);
 	app.put('/api/users' , auth.isAuthenticated , controller.users.updateUser);
 
@@ -33,6 +33,7 @@ module.exports = function(app) {
 
 	app.get('*', function(req, res) {
 		res.render('index' , {currentUser: req.user});
+
 	});
 	
 };
