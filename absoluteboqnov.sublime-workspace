@@ -1,0 +1,546 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"$roo",
+				"$routeProvider	AngularJS"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"va",
+				"value	AngularJS"
+			],
+			[
+				"an",
+				"angular-resource"
+			],
+			[
+				"Kendo",
+				"KendoCtrl"
+			],
+			[
+				"s",
+				"script"
+			],
+			[
+				"$ro",
+				"$routeProvider	AngularJS"
+			],
+			[
+				"config",
+				"config	AngularJS"
+			],
+			[
+				"see",
+				"seedDataUsers"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"cou",
+				"course"
+			],
+			[
+				"e",
+				"exec"
+			],
+			[
+				"Course",
+				"CourseResourse"
+			],
+			[
+				"$route",
+				"$routeParams	AngularJS"
+			],
+			[
+				"ca",
+				"cashedCourses"
+			],
+			[
+				"Cour",
+				"CourseResource"
+			],
+			[
+				"p",
+				"published"
+			],
+			[
+				"op",
+				"optrion"
+			],
+			[
+				"sear",
+				"search"
+			],
+			[
+				"form",
+				"form-horizontal"
+			],
+			[
+				"fo",
+				"form-control-static"
+			],
+			[
+				"for",
+				"form-control"
+			],
+			[
+				"inp",
+				"input-lg"
+			],
+			[
+				"res",
+				"resource"
+			],
+			[
+				"Cou",
+				"CourseResource"
+			],
+			[
+				"cour",
+				"courses"
+			],
+			[
+				"re",
+				"requare"
+			],
+			[
+				"se",
+				"seedInitialCourses"
+			],
+			[
+				"node",
+				"node_modules"
+			],
+			[
+				"S",
+				"Schema"
+			],
+			[
+				"c",
+				"controllers"
+			],
+			[
+				"ge",
+				"getAllCourses"
+			],
+			[
+				"cont",
+				"controller"
+			],
+			[
+				"user",
+				"usersController"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"use",
+				"usersController"
+			],
+			[
+				"g",
+				"get"
+			],
+			[
+				"$s",
+				"$scope	AngularJS"
+			],
+			[
+				"co",
+				"controller	AngularJS"
+			],
+			[
+				"upda",
+				"updateUserData"
+			],
+			[
+				"update",
+				"updateUserData"
+			],
+			[
+				"so",
+				"scope"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "",
+			"file": "public/app/views/home/home.jade",
+			"file_size": 61,
+			"file_write_time": 130598190946379499,
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"command_palette":
+	{
+		"height": 348.0,
+		"selected_items":
+		[
+			[
+				"save",
+				"File: Save All"
+			],
+			[
+				"Save",
+				"File: Save All"
+			],
+			[
+				"savr",
+				"Set Syntax: JavaScript (Rails)"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"SAVE",
+				"File: Save All"
+			],
+			[
+				"tern",
+				"TernJS: Reload"
+			],
+			[
+				"utf8",
+				"ConvertToUTF8: Reload with Encoding"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ter	",
+				"TernJS: Rename variable"
+			],
+			[
+				"ter",
+				"TernJS: Reload"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"reloa",
+				"TernJS: Reload"
+			],
+			[
+				"prefer",
+				"Preferences: Settings - User"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"sublime",
+				"SublimeLint: Next Error"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/home",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server"
+	],
+	"file_history":
+	[
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/app.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/routs.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/includes/layout.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/index.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/includes/scripts.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/main/home.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/home/home.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/config.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/home/home.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/css/site.css",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/bower.json",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/data/seedDataUsers.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/data/usersData.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/models/Users.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/mongoose.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/home",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/express.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/.bowerrc",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/controllers/usersController.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/absoluteboqnov.sublime-project",
+		"/home/genkop/Projects/meanjs/app/controllers/users/users.authentication.server.controller.js",
+		"/home/genkop/Плот/testPython.py",
+		"/home/genkop/Projects/meanjs/app/models/user.server.model.js",
+		"/home/genkop/Projects/meanjs/config/express.js",
+		"/home/genkop/Projects/meanjs/config/config.js",
+		"/home/genkop/Projects/kendoui-live-demo/readme.txt",
+		"/home/genkop/Projects/kendoui-live-demo/app/scripts/app.js",
+		"/home/genkop/Projects/kendoui-live-demo/app/scripts/main.js",
+		"/home/genkop/Projects/kendoui-live-demo/app.build.js",
+		"/home/genkop/Projects/KendoUI-Project/app/templates/spa/app.js",
+		"/home/genkop/Projects/meanjs/config/init.js",
+		"/home/genkop/Projects/meanjs/server.js",
+		"/home/genkop/Donwloads/linux/Revolution.OS.2001.DVDRip.XviD-RETRO.srt",
+		"/home/genkop/Projects/KendoUI-Project/.bowerrc",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/server/config/config.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/courses/courseResoures.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/main/new-courses.jade",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/courses/course-details.jade",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/courses/courseDetailsCtrl.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/server/controllers/coursesController.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/server/config/routes.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/courses/courses-list.jade",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/main/featured-courses.jade",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/app.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/account/identity.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/server/views/includes/scripts.jade",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/main/mainCtrl.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/courses/cashedCourses.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/courses/coursesCtrl.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/server/config/mongoose.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/server/models/Course.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/sutudentproject.sublime-project",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/server/controllers/index.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/server/views/index.jade",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/server/controllers/usersController.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/public/app/account/auth.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs-Pojects/StudentSystem/.jshintrc",
+		"/home/genkop/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/genkop/.config/sublime-text-3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/home/genkop/.config/sublime-text-3/Packages/SublimeLinter/Default (Linux).sublime-keymap",
+		"/home/genkop/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs Pojects/StudentSystem/public/app/account/signUpCtrl.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs Pojects/StudentSystem/public/app/account/loginCtrl.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs Pojects/StudentSystem/public/app/account/login.jade",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs Pojects/StudentSystem/public/app/account/identity.js",
+		"/media/genkop/8C0AA4270AA40FEE/NodeJs Pojects/StudentSystem/public/app/account/auth.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/server/config/express.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/server/models/Users.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/server/views/index.jade",
+		"/home/genkop/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/genkop/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/genkop/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/public/app/admin/userListCtrl.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/server/config/passport.js",
+		"/home/genkop/.config/sublime-text-3/Packages/User/JavaScript.sublime-settings",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/public/app/account/profileCtrl.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/sutudentproject.sublime-project",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/public/app/account/signUpCtrl.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/server/controllers/usersController.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/server.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/node_modules/jade/node_modules/monocle/node_modules/readdirp/stream-api.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/node_modules/stylus/node_modules/sax/test/flush.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/node_modules/express-session/node_modules/uid-safe/node_modules/base64-url/.travis.yml",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/package.json",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/public/app/account/loginCtrl.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/public/app/account/auth.js",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/npm-debug.log",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/.ntvs_analysis.dat",
+		"/media/genkop/8C0AA4270AA40FEE/TestThisProjectForInrellisense/StudentSystem/StudentSystem.njsproj",
+		"/home/genkop/.config/sublime-text-3/Packages/User/javascript.sublime-build"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"db"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/app/views/home/home.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 189.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "absoluteboqnov.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/tmp/NodeJsTesting/nodejs.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 252.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

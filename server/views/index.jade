@@ -1,0 +1,14 @@
+﻿extends includes/layout
+block main-content
+	div.navbar.navbar-inverse.navbar-fixed-top
+		div.container
+			div.navbar-header
+				a.navbar-brand(href="#/") Absolute
+			div.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					li.dropdown
+						a.dropdown-toggle(href="#/") Home
+	section
+		div(ng-view)
+	footer.text-center
+		p &copy; Genko Petrov
