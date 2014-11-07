@@ -1,6 +1,6 @@
 var express = require('express');
 
-// var env = process.env.NODE_ENV || 'development';
+var env = process.env.NODE_ENV || 'development';
 
 var app = express();
 
@@ -13,5 +13,5 @@ require('./server/config/routs')(app);
 
 app.listen(config.port);
 
-// console.log(env);
+console.log(env);
 console.log('Server is runing on port: ' + config.port);
