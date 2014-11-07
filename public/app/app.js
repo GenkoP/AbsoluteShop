@@ -29,6 +29,7 @@ app.config(function ($routeProvider) {
 		})
 		.when('/admin/adminpanel' , {
 			templateUrl: '/views/admin/adminpanel',
+			resolve: routeUserChecks.authenticated,
 		});
 });
 

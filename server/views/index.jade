@@ -8,7 +8,11 @@ block main-content
 				ul.nav.navbar-nav
 					li.dropdown
 						a.dropdown-toggle(href="#/") Home
-				.navbar-right(ng-controller="LogInController")			
+					li
+						a(href="#") Gallery
+					li
+						a(href="#") All promotions
+				.navbar-right(ng-controller="LogInController")
 					ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
 						li.dropdown
 							a.dropdown-toggle(href="" , data-toggle="dropdown")

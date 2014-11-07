@@ -15,6 +15,8 @@ app.controller('LogInController', function($scope, $location, $http, notifier, i
 				notifier.error('User/Password combination is not valid');
 			}
 		});
+
+		$location.path('/');
 	};
 
 	$scope.logout = function() {
