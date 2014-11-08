@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"fo",
+				"font-style"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"pading",
+				"padding-top"
+			],
+			[
+				"col",
+				"col-md-"
+			],
+			[
+				"$loca",
+				"$location	AngularJS"
+			],
+			[
+				"te",
+				"templateUrl"
+			],
+			[
+				"contro",
+				"controllers"
+			],
+			[
+				"log",
+				"logout"
+			],
+			[
+				"fa",
+				"factory	AngularJS"
+			],
+			[
+				"cont",
+				"controller	AngularJS"
+			],
+			[
+				"navbar-fi",
+				"navbar-fixed-top"
+			],
+			[
+				"nav",
+				"navbar"
+			],
+			[
 				"$roo",
 				"$routeProvider	AngularJS"
 			],
@@ -84,10 +136,6 @@
 				"form-horizontal"
 			],
 			[
-				"fo",
-				"form-control-static"
-			],
-			[
 				"for",
 				"form-control"
 			],
@@ -132,10 +180,6 @@
 				"getAllCourses"
 			],
 			[
-				"cont",
-				"controller"
-			],
-			[
 				"user",
 				"usersController"
 			],
@@ -176,13 +220,34 @@
 	"buffers":
 	[
 		{
-			"contents": "",
-			"file": "public/app/views/home/home.jade",
-			"file_size": 61,
-			"file_write_time": 130598190946379499,
+			"file": "public/app/controllers/admin/logInController.js",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 641,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/app/views/home/home.jade",
+			"settings":
+			{
+				"buffer_size": 1522,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/css/site.css",
+			"settings":
+			{
+				"buffer_size": 135,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/views/index.jade",
+			"settings":
+			{
+				"buffer_size": 906,
 				"line_ending": "Unix"
 			}
 		}
@@ -190,15 +255,15 @@
 	"build_system": "Packages/Python/Python.sublime-build",
 	"command_palette":
 	{
-		"height": 348.0,
+		"height": 285.0,
 		"selected_items":
 		[
 			[
-				"save",
+				"Save",
 				"File: Save All"
 			],
 			[
-				"Save",
+				"save",
 				"File: Save All"
 			],
 			[
@@ -290,23 +355,48 @@
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/images",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/images/home",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/admin",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/home",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server"
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/css",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/bootstrap",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/bootstrap/dist",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/bootstrap/dist/css",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/controllers",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views"
 	],
 	"file_history":
 	[
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/css/site.css",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/home/home.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/bootstrap/dist/css/bootstrap.css",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/app.js",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/routs.js",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/includes/layout.jade",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/index.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/admin/adminpanel.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/routs.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/admin/login.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/controllers/usersController.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin/auth.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/includes/layout.jade",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/includes/scripts.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/auth.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/common/notifier.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin/logInController.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin/identity.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin/adminResource.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/Procfile",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/config.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/package.json",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/.gitignore",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/main/home.jade",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/home/home.jade",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server.js",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/config.js",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/home/home.jade",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/css/site.css",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/bower.json",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/data/seedDataUsers.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/data/usersData.js",
@@ -315,7 +405,6 @@
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/home",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/express.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/.bowerrc",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/controllers/usersController.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/absoluteboqnov.sublime-project",
 		"/home/genkop/Projects/meanjs/app/controllers/users/users.authentication.server.controller.js",
 		"/home/genkop/Плот/testPython.py",
@@ -390,7 +479,7 @@
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -404,6 +493,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"bs",
+			"bs-doc",
+			"bs-docs",
 			"db"
 		],
 		"highlight": true,
@@ -422,30 +514,87 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/app/views/home/home.jade",
+					"file": "public/app/controllers/admin/logInController.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 641,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								372,
+								372
 							]
 						],
 						"settings":
 						{
-							"open_with_edit": true,
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/app/views/home/home.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								465,
+								465
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/css/site.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								110,
+								110
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -453,13 +602,42 @@
 					},
 					"stack_index": 0,
 					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "server/views/index.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 906,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								348,
+								348
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -499,7 +677,7 @@
 	"project": "absoluteboqnov.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -538,7 +716,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 252.0,
+	"side_bar_width": 225.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
