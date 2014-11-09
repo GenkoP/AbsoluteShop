@@ -32,4 +32,15 @@
 				div.
 					<ui-gmap-google-map center="map.center" zoom="map.zoom" >
 						<ui-gmap-marker idKey="marker.id" coords="marker.coords"></ui-gmap-marker>
-					</ui-gmap-google-map>
+						</ui-gmap-google-map>
+	div.
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/bg_BG/sdk.js#xfbml=1&appId=1419783234977087&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+	div.
+		<div class="fb-like" data-href="http://localhost:8080/#/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>

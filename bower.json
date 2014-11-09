@@ -24,6 +24,7 @@
     "toastr": "~2.1.0",
     "lodash": "~2.4.1",
     "bluebird": "~2.3.11",
-    "angular-google-maps": "~2.0.7"
+    "angular-google-maps": "~2.0.7",
+    "angulike": "*"
   }
 }

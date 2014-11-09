@@ -1,6 +1,7 @@
 /* global angular , toastr*/
 
-var app = angular.module('app' , [ 'ngRoute' , 'ngResource', 'kendo.directives', 'google-maps'.ns() ])
+var app = angular.module('app' , 
+	[ 'ngRoute' , 'ngResource', 'kendo.directives', 'google-maps'.ns() , 'angulike' ])
 		.value('toastr', toastr);
 
 app.config(function ($routeProvider) {
@@ -40,4 +41,5 @@ app.run(function($rootScope , $location) {
 			$location.path('/');
 		}
 	});
+
 });

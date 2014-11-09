@@ -10,4 +10,6 @@ app.controller('HomeController', function($scope) {
     	}
     };
     $scope.options = {scrollwheel: false};
+
+  
 });
