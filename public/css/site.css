@@ -2,6 +2,10 @@ body {
 	padding-top: 60px;
 }
 
+.angular-google-map-container { 
+	height: 400px;
+}
+
 .info-gmaps {
 	padding-top: 20px;
 }

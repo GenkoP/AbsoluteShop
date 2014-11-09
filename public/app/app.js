@@ -1,6 +1,6 @@
 /* global angular , toastr*/
 
-var app = angular.module('app' , [ 'ngRoute' , 'ngResource' , 'kendo.directives' ])
+var app = angular.module('app' , [ 'ngRoute' , 'ngResource', 'kendo.directives', 'google-maps'.ns() ])
 		.value('toastr', toastr);
 
 app.config(function ($routeProvider) {
@@ -21,7 +21,8 @@ app.config(function ($routeProvider) {
 
 	$routeProvider
 		.when('/' , {
-			templateUrl: '/views/home/home'
+			templateUrl: '/views/home/home',
+			controller: 'HomeController'
 		})
 		.when('/admin/login' , {
 			templateUrl: '/views/admin/login',

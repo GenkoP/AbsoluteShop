@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"lo",
+				"log"
+			],
+			[
+				"pro",
+				"process"
+			],
+			[
+				"if",
+				"ife	if … else"
+			],
+			[
+				"conte",
+				"container"
+			],
+			[
 				"ma",
 				"margin-bottom"
 			],
@@ -220,34 +236,10 @@
 	"buffers":
 	[
 		{
-			"file": "public/app/controllers/admin/logInController.js",
+			"file": "/home/genkop/workspace/angular-google-maps-master/example/assets/scripts/controllers/two-maps.js",
 			"settings":
 			{
-				"buffer_size": 641,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/app/views/home/home.jade",
-			"settings":
-			{
-				"buffer_size": 1512,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/css/site.css",
-			"settings":
-			{
-				"buffer_size": 139,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/views/index.jade",
-			"settings":
-			{
-				"buffer_size": 906,
+				"buffer_size": 3421,
 				"line_ending": "Unix"
 			}
 		}
@@ -255,15 +247,15 @@
 	"build_system": "Packages/Python/Python.sublime-build",
 	"command_palette":
 	{
-		"height": 285.0,
+		"height": 348.0,
 		"selected_items":
 		[
 			[
-				"Save",
+				"save",
 				"File: Save All"
 			],
 			[
-				"save",
+				"Save",
 				"File: Save All"
 			],
 			[
@@ -352,31 +344,20 @@
 	},
 	"expanded_folders":
 	[
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/images",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/images/home",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/admin",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/home",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/css",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/bootstrap",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/bootstrap/dist",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/bootstrap/dist/css",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/controllers",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views"
+		"/home/genkop/workspace/angular-google-maps-master"
 	],
 	"file_history":
 	[
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/css/site.css",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/mongoose.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/config.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/index.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/.gitignore",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin/logInController.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/home/home.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/css/site.css",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/bootstrap/dist/css/bootstrap.css",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/app.js",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/index.jade",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/admin/adminpanel.jade",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/routs.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/admin/login.jade",
@@ -386,21 +367,16 @@
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/includes/scripts.jade",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/auth.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/common/notifier.js",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin/logInController.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin/identity.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin/adminResource.js",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/Procfile",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/config.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/package.json",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/.gitignore",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/main/home.jade",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/home/home.jade",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/bower.json",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/data/seedDataUsers.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/data/usersData.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/models/Users.js",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/mongoose.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/home",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/express.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/.bowerrc",
@@ -513,122 +489,37 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/app/controllers/admin/logInController.js",
-					"semi_transient": false,
+					"file": "/home/genkop/workspace/angular-google-maps-master/example/assets/scripts/controllers/two-maps.js",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 641,
+						"buffer_size": 3421,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								372,
-								372
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "public/app/views/home/home.jade",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1512,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								394,
-								394
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/css/site.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 139,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								139,
-								139
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "server/views/index.jade",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 906,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								348,
-								348
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -715,7 +606,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 225.0,
+	"side_bar_width": 383.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
