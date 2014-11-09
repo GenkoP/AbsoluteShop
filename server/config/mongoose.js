@@ -1,6 +1,5 @@
 var mongoose = require('mongoose'),
 	User = require('../models/Users');
-	//seedUser = require('../data/seedDataUsers');
 
 module.exports = function(config) {
 	mongoose.connect(config.db);

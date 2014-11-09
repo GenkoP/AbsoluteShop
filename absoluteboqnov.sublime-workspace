@@ -231,7 +231,7 @@
 			"file": "public/app/views/home/home.jade",
 			"settings":
 			{
-				"buffer_size": 1522,
+				"buffer_size": 1512,
 				"line_ending": "Unix"
 			}
 		},
@@ -239,7 +239,7 @@
 			"file": "public/css/site.css",
 			"settings":
 			{
-				"buffer_size": 135,
+				"buffer_size": 139,
 				"line_ending": "Unix"
 			}
 		},
@@ -355,7 +355,6 @@
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/images",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/images/home",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views",
@@ -479,7 +478,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -514,7 +513,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -552,15 +551,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1522,
+						"buffer_size": 1512,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								465,
-								465
+								394,
+								394
 							]
 						],
 						"settings":
@@ -572,7 +571,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -581,15 +580,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 135,
+						"buffer_size": 139,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								110,
-								110
+								139,
+								139
 							]
 						],
 						"settings":
@@ -600,7 +599,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{

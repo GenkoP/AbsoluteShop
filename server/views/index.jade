@@ -13,16 +13,17 @@ block main-content
 					li
 						a(href="#") All promotions
 				.navbar-right(ng-controller="LogInController")
-					ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
-						li.dropdown
-							a.dropdown-toggle(href="" , data-toggle="dropdown")
-								| {{ identity.currentUser.firstName + ' ' + identity.currentUser.lastName }}
-								span.caret
-							ul.dropdown-menu
-								li(ng-show="identity.isAuthenticated()")
-									a(href="#/admin/adminpanel") Admin panel
-								li
-									a(href="#/" ng-click="logout()") Log out
+					div(ng-show="identity.isAuthenticated()")
+						ul.nav.navbar-nav.navbar-right
+							li.dropdown
+								a.dropdown-toggle(href="" , data-toggle="dropdown")
+									| {{ identity.currentUser.firstName + ' ' + identity.currentUser.lastName }}
+									span.caret
+								ul.dropdown-menu
+									li(ng-show="identity.isAuthenticated()")
+										a(href="#/admin/adminpanel") Admin panel
+									li
+										a(href="#/" ng-click="logout()") Log out
 	section
 		div(ng-view)
 	footer.text-center
