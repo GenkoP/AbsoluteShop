@@ -1,6 +1,6 @@
 /* global app , angular */
 
-app.controller('HomeController', function($scope) {
+app.controller('HomeController', function($scope , CashedPromotion) {
     $scope.map = {center: {latitude: 43.214873, longitude: 27.921018 }, zoom: 16 };
     $scope.marker = {
     	id: 0,
@@ -11,5 +11,6 @@ app.controller('HomeController', function($scope) {
     };
     $scope.options = {scrollwheel: false};
 
+    $scope.promotions = CashedPromotion.query();
   
 });

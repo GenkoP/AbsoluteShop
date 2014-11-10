@@ -5,21 +5,10 @@
 		div.col-md-5
 			h2.header Promotion product
 			.promotions
-				.row
-					.col-md-6 Jim Beam + almonds
-					.col-md-6 20lv.
-				.row
-					.col-md-6 Gentleman + almonds
-					.col-md-6 3lv.
-				.row
-					.col-md-6 Grant + almonds
-					.col-md-6 5lv.
-				.row
-					.col-md-6 Lavaza + salt :)
-					.col-md-6 200lv.
-				.row
-					.col-md-6 Garbage + pytkan
-					.col-md-6 infinity gold
+				.row(ng-repeat="promotion in promotions")
+					.col-md-6 {{ promotion.productName }}
+					.col-md-6 {{ promotion.price }}
+				
 .container.info-gmaps
 	.row
 		div.col-md-6
