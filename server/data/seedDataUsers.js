@@ -1,13 +1,11 @@
-
 var	encryption = require('../utilities/encryption');
-
 
 module.exports.seedInitialUsers = function (UserModel) {
 
 	UserModel.find({}).exec(function (err, collection) {
 		if (err) {
 			console.log('Can not find users ' + err);
-			return;
+			return;	
 		}
 
 		if (collection.length === 0) {

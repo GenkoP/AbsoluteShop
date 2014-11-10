@@ -1,7 +1,7 @@
 /* global angular , toastr*/
 
 var app = angular.module('app' , 
-	[ 'ngRoute' , 'ngResource', 'kendo.directives', 'google-maps'.ns() , 'angulike' ])
+	[ 'ngRoute' , 'ngResource', 'kendo.directives', /*'google-maps'.ns() , 'angulike'*/ ])
 		.value('toastr', toastr);
 
 app.config(function ($routeProvider) {
@@ -31,6 +31,11 @@ app.config(function ($routeProvider) {
 		})
 		.when('/admin/adminpanel' , {
 			templateUrl: '/views/admin/adminpanel',
+			resolve: routeUserChecks.authenticated,
+		})
+		.when('/admin/promotion', {
+			templateUrl: 'views/admin/addNewPromotion',
+			controller: 'PromotionController',
 			resolve: routeUserChecks.authenticated,
 		});
 });

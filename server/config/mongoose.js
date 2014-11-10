@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
-	User = require('../models/Users');
+	User = require('../models/Users'),
+	Promotion = require('../models/Promotions');
 
 module.exports = function(config) {
 	mongoose.connect(config.db);
@@ -23,6 +24,6 @@ module.exports = function(config) {
 	
 	User.init();
 
-	
+	Promotion.init();
 	
 };
