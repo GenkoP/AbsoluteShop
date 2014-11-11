@@ -17,5 +17,9 @@ module.exports = {
 
 			}
 		});
-	}
+	
+	},
+	createNewPromotion: function(req , res){
+		console.log(req.body);
+	},
 };

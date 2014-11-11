@@ -18,8 +18,9 @@ module.exports = function(app) {
 
 	app.get('/logout', auth.logout);
 
-
+	// Promotions
 	app.get('/api/promotions' , controller.promotions.getAllPromotions );
+	app.post('/api/promotions' , controller.promotions.createNewPromotion);
 	
 	app.get('/' , function (req , res) {
 		

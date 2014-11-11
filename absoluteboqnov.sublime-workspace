@@ -4,6 +4,82 @@
 		"selected_items":
 		[
 			[
+				"contro",
+				"controller"
+			],
+			[
+				"pro",
+				"promotionResource"
+			],
+			[
+				"prom",
+				"promotions"
+			],
+			[
+				"contr",
+				"controller"
+			],
+			[
+				"pros",
+				"promotions"
+			],
+			[
+				"mod",
+				"module"
+			],
+			[
+				"see",
+				"seedPromotions"
+			],
+			[
+				"re",
+				"require"
+			],
+			[
+				"seed",
+				"seedPromotions"
+			],
+			[
+				"Pro",
+				"Promotion"
+			],
+			[
+				"Sh",
+				"Schema"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"pr",
+				"promotion"
+			],
+			[
+				"$sc",
+				"$scope	AngularJS"
+			],
+			[
+				"price",
+				"price"
+			],
+			[
+				"for",
+				"form-group"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"la",
+				"label-danger"
+			],
+			[
 				"mar",
 				"margin-top"
 			],
@@ -14,10 +90,6 @@
 			[
 				"lo",
 				"log"
-			],
-			[
-				"pro",
-				"process"
 			],
 			[
 				"if",
@@ -56,10 +128,6 @@
 				"templateUrl"
 			],
 			[
-				"contro",
-				"controllers"
-			],
-			[
 				"log",
 				"logout"
 			],
@@ -84,10 +152,6 @@
 				"$routeProvider	AngularJS"
 			],
 			[
-				"con",
-				"container"
-			],
-			[
 				"va",
 				"value	AngularJS"
 			],
@@ -110,10 +174,6 @@
 			[
 				"config",
 				"config	AngularJS"
-			],
-			[
-				"see",
-				"seedDataUsers"
 			],
 			[
 				"fu",
@@ -156,14 +216,6 @@
 				"search"
 			],
 			[
-				"form",
-				"form-horizontal"
-			],
-			[
-				"for",
-				"form-control"
-			],
-			[
 				"inp",
 				"input-lg"
 			],
@@ -178,10 +230,6 @@
 			[
 				"cour",
 				"courses"
-			],
-			[
-				"re",
-				"requare"
 			],
 			[
 				"se",
@@ -244,34 +292,26 @@
 	"buffers":
 	[
 		{
+			"file": "server/controllers/promotionsController.js",
+			"settings":
+			{
+				"buffer_size": 480,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/config/routs.js",
+			"settings":
+			{
+				"buffer_size": 988,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "public/app/app.js",
 			"settings":
 			{
-				"buffer_size": 996,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/views/includes/scripts.jade",
-			"settings":
-			{
-				"buffer_size": 1353,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/app/views/home/home.jade",
-			"settings":
-			{
-				"buffer_size": 2186,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/app/controllers/home/homeController.js",
-			"settings":
-			{
-				"buffer_size": 329,
+				"buffer_size": 1163,
 				"line_ending": "Unix"
 			}
 		}
@@ -380,42 +420,49 @@
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/home",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/promotion",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/admin",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/home",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/css",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/angulike",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/bluebird/js",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/bluebird/js/browser",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/lodash/dist",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/controllers",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/data",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/models",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/includes"
 	],
 	"file_history":
 	[
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/angulike/angulike.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/promotion/cashedPromotions.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/includes/scripts.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/home/home.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/home/homeController.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/promotion/promotionResource.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/routs.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/controllers/controllersConfig.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/controllers/promotionsController.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/data/seedPromotions.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/models/Promotions.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/data/seedDataUsers.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/mongoose.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/app.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/promotion/promotionController.js",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/admin/addNewPromotion.jade",
+		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/angulike/angulike.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/admin/login.jade",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/css/site.css",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/bower.json",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/app.js",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/home/home.jade",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/home/homeController.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/google-maps/angular-google-maps.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/google-maps/angular-google-maps",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server.js",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/mongoose.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/config.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/index.jade",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/.gitignore",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin/logInController.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/lib/bootstrap/dist/css/bootstrap.css",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/views/admin/adminpanel.jade",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/config/routs.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/controllers/usersController.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/controllers/admin/auth.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/views/includes/layout.jade",
@@ -427,7 +474,6 @@
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/package.json",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/main/home.jade",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/home/home.jade",
-		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/data/seedDataUsers.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/data/usersData.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/server/models/Users.js",
 		"/home/genkop/workspace/AbsolutShopBoqnovVarna/public/app/home",
@@ -542,24 +588,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/app/app.js",
+					"file": "server/controllers/promotionsController.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 996,
+						"buffer_size": 480,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								722,
-								722
+								426,
+								426
 							]
 						],
 						"settings":
@@ -568,32 +614,33 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 344.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "server/views/includes/scripts.jade",
+					"file": "server/config/routs.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1353,
+						"buffer_size": 988,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								481,
-								481
+								710,
+								710
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -604,59 +651,31 @@
 				},
 				{
 					"buffer": 2,
-					"file": "public/app/views/home/home.jade",
-					"semi_transient": false,
+					"file": "public/app/app.js",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 2186,
+						"buffer_size": 1163,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								498,
-								498
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Jade/Syntaxes/Jade.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
+						"translation.x": -0.0,
+						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "public/app/controllers/home/homeController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 329,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								324,
-								324
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -743,7 +762,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 238.0,
+	"side_bar_width": 251.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
