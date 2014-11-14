@@ -6,7 +6,7 @@ app.controller('PromotionController' , function($scope , $http , notifier ){
 		
 		$http.post('/api/promotions' , promotion).success(function(respinse){
 
-			if (respinse.success === true) {
+			if (respinse.isAdded === true) {
 				
 				notifier.success('Promotion is added !');
 

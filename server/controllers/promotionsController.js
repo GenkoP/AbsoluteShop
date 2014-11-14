@@ -1,9 +1,12 @@
-var Promotions =  require('mongoose').model('Promotion');
+
+'use strict';
+var promo = require('../data/promotionData');
 
 module.exports = {
 	
-	getAllPromotions: function(req , res){
-		Promotions.find({}).exec(function(err , collection){
+	getAllPromotions: function (req , res){
+
+		promo.getAll().exec(function(err , collection){
 			if (err) {
 				console.log('Fatal error in promotionsController  : ' + err );
 			}
@@ -14,18 +17,16 @@ module.exports = {
 			else{
 
 			res.send(collection);
-
 			}
+			
 		});
-	
 	},
+	
 	createNewPromotion: function(req , res){
 		
 		var addNewPromotion = req.body;
 
-		console.log(req.body);
-
-		Promotions.create(addNewPromotion , function(err){
+		promo.createNew(addNewPromotion , function(err){
 
 			if (err) {
 				console.log('Promotion is not added error: '  + err);
@@ -34,7 +35,7 @@ module.exports = {
 
 				console.log('Promotion is added!');
 
-				res.send({success:true});
+				res.send({isAdded:true});
 			}
 		});
 
