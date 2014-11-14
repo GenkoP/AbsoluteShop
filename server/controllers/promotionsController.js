@@ -20,6 +20,23 @@ module.exports = {
 	
 	},
 	createNewPromotion: function(req , res){
+		
+		var addNewPromotion = req.body;
+
 		console.log(req.body);
+
+		Promotions.create(addNewPromotion , function(err){
+
+			if (err) {
+				console.log('Promotion is not added error: '  + err);
+			}
+			else{
+
+				console.log('Promotion is added!');
+
+				res.send({success:true});
+			}
+		});
+
 	},
 };

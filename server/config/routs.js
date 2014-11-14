@@ -4,15 +4,12 @@ var auth = require('./auth'),
  	
 module.exports = function(app) {
 
+	// Admin
 	app.get('/api/admin' , auth.isInRole('admin'));
 	app.post('/api/users'  , controller.users.createUser);
 	app.put('/api/users' , auth.isAuthenticated , controller.users.updateUser);
 
-	app.get('/views/:partialArea/:partialName', function(req, res) {
 
-		res.render('../../public/app/views/' + req.params.partialArea + '/' + req.params.partialName);
-
-	});
 
 	app.post('/login', auth.login);
 
@@ -21,11 +18,19 @@ module.exports = function(app) {
 	// Promotions
 	app.get('/api/promotions' , controller.promotions.getAllPromotions );
 	app.post('/api/promotions' , controller.promotions.createNewPromotion);
-	
+
+	//Home page
 	app.get('/' , function (req , res) {
 		
 		res.render('index' , {currentUser: req.user});
 		
+	});
+
+	//Render partials
+	app.get('/views/:partialArea/:partialName', function(req, res) {
+
+		res.render('../../public/app/views/' + req.params.partialArea + '/' + req.params.partialName);
+
 	});
 
 	app.get('/api/*' , function(req , res) {

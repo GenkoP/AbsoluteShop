@@ -1,9 +1,20 @@
 /* global app */
 
-app.controller('PromotionController' , function($scope){
+app.controller('PromotionController' , function($scope , $http , notifier ){
 
 	$scope.addNewPromotion = function(promotion){
-		console.log(promotion);
 		
+		$http.post('/api/promotions' , promotion).success(function(respinse){
+
+			if (respinse.success === true) {
+				
+				notifier.success('Promotion is added !');
+
+			}
+			else{
+				notifier.error('Can not add this promotion');
+			}
+
+		});
 	};
 });
