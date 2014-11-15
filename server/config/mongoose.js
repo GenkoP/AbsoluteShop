@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
 	User = require('../models/Users'),
+	Images = require('../models/Images') ,
 	Promotion = require('../models/Promotions');
 
 module.exports = function(config) {
@@ -25,5 +26,7 @@ module.exports = function(config) {
 	User.init();
 
 	Promotion.init();
+
+	Images.init();
 	
 };

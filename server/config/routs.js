@@ -19,6 +19,9 @@ module.exports = function(app) {
 	app.get('/api/promotions' , controller.promotions.getAllPromotions );
 	app.post('/api/promotions' , controller.promotions.createNewPromotion);
 
+	// Images
+	app.post('/api/images' , controller.images.addNew);
+
 	//Home page
 	app.get('/' , function (req , res) {
 		

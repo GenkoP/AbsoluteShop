@@ -37,6 +37,11 @@ app.config(function ($routeProvider) {
 			templateUrl: 'views/admin/addNewPromotion',
 			controller: 'PromotionController',
 			resolve: routeUserChecks.authenticated,
+		})
+		.when('/admin/images' , {
+			templateUrl: 'views/admin/addImage',
+			controller: 'ImagesController',
+			resolve: routeUserChecks.authenticated,
 		});
 });
 
