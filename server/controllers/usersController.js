@@ -1,7 +1,7 @@
 
 var encryption = require('../utilities/encryption');
 
-var users = require('../data/usersData');
+var users = require('../dataLayout/usersData');
 
 module.exports = {
 

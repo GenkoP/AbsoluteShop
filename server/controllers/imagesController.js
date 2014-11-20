@@ -1,4 +1,4 @@
-var Images = require('../data/imagesData'),
+var Images = require('../dataLayout/imagesData'),
 	fs = require('fs');
 
 	var imagePathTofoleder = __dirname + '/../../public/app/images/';

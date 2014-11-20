@@ -1,6 +1,6 @@
 
 'use strict';
-var promo = require('../data/promotionData');
+var promo = require('../dataLayout/promotionData');
 
 module.exports = {
 	

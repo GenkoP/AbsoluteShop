@@ -1,6 +1,6 @@
-var	encryption = require('../utilities/encryption');
+var	encryption = require('../../utilities/encryption');
 
-module.exports.seedInitialUsers = function (UserModel) {
+module.exports.seedInitial = function (UserModel) {
 
 	UserModel.find({}).exec(function (err, collection) {
 		if (err) {

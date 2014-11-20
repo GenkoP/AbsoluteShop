@@ -1,7 +1,7 @@
 
 var mongoose = require('mongoose'),
 	encryption = require('../utilities/encryption'),
-	seedUser = require('../data/seedDataUsers');
+	dataUser = require('../dataLayout/seedData/seedDataUsers');
 
 module.exports.init =  function () {
 
@@ -27,7 +27,7 @@ module.exports.init =  function () {
 
 	var User = mongoose.model('User' , userSchema);
 
-	seedUser.seedInitialUsers(User);
+	dataUser.seedInitial(User);
 };
 
 

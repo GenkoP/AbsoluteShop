@@ -1,7 +1,7 @@
 /* global require */
 
 var mongoose = require('mongoose'),
-	seedPromotions = require('../data/seedPromotions');
+	dataPromotions = require('../dataLayout/seedData/seedPromotions');
 
 module.exports.init = function () {
 
@@ -12,5 +12,5 @@ module.exports.init = function () {
 
 	var Promotion = mongoose.model('Promotion' ,promoSchema );
 
-	seedPromotions.seedDataPromotions(Promotion);
+	dataPromotions.seedInitial(Promotion);
 };

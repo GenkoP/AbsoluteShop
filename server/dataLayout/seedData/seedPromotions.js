@@ -1,5 +1,5 @@
 
-module.exports.seedDataPromotions = function(promotionModel) {
+module.exports.seedInitial = function(promotionModel) {
 
 	promotionModel.find({}).exec(function(err, collection){
 		if (err) {
