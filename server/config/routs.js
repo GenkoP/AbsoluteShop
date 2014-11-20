@@ -9,10 +9,7 @@ module.exports = function(app) {
 	app.post('/api/users'  , controller.users.createUser);
 	app.put('/api/users' , auth.isAuthenticated , controller.users.updateUser);
 
-
-
 	app.post('/login', auth.login);
-
 	app.get('/logout', auth.logout);
 
 	// Promotions
@@ -23,6 +20,9 @@ module.exports = function(app) {
 	app.get('/api/images' , controller.images.getAll);
 	app.post('/api/images' , controller.images.addNew);
 	
+	//Company Information
+	app.get('/api/info' , controller.companyInfo.getInfo)
+
 
 	//Home page
 	app.get('/' , function (req , res) {
