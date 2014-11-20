@@ -4,7 +4,7 @@
 
 app.controller('HomeController', 
 
-    function($scope , CashedPromotion, CashedImages) {
+    function($scope , CashedPromotion, CashedImages , InfoResource) {
 
         $scope.map = {center: {latitude: 43.214873, longitude: 27.921018 }, zoom: 16 };
         $scope.marker = {
@@ -19,5 +19,7 @@ app.controller('HomeController',
         $scope.promotions = CashedPromotion.query();
 
         $scope.homeimage = CashedImages.query();
+
+        $scope.compInfo = InfoResource.query();
     
 });

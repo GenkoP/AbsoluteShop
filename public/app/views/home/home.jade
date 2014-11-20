@@ -18,15 +18,15 @@
 	.row
 		div.col-md-6
 			div
-				h2.header Infomation for shop
-				.row
+				h2.header Infomation
+				.row(ng-repeat="info in compInfo")
 					div.col-md-6
-						p Area: Shop for cigarets and alcohol
-						p Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate tempora illum hic dolor, ratione ad sapiente esse molestias repudiandae est vero, consequatur, quos tenetur. Illo quo natus laboriosam voluptates unde?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate tempora illum hic dolor, ratione ad sapiente esse molestias repudiandae est vero, consequatur, quos tenetur. Illo quo natus laboriosam voluptates unde?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate tempora illum hic dolor, ratione ad sapiente esse molestias repudiandae est vero, consequatur, quos tenetur. Illo quo natus laboriosam voluptates unde?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate tempora illum hic dolor, ratione ad sapiente esse molestias repudiandae est vero, consequatur, quos tenetur. Illo quo natus laboriosam voluptates unde?
+						p Area:{{ info.dompanyArea }} <!-- dompanyArea wrong write must be comapnyArea -->
+						p Description: {{ info.description }}
 					div.col-md-6
-						p Address: Varna Somme street 50 
-						p Phone number: 0891234423
-						p Email babameca@baba.com
+						p Address: {{ info.address }}
+						p Phone number: {{ info.phoneNumber }}
+						p Email: {{ info.email }}
 		div.col-md-6
 			div
 				h2.header Google maps
