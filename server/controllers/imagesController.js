@@ -6,11 +6,9 @@ var Images = require('../data/imagesData'),
 module.exports = {
 
 	addNew: function(req , res) {
+
 		var fstream;
 		var image = {};
-
-
-		console.log(req.busboy);
 
 
 	    req.pipe(req.busboy);
@@ -19,7 +17,7 @@ module.exports = {
 
 	        fstream = fs.createWriteStream(imagePathTofoleder + filename);
 	        file.pipe(fstream);
-	        image.url = imagePathTofoleder + filename;
+	        image.url = 'app/images/' + filename;
 
 	    });
 
@@ -42,6 +40,28 @@ module.exports = {
 
 	        
 	    });
+
 	},
 
+	getAll: function(req , res) {
+		
+		Images.getAll().exec(function(err , collection){
+
+			if(err) {
+
+				console.log(' Error in imagesController getAll function! Error: ' + err );
+			}
+			else{
+
+				if(collection.length === 0){
+
+					console.log('Can not find any images!');
+				}
+
+				res.send(collection);
+			}
+
+		});
+
+	}
 };

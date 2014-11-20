@@ -1,16 +1,19 @@
 .container
 	.row
 		div.col-md-6
-			img(src="app/images/home/homeimg.jpg")
-		
+			
+			div(ng-repeat="homeimag in homeimage")
+				img(src="{{ homeimag.url }}")
 		div.col-md-6
 			div.fb-like(data-href="https://www.facebook.com/MagazinAbsolut" data-layout="standard" data-action="like" data-show-faces="true" data-share="true")
 		div.col-md-6
 			h2.header Promotion product
-			.promotions
+			.promotions {{ promotions.productName }}
 				.row(ng-repeat="promotion in promotions")
 					.col-md-6 {{ promotion.productName }}
 					.col-md-6 {{ promotion.price }}
+			
+				
 .container.info-gmaps
 	.row
 		div.col-md-6

@@ -20,7 +20,9 @@ module.exports = function(app) {
 	app.post('/api/promotions' , controller.promotions.createNewPromotion);
 
 	// Images
+	app.get('/api/images' , controller.images.getAll);
 	app.post('/api/images' , controller.images.addNew);
+	
 
 	//Home page
 	app.get('/' , function (req , res) {
