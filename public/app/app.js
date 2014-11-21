@@ -42,6 +42,16 @@ app.config(function ($routeProvider) {
 			templateUrl: 'views/admin/addImage',
 			controller: 'ImagesController',
 			resolve: routeUserChecks.authenticated,
+		})
+		.when('/admin/info' , {
+			templateUrl: 'views/info/info',
+			controller: 'InfoController',
+			resolve: routeUserChecks.authenticated,
+		})
+		.when('/admin/info/update', {
+			templateUrl: 'views/info/updateInfo',
+			controller: 'InfoController',
+			resolve: routeUserChecks.authenticated,
 		});
 });
 

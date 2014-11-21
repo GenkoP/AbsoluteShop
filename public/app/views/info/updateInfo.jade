@@ -1,0 +1,11 @@
+.container
+	.row
+		form.form-horizontal(name="updateInfo")
+			.form-group
+				.col-md-2
+					input.form-control( type="text" , ng-model="info.dompanyArea" , placeholder="Area" )
+					input.form-control( type="text" , ng-model="info.description" , placeholder="description" )
+					input.form-control( type="text" , ng-model="info.address" , placeholder="address" )
+					input.form-control( type="text" , ng-model="info.phoneNumber" , placeholder="phoneNumber" )
+					input.form-control( type="text" , ng-model="info.email" , placeholder="email" )
+					button.btn.btn-primary.btn-login(ng-click="update(info)") Update

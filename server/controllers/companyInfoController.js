@@ -7,7 +7,7 @@ module.exports = {
 
 			if (err) {
 
-				console.log('Error in companyInfoController! Error is: ' + err );
+				console.log('Error in companyInfoController getAll! Error is: ' + err );
 			}
 			else{
 
@@ -19,6 +19,19 @@ module.exports = {
 				}
 			}
 
+		});
+	},
+	updateInfo: function(req , res , next){
+
+		console.log(req.body);
+
+		var updatedFilds = req.body;
+
+
+		companyInfoData.update(req.body._id , updatedFilds , function(){
+
+			console.log('Information is updated!');
+			
 		});
 	}
 };

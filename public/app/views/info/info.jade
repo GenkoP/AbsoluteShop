@@ -1,0 +1,9 @@
+.container
+	.row
+		h1 Company Information
+		.col-md-2(ng-repeat="info in compInfo")
+			p Area:{{ info.dompanyArea }} <!-- dompanyArea wrong write must be comapnyArea -->
+			p Description: {{ info.description }}
+			p Address: {{ info.address }}
+			p Phone number: {{ info.phoneNumber }}
+			p Email: {{ info.email }}

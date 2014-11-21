@@ -21,7 +21,8 @@ module.exports = function(app) {
 	app.post('/api/images' , controller.images.addNew);
 	
 	//Company Information
-	app.get('/api/info' , controller.companyInfo.getInfo)
+	app.get('/api/info' , controller.companyInfo.getInfo);
+	app.put('/api/info', controller.companyInfo.updateInfo);
 
 
 	//Home page

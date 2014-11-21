@@ -4,9 +4,9 @@ app.controller('PromotionController' , function($scope , $http , notifier ){
 
 	$scope.addNewPromotion = function(promotion){
 		
-		$http.post('/api/promotions' , promotion).success(function(respinse){
+		$http.post('/api/promotions' , promotion).success(function(response){
 
-			if (respinse.isAdded === true) {
+			if (response.isAdded === true) {
 				
 				notifier.success('Promotion is added !');
 
