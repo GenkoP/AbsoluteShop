@@ -1,15 +1,18 @@
 /* global app  */
 
-app.controller('InfoController', function($scope ,$http , InfoResource ){
+app.controller('InfoController', function($scope , $http , $location , InfoResource ){
 	
 	$scope.compInfo = InfoResource.query();
 
 	$scope.update = function(info){
 
 
-		$http.put('/api/info', info ).success(function(){
+		$http.put('/api/info', info ).success(function(response){
 
-			console.log('Filds is updated!');
+			if (response.success) {
+				
+				$location.path('/admin/info');
+			}
 		});
 
 

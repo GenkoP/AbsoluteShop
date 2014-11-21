@@ -21,14 +21,15 @@ module.exports = {
 
 		});
 	},
-	updateInfo: function(req , res , next){
+	updateInfo: function(req , res){
 
 		console.log(req.body);
 
 		var updatedFilds = req.body;
-
-
+		
 		companyInfoData.update(req.body._id , updatedFilds , function(){
+
+			res.send({success: true});
 
 			console.log('Information is updated!');
 			
