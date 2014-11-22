@@ -4,7 +4,7 @@ var promo = require('../dataLayout/promotionData');
 
 module.exports = {
 	
-	getAllPromotions: function (req , res){
+	getAll: function (req , res){
 
 		promo.getAll().exec(function(err , collection){
 			if (err) {
@@ -21,8 +21,22 @@ module.exports = {
 			
 		});
 	},
+
+	getById: function(req , res ){
+
+		var findedPromId = req.params.id;
+
+		promo.findById(findedPromId).exec(function(err){
+
+			if(err){
+				console.log('Can not find promotion wiht this id ! Error ' + err );
+			}
+
+		});
+
+	},
 	
-	createNewPromotion: function(req , res){
+	addNew: function(req , res){
 		
 		var addNewPromotion = req.body;
 
@@ -40,4 +54,45 @@ module.exports = {
 		});
 
 	},
+
+
+	update: function(req , res){
+		
+		var updatePromotion = req.body,
+			updatePromotionId = req.params.id;
+
+		var updatedfilds = {
+
+			productName: updatePromotion.productName,
+			price: updatePromotion.productName 
+
+		};
+
+		promo.update(updatePromotionId , updatedfilds , function(err){
+
+			if (err) {
+
+				console.log('Can not update this promotion ! Error: ' + err );
+			}
+
+		});
+
+	},
+
+	remove: function(req , res ){
+
+		var deletedPromId = req.params.id;
+
+		promo.remove(deletedPromId , function(err){
+
+			if(err){
+				console.log('Can not remove this promotion!Error ' + err );
+			}
+
+		});
+
+	}
+
+
+
 };

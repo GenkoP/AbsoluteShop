@@ -13,9 +13,12 @@ module.exports = function(app) {
 	app.get('/logout',auth.isAuthenticated, auth.logout);
 
 	// Promotions
-	app.get('/api/promotions' , controller.promotions.getAllPromotions );
-	app.post('/api/promotions' , controller.promotions.createNewPromotion);
-
+	app.get('/api/promotions' , controller.promotions.getAll );
+	app.post('/api/promotions' , controller.promotions.addNew);
+	app.get('/api/promotions/:id' , auth.isAuthenticated , controller.promotions.getById);
+	app.put('/api/promotions/:id' , auth.isAuthenticated , controller.promotions.update);
+	app.delete('api/promotions/:id' , auth.isAuthenticated . controller.promotions.remove);
+	
 	// Images
 	app.get('/api/images' , controller.images.getAll);
 	app.post('/api/images' ,auth.isAuthenticated, controller.images.addNew);

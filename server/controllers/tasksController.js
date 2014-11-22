@@ -89,11 +89,10 @@ module.exports = {
 
 	remove: function(req , res ){
 
-		console.log(req.params);
 
-		var removedTask = req.params;
+		var removedTaskId = req.params.id;
 
-		taskData.remove({ _id: req.params.id } , function(err){
+		taskData.remove({ _id: removedTaskId } , function(err){
 
 			if(err){
 

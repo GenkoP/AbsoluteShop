@@ -6,8 +6,10 @@ var mongoose = require('mongoose'),
 module.exports.init = function () {
 
 	var promoSchema = mongoose.Schema({
+
 		productName: String,
 		price: String 
+		
 	});
 
 	var Promotion = mongoose.model('Promotion' ,promoSchema );
