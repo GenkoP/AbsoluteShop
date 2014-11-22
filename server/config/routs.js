@@ -15,9 +15,9 @@ module.exports = function(app) {
 	// Promotions
 	app.get('/api/promotions' , controller.promotions.getAll );
 	app.post('/api/promotions' , controller.promotions.addNew);
-	app.get('/api/promotions/:id' , auth.isAuthenticated , controller.promotions.getById);
-	app.put('/api/promotions/:id' , auth.isAuthenticated , controller.promotions.update);
-	app.delete('api/promotions/:id' , auth.isAuthenticated . controller.promotions.remove);
+	app.put('/api/promotions/:id' , controller.promotions.update);
+	app.get('/api/promotions/:id' , controller.promotions.getById);
+	app.delete('/api/promotions/:id'  , controller.promotions.remove);
 	
 	// Images
 	app.get('/api/images' , controller.images.getAll);

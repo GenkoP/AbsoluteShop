@@ -1,10 +1,8 @@
 .container
 	.row
-		h2.header Update promotion
+		h2.header Promotions
 			.promotions {{ promotions.productName }}
 				.row(ng-repeat="promotion in promotions")
 					.col-md-6 {{ promotion.productName }}
 					.col-md-6 {{ promotion.price }}	
-					.col-md-6 
-						button(type="submit", ng-click="remove(promotion._id)" ) Delete
-						a(href="#/admin/promotion/update/{{ promotion._id }}") Update
+

@@ -1,11 +1,19 @@
 .container
 	.row
+		h2.header Promotion product
+			.promotions
+				.row
+					.col-md-4 
+						p Product name {{ promotion.productName }}
+					.col-md-4
+						p Price {{ promotion.price }}	
+	.row
 		.col-md-2
-			form.form-horizontal(name="addPomotion")
+			form.form-horizontal(name="updatePromotion")
 				.form-group
 					label(for="productName") Product name
 					input.form-control(type="text" , placeholder="Product name" ,name="productName" , ng-model="promotion.productName", required)
 				.form-group
 					label(for="price") Price
 					input.form-control(type="text" , placeholder="Price" , name="price" ,ng-model="promotion.price", required)
-				button.btn.btn-primary.btn-login(ng-click="addNewPromotion(promotion)" , ng-disabled="addPomotion.$invalid") Add promotion
+				button.btn.btn-primary.btn-login(ng-click="update(promotion)" , ng-disabled="updatePromotion.$invalid") Update

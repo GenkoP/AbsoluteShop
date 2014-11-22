@@ -33,20 +33,37 @@ app.config(function ($routeProvider) {
 			templateUrl: '/views/promotion/promotions',
 			controller: 'PromotionController'
 		})
+
 		// Administration routes
 		.when('/admin/adminpanel' , {
 			templateUrl: '/views/admin/adminpanel',
 			resolve: routeUserChecks.authenticated,
 		})
+
+		// Promotions
 		.when('/admin/promotion', {
-			templateUrl: 'views/admin/addNewPromotion',
+			templateUrl: 'views/promotion/promotions',
 			controller: 'PromotionController',
 			resolve: routeUserChecks.authenticated,
 		})
+		.when('/admin/promotion/create', {
+			templateUrl: 'views/promotion/create',
+			controller: 'PromotionController',
+			resolve: routeUserChecks.authenticated,
+		})
+		.when('/admin/promotion/update/:id' , {
+			templateUrl: 'views/promotion/update',
+			controller: 'PromotionController',
+			resolve: routeUserChecks.authenticated,
+		})
+
+		// Images
 		.when('/admin/images' , {
 			templateUrl: 'views/admin/addImage',
 			resolve: routeUserChecks.authenticated,
 		})
+
+		// Information
 		.when('/admin/info' , {
 			templateUrl: 'views/info/info',
 			controller: 'InfoController',
@@ -56,7 +73,9 @@ app.config(function ($routeProvider) {
 			templateUrl: 'views/info/updateInfo',
 			controller: 'InfoController',
 			resolve: routeUserChecks.authenticated,
-		})// Tasks
+		})
+
+		// Tasks
 		.when('/admin/tasks', {
 			templateUrl: 'views/tasks/tasks',
 			controller: 'TasksController',

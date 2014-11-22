@@ -1,5 +1,4 @@
 
-'use strict';
 var promo = require('../dataLayout/promotionData');
 
 module.exports = {
@@ -37,6 +36,8 @@ module.exports = {
 	},
 	
 	addNew: function(req , res){
+
+		console.log(req.body);
 		
 		var addNewPromotion = req.body;
 
@@ -58,17 +59,20 @@ module.exports = {
 
 	update: function(req , res){
 		
+		console.log( 'Request body: ' +  req.body._id);
+		console.log( 'Id is: ' + req.params);
+
 		var updatePromotion = req.body,
 			updatePromotionId = req.params.id;
 
 		var updatedfilds = {
 
 			productName: updatePromotion.productName,
-			price: updatePromotion.productName 
+			price: updatePromotion.price,
 
 		};
 
-		promo.update(updatePromotionId , updatedfilds , function(err){
+		promo.update(req.body._id , updatedfilds , function(err){
 
 			if (err) {
 
@@ -80,6 +84,8 @@ module.exports = {
 	},
 
 	remove: function(req , res ){
+
+		console.log(req.params.id);
 
 		var deletedPromId = req.params.id;
 

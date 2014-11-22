@@ -33,7 +33,7 @@ app.controller('TasksController', function($scope , $http , $routeParams  , Task
 
 		console.log(task);
 
-		$http.put('/api/tasks/id' , task);
+		$http.put('/api/tasks/' + task._id , task);
 	};
 
 });

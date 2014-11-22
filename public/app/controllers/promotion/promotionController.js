@@ -1,8 +1,22 @@
 /* global app */
 
-app.controller('PromotionController' , function($scope , $http , notifier , CashedPromotion ){
+app.controller('PromotionController' , 
+	function($scope , $http , $routeParams , notifier ,PromotionResource ){
 
-	$scope.promotions = CashedPromotion.query();
+	$scope.promotions = PromotionResource.query();
+
+	$scope.promotion = PromotionResource.query().$promise.then(function(collection){
+
+		collection.forEach(function(promotion){
+
+			if (promotion._id === $routeParams.id){
+
+				$scope.promotion = promotion;
+			}
+
+		});
+
+	});
 	
 	$scope.addNewPromotion = function(promotion){
 		
@@ -19,4 +33,23 @@ app.controller('PromotionController' , function($scope , $http , notifier , Cash
 
 		});
 	};
+
+	$scope.update = function(promotion){
+
+		console.log(promotion);
+
+		$http.put('/api/promotions/'+ promotion._id , promotion);
+
+	};
+
+	$scope.remove = function(id){
+
+		console.log(id);
+
+		$http.delete('/api/promotions/' + id );
+
+	};
+
+
+
 });
