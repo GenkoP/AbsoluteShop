@@ -29,6 +29,11 @@ app.config(function ($routeProvider) {
 			templateUrl: '/views/admin/login',
 			controller: 'LogInController'
 		})
+		.when('/promotions' , {
+			templateUrl: '/views/promotion/promotions',
+			controller: 'PromotionController'
+		})
+		// Administration routes
 		.when('/admin/adminpanel' , {
 			templateUrl: '/views/admin/adminpanel',
 			resolve: routeUserChecks.authenticated,
@@ -40,7 +45,6 @@ app.config(function ($routeProvider) {
 		})
 		.when('/admin/images' , {
 			templateUrl: 'views/admin/addImage',
-			controller: 'ImagesController',
 			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/info' , {
@@ -51,6 +55,26 @@ app.config(function ($routeProvider) {
 		.when('/admin/info/update', {
 			templateUrl: 'views/info/updateInfo',
 			controller: 'InfoController',
+			resolve: routeUserChecks.authenticated,
+		})// Tasks
+		.when('/admin/tasks', {
+			templateUrl: 'views/tasks/tasks',
+			controller: 'TasksController',
+			resolve: routeUserChecks.authenticated,
+		})
+		.when('/admin/tasks/create', {
+			templateUrl: 'views/tasks/create',
+			controller: 'TasksController',
+			resolve: routeUserChecks.authenticated,
+		})
+		.when('/admin/tasks/details/:id' , {
+			templateUrl: 'views/tasks/details', 
+			controller: 'TasksController',
+			resolve: routeUserChecks.authenticated,
+		})
+		.when('/admin/tasks/update/:id' , {
+			templateUrl: 'views/tasks/update',
+			controller: 'TasksController',
 			resolve: routeUserChecks.authenticated,
 		});
 });

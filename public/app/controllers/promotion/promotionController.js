@@ -1,7 +1,9 @@
 /* global app */
 
-app.controller('PromotionController' , function($scope , $http , notifier ){
+app.controller('PromotionController' , function($scope , $http , notifier , CashedPromotion ){
 
+	$scope.promotions = CashedPromotion.query();
+	
 	$scope.addNewPromotion = function(promotion){
 		
 		$http.post('/api/promotions' , promotion).success(function(response){

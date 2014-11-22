@@ -2,7 +2,8 @@ var mongoose = require('mongoose'),
 	User = require('../models/Users'),
 	Images = require('../models/Images') ,
 	Promotion = require('../models/Promotions'),
-	CompanyInfo = require('../models/CompanyInfo');
+	CompanyInfo = require('../models/CompanyInfo'),
+	Task = require('../models/Tasks');
 
 module.exports = function(config) {
 	mongoose.connect(config.db);
@@ -24,6 +25,8 @@ module.exports = function(config) {
 		console.log('Database error: ' + err);
 	});
 	
+	// Initialize mongoose models
+
 	User.init();
 
 	Promotion.init();
@@ -31,4 +34,6 @@ module.exports = function(config) {
 	Images.init();
 	
 	CompanyInfo.init();
+
+	Task.init();
 };

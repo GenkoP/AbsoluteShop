@@ -8,7 +8,7 @@ app.controller('LogInController', function($scope, $location, $http, notifier, i
 
 			if (success) {
 
-				notifier.success('Sucsessful login!');
+				notifier.success('Successfull login!');
 
 			} else {
 
@@ -16,13 +16,13 @@ app.controller('LogInController', function($scope, $location, $http, notifier, i
 			}
 		});
 
-		$location.path('/');
+		$location.path('/admin/adminpanel');
 	};
 
 	$scope.logout = function() {
 		auth.logout().then(function() {
 
-			notifier.success('Sucsessful logout');
+			notifier.success('Successfull logout');
 
 			if ($scope.user) {
 

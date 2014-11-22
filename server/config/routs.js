@@ -10,7 +10,7 @@ module.exports = function(app) {
 	app.put('/api/users' , auth.isAuthenticated , controller.users.updateUser);
 
 	app.post('/login', auth.login);
-	app.get('/logout', auth.logout);
+	app.get('/logout',auth.isAuthenticated, auth.logout);
 
 	// Promotions
 	app.get('/api/promotions' , controller.promotions.getAllPromotions );
@@ -18,11 +18,18 @@ module.exports = function(app) {
 
 	// Images
 	app.get('/api/images' , controller.images.getAll);
-	app.post('/api/images' , controller.images.addNew);
+	app.post('/api/images' ,auth.isAuthenticated, controller.images.addNew);
 	
-	//Company Information
+	// Company Information
 	app.get('/api/info' , controller.companyInfo.getInfo);
-	app.put('/api/info', controller.companyInfo.updateInfo);
+	app.put('/api/info',auth.isAuthenticated, controller.companyInfo.updateInfo);
+
+	// Tasks
+	app.get('/api/tasks' , auth.isAuthenticated, controller.tasks.getAll );
+	app.get('/api/tasks/:id' , auth.isAuthenticated, controller.tasks.getById);
+	app.post('/api/tasks' , auth.isAuthenticated , controller.tasks.addNew);
+	app.put('/api/tasks/:id', auth.isAuthenticated , controller.tasks.update);
+	app.delete('/api/tasks/:id' ,auth.isAuthenticated , controller.tasks.remove);
 
 
 	//Home page

@@ -11,9 +11,7 @@
 			.promotions {{ promotions.productName }}
 				.row(ng-repeat="promotion in promotions")
 					.col-md-6 {{ promotion.productName }}
-					.col-md-6 {{ promotion.price }}
-			
-				
+					.col-md-6 {{ promotion.price }}	
 .container.info-gmaps
 	.row
 		div.col-md-6
@@ -23,8 +21,8 @@
 					div.col-md-6
 						p Area:{{ info.dompanyArea }} <!-- dompanyArea wrong write must be comapnyArea -->
 						p Description: {{ info.description }}
-					div.col-md-6
 						p Address: {{ info.address }}
+					div.col-md-6
 						p Phone number: {{ info.phoneNumber }}
 						p Email: {{ info.email }}
 		div.col-md-6
