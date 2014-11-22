@@ -52,7 +52,7 @@ module.exports = {
 			}
 			else{
 
-				res.send({isCreated: true});
+				res.send({isAdded: true});
 				
 			}
 	
@@ -77,11 +77,16 @@ module.exports = {
 		taskData.update(updatedTask._id , updatedFilds , function(err){
 
 			if(err){
+
 				console.log('Can not update this filds on tasks! Error: ' + err );
+
+				res.send({ isUpdated: false });
+
 			}
 			else{
 
-				next();
+				res.send({ isUpdated: true });
+				res.end();
 			}
 
 		});
@@ -97,6 +102,14 @@ module.exports = {
 			if(err){
 
 				console.log('Can not remove this task!Error: ' + err );
+
+				res.send({ isDeleted: false });
+			}
+			else{
+
+				res.send({ isDeleted: true });
+				res.end();
+
 			}
 			
 		});

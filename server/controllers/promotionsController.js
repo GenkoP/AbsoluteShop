@@ -44,13 +44,18 @@ module.exports = {
 		promo.createNew(addNewPromotion , function(err){
 
 			if (err) {
+
 				console.log('Promotion is not added error: '  + err);
+
+				res.end();
+
 			}
 			else{
 
 				console.log('Promotion is added!');
 
 				res.send({isAdded:true});
+				res.end();
 			}
 		});
 
@@ -78,6 +83,11 @@ module.exports = {
 
 				console.log('Can not update this promotion ! Error: ' + err );
 			}
+			else{
+
+				res.send({ isUpdated: true });
+				res.end();
+			}
 
 		});
 
@@ -92,7 +102,17 @@ module.exports = {
 		promo.remove(deletedPromId , function(err){
 
 			if(err){
+
 				console.log('Can not remove this promotion!Error ' + err );
+				res.send({ isDeleted: false });
+				res.end();
+
+			}
+			else{
+
+				res.send({ isDeleted: true });
+				res.end();
+
 			}
 
 		});
