@@ -1,7 +1,7 @@
 var Images = require('../dataLayout/imagesData'),
 	fs = require('fs');
 
-var imagePathTofoleder = __dirname + '/../../public/app/images/';
+var imagePathTofoleder = __dirname + '/../../public/images/';
 
 module.exports = {
 
@@ -20,7 +20,7 @@ module.exports = {
 			fstream = fs.createWriteStream(imagePathTofoleder + fileName);
 			file.pipe(fstream);
 
-			image.url = 'app/images/' + fileName;
+			image.url = 'images/' + fileName;
 
 
 			Images.addNew(image, function(err) {
@@ -30,14 +30,7 @@ module.exports = {
 					console.log('Can not add new image! Error: ' + err);
 
 
-				} else {
-
-					res.send({isAdded: false});
-
-					next();
-
 				}
-
 
 			});
 
