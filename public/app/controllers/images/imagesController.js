@@ -2,7 +2,23 @@
 
 'use strict';
 
-app.controller('ImageController', function($scope, fileUpload , ImageResource) {
+app.controller('ImageController', function($scope, $routeParams, images , ImageResource) {
+
+    $scope.gallery = ImageResource.query();
+
+    $scope.image = ImageResource.query().$promise.then(function(collection){
+
+        collection.forEach(function(image){
+
+            if (image._id === $routeParams.id){
+
+                $scope.image = image;
+            }
+
+        });
+
+    });
+    
 
     $scope.uploadFile = function() {
 
@@ -18,18 +34,24 @@ app.controller('ImageController', function($scope, fileUpload , ImageResource) {
 
                 for (var i = 0; i < file.length; i += 1) {
 
-                    fileUpload.uploadFileToUrl(file[i], uploadUrl);
+                    images.uploadFileToUrl(file[i], uploadUrl);
 
                 }
 
             } else {
                
-                fileUpload.uploadFileToUrl(file, uploadUrl);
+                images.uploadFileToUrl(file, uploadUrl);
             }
         }
 
     };
 
-     $scope.gallery = ImageResource.query();
+     
+
+     $scope.updateHomeImage = function(image){
+
+        images.choiceHomePageImage(image);
+        
+     };
 
 });

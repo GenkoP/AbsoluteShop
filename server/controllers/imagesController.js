@@ -70,5 +70,33 @@ module.exports = {
 
 		});
 
+	},
+
+	update: function(req , res){
+
+
+		var updatedImage = req.body,
+			imageId = req.body._id,
+			updatedfilds = {
+
+			isForHomePageImage: updatedImage.isForHomePageImage,
+
+		};
+
+		Images.update(imageId , updatedfilds , function(err){
+
+			if (err) {
+
+				console.log('Can not update this image ! Error: ' + err );
+			}
+			else{
+
+				res.send({ isUpdated: true });
+				res.end();
+			}
+
+		});
+
+
 	}
 };

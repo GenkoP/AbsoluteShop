@@ -62,7 +62,6 @@ app.controller('PromotionController' ,
 
 	$scope.remove = function(id){
 
-		console.log(id);
 
 		$http.delete('/api/promotions/' + id ).success(function(response){
 

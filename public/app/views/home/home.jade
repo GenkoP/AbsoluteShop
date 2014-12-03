@@ -2,8 +2,8 @@
 	.row
 		div.col-md-6
 			
-			div(ng-repeat="homeimag in homeimage")
-				img(src="{{ homeimag.url }}")
+			div(ng-repeat="homeimag in homeimage | filter:{isForHomePageImage: true} ")
+				img(src="{{ homeimag.url }}" , alt="Home page image")
 		div.col-md-6
 			div.fb-like(data-href="https://www.facebook.com/MagazinAbsolut" data-layout="standard" data-action="like" data-show-faces="true" data-share="true")
 		div.col-md-6

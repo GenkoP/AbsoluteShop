@@ -1,0 +1,9 @@
+.conteiner
+	.row
+		.col-md-5
+			img(src="{{ image.url }}", alt="Image" , height="200" , weighth="200"  )
+		.col-md-5
+			form.form-horizontal
+				label(for="box") Choice Homepage image
+				input(type="checkbox" id="box" name="box" ng-model="image.isForHomePageImage" )
+			button(ng-click="updateHomeImage(image)") Update

@@ -67,7 +67,10 @@ app.config(function ($routeProvider) {
 			controller: 'ImageController',
 			
 		})
-
+		.when('/admin/images/:id' , {
+			templateUrl: 'views/images/choiceHomePageImage',
+			controller: 'ImageController',
+		})
 		// Information
 		.when('/admin/info' , {
 			templateUrl: 'views/info/info',

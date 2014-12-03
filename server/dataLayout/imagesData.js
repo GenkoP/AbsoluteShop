@@ -9,4 +9,9 @@ module.exports = {
 	getAll: function() {
 		return Images.find({});
 	},
+	update: function(id, updateFild , callback){
+
+		Images.update({_id: id}, updateFild , callback );
+
+	}
 };

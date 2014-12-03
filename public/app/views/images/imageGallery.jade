@@ -2,4 +2,5 @@
 	.row
 		div(ng-repeat="image in gallery")
 			.col-md-2
-				img(src="{{image.url}}", alt="Image" height="200" , weight="200")
+				a(href="#/admin/images/{{ image._id }}")
+					img(src="{{ image.url }}", alt="Image" height="200" , weight="200")
