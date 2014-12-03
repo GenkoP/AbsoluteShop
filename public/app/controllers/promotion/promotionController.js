@@ -1,6 +1,7 @@
 /* global app */
 
 app.controller('PromotionController' , 
+
 	function($scope , $http , $routeParams, $location , notifier ,PromotionResource ){
 
 	$scope.promotions = PromotionResource.query();
@@ -24,6 +25,8 @@ app.controller('PromotionController' ,
 
 			if (response.isAdded === true) {
 				
+				$location.path('/admin/promotion');
+
 				notifier.success('Promotion is added !');
 
 			}
@@ -65,9 +68,14 @@ app.controller('PromotionController' ,
 
 			if(response.isDeleted === true){
 
+				$scope.promotions = undefined;
+
 				$location.path('/admin/promotion');
 
+				$scope.promotions = PromotionResource.query();
+					
 				notifier.success('Promotion is deleted!');
+
 			}
 			else{
 

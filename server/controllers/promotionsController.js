@@ -1,4 +1,3 @@
-
 var promo = require('../dataLayout/promotionData');
 
 module.exports = {
@@ -7,11 +6,8 @@ module.exports = {
 
 		promo.getAll().exec(function(err , collection){
 			if (err) {
-				console.log('Fatal error in promotionsController  : ' + err );
-			}
 
-			if(collection.length === 0){
-				console.log('Can not find promotions in mongodb');
+				console.log('Fatal error in promotionsController  : ' + err );
 			}
 			else{
 

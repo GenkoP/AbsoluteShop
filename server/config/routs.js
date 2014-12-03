@@ -21,7 +21,8 @@ module.exports = function(app) {
 	
 	// Images
 	app.get('/api/images' , controller.images.getAll);
-	app.post('/api/images' ,auth.isAuthenticated, controller.images.addNew);
+	app.post('/api/images' , controller.images.addNew);
+	
 	
 	// Company Information
 	app.get('/api/info' , controller.companyInfo.getInfo);

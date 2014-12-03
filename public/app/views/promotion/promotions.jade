@@ -1,10 +1,12 @@
 .container
 	.row
 		h2.header Update promotion
-			.promotions {{ promotions.productName }}
-				.row(ng-repeat="promotion in promotions")
-					.col-md-6 {{ promotion.productName }}
-					.col-md-6 {{ promotion.price }}	
-					.col-md-6 
-						button(type="submit", ng-click="remove(promotion._id)" ) Delete
-						a(href="#/admin/promotion/update/{{ promotion._id }}") Update
+		a(href="#/admin/promotion/create") Create new promotion
+		.promotions
+			.row(ng-repeat="promotion in promotions")
+				a(href="#/admin/promotion/update/{{ promotion._id }}")
+					.col-md-3 {{ promotion.productName }}
+					.col-md-3 {{ promotion.price }}	
+				.col-md-3 
+					button(type="submit", ng-click="remove(promotion._id)" ) Delete
+					a(href="#/admin/promotion/update/{{ promotion._id }}") Update

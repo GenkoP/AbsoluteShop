@@ -25,6 +25,7 @@
     "lodash": "~2.4.1",
     "bluebird": "~2.3.11",
     "angular-google-maps": "~2.0.7",
-    "angulike": "*"
+    "angulike": "*",
+    "ng-flow": "~2.5.1"
   }
 }

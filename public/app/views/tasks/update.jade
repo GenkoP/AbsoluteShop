@@ -2,24 +2,24 @@
 	.container
 	.row
 		h2 Update tasks
-		.col-md-3
+		.col-md-6
 			p Description: {{ task.taskDescript }}
 			p Priority: {{ task.priority }}
 			p Date on create: {{ task.dateOnCreate }}
 			p Date to finish: {{ task.dateToFinish }}
-		.col-md-3
+		.col-md-6
 			form.form-horizontal(name="updateTasks")
 				.form-group
-					label(for="description")
+					label(for="description") Description:
 					input.form-control(type="text" , placeholder="Description" ,  ng-model="task.taskDescript" , name="description" , required )
 
-					label(for="priority")
+					label(for="priority") Priority:
 					input.form-control(type="text" , placeholder="Priority" ,  ng-model="task.priority" , name="priority" , required )
 
-					label(for="dateOnCreate")
+					label(for="dateOnCreate") Date on Create:
 					input.form-control(type="text" , placeholder="Date on create" ,  ng-model="task.dateOnCreate" , name="dateOnCreate" , required )
 
-					label(for="dateToFinish")
+					label(for="dateToFinish") Date to Finish:
 					input.form-control(type="text" , placeholder="Date to finish" ,  ng-model="task.dateToFinish" , name="dateToFinish" , required )
 
 					button.btn.btn-primary.btn-login(ng-click="update(task)") Update Task

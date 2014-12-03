@@ -7,39 +7,63 @@ module.exports = {
 
 	addNew: function(req , res) {
 
-		var fstream;
-		var image = {};
-
+		var fstream,
+			image = {};
 
 	    req.pipe(req.busboy);
 
-	    req.busboy.on('file', function (fieldname, file, filename) {
+	    req.busboy.on('file', function (fieldname, file, fileName) {
 
-	        fstream = fs.createWriteStream(imagePathTofoleder + filename);
+	    	console.log(fileName);
+
+
+	        fstream = fs.createWriteStream(imagePathTofoleder + fileName);
 	        file.pipe(fstream);
-	        image.url = 'app/images/' + filename;
 
-	    });
+	       	image.url = 'app/images/' + fileName;
 
 
-	    req.busboy.on('finish', function() {
-	        
-	    	Images.addNew(image , function(err){
+	       	Images.addNew(image , function(err){
 
 	    		if(err){
 
 	    			console.log('Can not add new image! Error: ' + err );
+	    			
+
 	    		}
 	    		else{
 
 	    			console.log('Image is create !');
 
 	    		}
+	        
+
+	    });
+
+
+	    req.busboy.on('finish', function() {
+	        
+
+	    	res.end();
+
+	    	// Images.addNew(image , function(err){
+
+	    	// 	if(err){
+
+	    	// 		console.log('Can not add new image! Error: ' + err );
+	    	// 		res.end();
+	    	// 	}
+	    	// 	else{
+
+	    	// 		console.log('Image is create !');
+	    	// 		res.end();
+
+	    	// 	}
 
 	    	});
 
 	        
-	    });
+	   });
 
 	},
 

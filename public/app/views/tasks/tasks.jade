@@ -1,11 +1,17 @@
 .container
 	.row
-		.col-md-2(ng-repeat="task in tasks")
-			p Description: {{ task.taskDescript }}
-			p Priority: {{ task.priority }}
-			p Date on create: {{ task.dateOnCreate }}
-			p Date to finish: {{ task.dateToFinish }}
-			div
+		h2 Tasks
+		a(href="#/admin/tasks/create") Create new task
+		div(ng-repeat="task in tasks")
+			a(href="/#/admin/tasks/update/{{ task._id }}")
+				.col-md-2
+					p Description: {{ task.taskDescript }}
+				.col-md-2
+					p Priority: {{ task.priority }}
+				.col-md-2
+					p Date on create: {{ task.dateOnCreate }}
+				.col-md-2
+					p Date to finish: {{ task.dateToFinish }}
+			.col-md-2
 				button(type="submit", ng-click="remove(task._id)" ) Delete
-				a(href="/#/admin/tasks/details/{{ task._id }}") Details
 				a(href="/#/admin/tasks/update/{{ task._id }}") Update
