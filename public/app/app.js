@@ -58,9 +58,14 @@ app.config(function ($routeProvider) {
 		})
 
 		// Images
+		.when('/gallery', {
+			templateUrl: 'views/images/imageGallery',
+			controller: 'ImageController',
+		})
 		.when('/admin/images' , {
 			templateUrl: 'views/images/addImage',
 			controller: 'ImageController',
+			
 		})
 
 		// Information

@@ -1,6 +1,6 @@
 /* global app, angular, FormData*/
 
-app.service('fileUpload', function($http){
+app.service('fileUpload', function($http , $location){
 	
 	this.uploadFileToUrl = function(file, uploadUrl){
 		
@@ -12,7 +12,13 @@ app.service('fileUpload', function($http){
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined}
         })
-        .success(function(){
+        .success(function(response){
+
+          if(response.isAdded === true){
+            
+            $location.path('/gallery');
+          }
+
         })
         .error(function(){
         });

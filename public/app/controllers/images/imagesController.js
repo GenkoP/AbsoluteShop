@@ -2,7 +2,7 @@
 
 'use strict';
 
-app.controller('ImageController', function($scope, fileUpload) {
+app.controller('ImageController', function($scope, fileUpload , ImageResource) {
 
     $scope.uploadFile = function() {
 
@@ -28,7 +28,8 @@ app.controller('ImageController', function($scope, fileUpload) {
             }
         }
 
-
-
     };
+
+     $scope.gallery = ImageResource.query();
+
 });

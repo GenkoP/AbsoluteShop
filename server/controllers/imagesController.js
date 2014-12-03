@@ -14,7 +14,7 @@ module.exports = {
 
 		req.busboy.on('file', function(fieldname, file, fileName) {
 
-			console.log(fileName);
+			console.log(file);
 
 
 			fstream = fs.createWriteStream(imagePathTofoleder + fileName);
@@ -29,6 +29,9 @@ module.exports = {
 
 					console.log('Can not add new image! Error: ' + err);
 
+					res.send({isAdded: false});
+
+					next();
 
 				}
 

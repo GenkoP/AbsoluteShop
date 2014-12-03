@@ -36,14 +36,5 @@ body {
 }
 /* START Styles for addImage */
 
-#imageUploadInput{
-
-    visibility: hidden;
-}
-#imgFromInput{
-    
-    visibility: hidden;
-
-}
 
 /* END Styles for addImage */
