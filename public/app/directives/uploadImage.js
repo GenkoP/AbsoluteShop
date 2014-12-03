@@ -16,16 +16,7 @@ app.directive('imageUpload', ['$parse', function($parse) {
 				var count = form.children('input[type="file"]').length,
 					inputName = 'n_' + count;
 
-				var newImgInput = $('<input multiple>')
-					.attr('type', 'file')
-					.attr('id', inputName)
-					.attr('onchange', 'angular.element(this).scope().readURL(this)')
-					.attr('name', inputName)
-					.attr('accept', 'image/*')
-					.hide();
-
-
-				form.append(newImgInput);
+				appendInputFileToForm(form , count , inputName);
 
 				$('#' + inputName).click();
 
@@ -60,6 +51,19 @@ app.directive('imageUpload', ['$parse', function($parse) {
 					reader.readAsDataURL(input.files[0]);
 				}
 			};
+
+			function appendInputFileToForm(form , count , inputName) {
+				
+				var newImgInput = $('<input multiple>')
+					.attr('type', 'file')
+					.attr('id', inputName)
+					.attr('onchange', 'angular.element(this).scope().readURL(this)')
+					.attr('name', inputName)
+					.attr('accept', 'image/*')
+					.hide();
+
+				form.append(newImgInput);
+			}
 
 			function appendImageTag(e) {
 

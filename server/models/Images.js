@@ -5,7 +5,7 @@ module.exports.init = function () {
 	var imageSchema = mongoose.Schema({
 
 		url: {type:String , unique: true},
-		dateToAdd:{type: Date , dafaut:Date.now},
+		isForHomePageImage: Boolean,
 
 	});
 

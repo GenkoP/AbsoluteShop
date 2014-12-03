@@ -1,83 +1,70 @@
 var Images = require('../dataLayout/imagesData'),
 	fs = require('fs');
 
-	var imagePathTofoleder = __dirname + '/../../public/app/images/';
+var imagePathTofoleder = __dirname + '/../../public/app/images/';
 
 module.exports = {
 
-	addNew: function(req , res) {
+	addNew: function(req, res , next) {
 
 		var fstream,
 			image = {};
 
-	    req.pipe(req.busboy);
+		req.pipe(req.busboy);
 
-	    req.busboy.on('file', function (fieldname, file, fileName) {
+		req.busboy.on('file', function(fieldname, file, fileName) {
 
-	    	console.log(fileName);
-
-
-	        fstream = fs.createWriteStream(imagePathTofoleder + fileName);
-	        file.pipe(fstream);
-
-	       	image.url = 'app/images/' + fileName;
+			console.log(fileName);
 
 
-	       	Images.addNew(image , function(err){
+			fstream = fs.createWriteStream(imagePathTofoleder + fileName);
+			file.pipe(fstream);
 
-	    		if(err){
-
-	    			console.log('Can not add new image! Error: ' + err );
-	    			
-
-	    		}
-	    		else{
-
-	    			console.log('Image is create !');
-
-	    		}
-	        
-
-	    });
+			image.url = 'app/images/' + fileName;
 
 
-	    req.busboy.on('finish', function() {
-	        
+			Images.addNew(image, function(err) {
 
-	    	res.end();
+				if (err) {
 
-	    	// Images.addNew(image , function(err){
+					console.log('Can not add new image! Error: ' + err);
 
-	    	// 	if(err){
 
-	    	// 		console.log('Can not add new image! Error: ' + err );
-	    	// 		res.end();
-	    	// 	}
-	    	// 	else{
+				} else {
 
-	    	// 		console.log('Image is create !');
-	    	// 		res.end();
+					res.send({isAdded: false});
 
-	    	// 	}
+					next();
 
-	    	});
+				}
 
-	        
-	   });
+
+			});
+
+
+			req.busboy.on('finish', function() {
+
+				res.send({isAdded: true});
+
+				res.end();
+
+			});
+
+
+		});
 
 	},
 
-	getAll: function(req , res) {
-		
-		Images.getAll().exec(function(err , collection){
+	getAll: function(req, res) {
 
-			if(err) {
+		Images.getAll().exec(function(err, collection) {
 
-				console.log(' Error in imagesController getAll function! Error: ' + err );
-			}
-			else{
+			if (err) {
 
-				if(collection.length === 0){
+				console.log(' Error in imagesController getAll function! Error: ' + err);
+			} else {
+
+				if (collection.length === 0) {
 
 					console.log('Can not find any images!');
 				}

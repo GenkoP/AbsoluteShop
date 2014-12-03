@@ -5,6 +5,7 @@
 app.controller('ImageController', function($scope, fileUpload) {
 
     $scope.uploadFile = function() {
+
         var form = $('#formImageUpload'),
             count = form.children('input[type="file"]').length,
             uploadUrl = '/api/images';
@@ -12,8 +13,6 @@ app.controller('ImageController', function($scope, fileUpload) {
         for (var n = 0; n < count; n += 1) {
 
             var file = $scope['n_' + n ];
-
-            console.log(file);
 
             if (file.length > 1) {
 
@@ -24,6 +23,7 @@ app.controller('ImageController', function($scope, fileUpload) {
                 }
 
             } else {
+               
                 fileUpload.uploadFileToUrl(file, uploadUrl);
             }
         }
