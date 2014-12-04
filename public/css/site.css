@@ -2,6 +2,10 @@ body {
 	padding-top: 60px;
 }
 
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
 .login-form {
 	margin-top: 100px;
 	margin-bottom: 100px;

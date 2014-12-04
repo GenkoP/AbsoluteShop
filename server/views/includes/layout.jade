@@ -8,7 +8,7 @@ html
 		link(rel="stylesheet" href="lib/kendo-ui-core/styles/kendo.default.min.css")
 		link(rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css")
 		link(rel="stylesheet" href="/css/site.css")
-	body(ng-app="app")
+	body(ng-app="app" , ng-cloak ,class="ng-cloak")
 		block main-content
 		include scripts
 		include currentUserScript
