@@ -1,6 +1,6 @@
 ﻿extends includes/layout
 block main-content
-	div.navbar.navbar-inverse.navbar-fixed-top(ng-cloak)
+	div.navbar.navbar-inverse.navbar-fixed-top
 		div.container
 			div.navbar-header
 				a.navbar-brand(href="#/") Absolute
@@ -12,8 +12,6 @@ block main-content
 						a(href="#/gallery") Gallery
 					li
 						a(href="#/promotions") All promotions
-					li
-						a(href="#/admin/images") Add Image
 				.navbar-right(ng-controller="LogInController")
 					div(ng-show="identity.isAuthenticated()")
 						ul.nav.navbar-nav.navbar-right
@@ -22,7 +20,7 @@ block main-content
 									| {{ identity.currentUser.firstName + ' ' + identity.currentUser.lastName }}
 									span.caret
 								ul.dropdown-menu
-									li(ng-show="identity.isAuthenticated()")
+									li
 										a(href="#/admin/adminpanel") Admin panel
 									li
 										a(href="#/admin/images" ) Add new image

@@ -1,7 +1,7 @@
 /* global angular , toastr*/
 
 var app = angular.module('app' , 
-	[ 'ngRoute' , 'ngResource', 'kendo.directives', 'google-maps'.ns() ])
+	[ 'ngRoute' , 'ngResource', 'google-maps'.ns() ])
 		.value('toastr', toastr);
 
 app.config(function ($routeProvider) {
@@ -22,85 +22,86 @@ app.config(function ($routeProvider) {
 
 	$routeProvider
 		.when('/' , {
-			templateUrl: '/views/home/home',
+			templateUrl: 'views/home/home',
 			controller: 'HomeController'
 		})
 		.when('/admin/login' , {
-			templateUrl: '/views/admin/login',
+			templateUrl: '/views/user/login',
 			controller: 'LogInController'
 		})
 		.when('/promotions' , {
 			templateUrl: '/views/promotion/promotions',
 			controller: 'PromotionController'
 		})
+			.when('/gallery', {
+			templateUrl: '/views/images/imageGallery',
+			controller: 'ImageController',
 
-		// Administration routes
+		})
 		.when('/admin/adminpanel' , {
-			templateUrl: '/views/admin/adminpanel',
+			templateUrl: '/views/user/adminpanel',
 			resolve: routeUserChecks.authenticated,
 		})
 
 		// Promotions
 		.when('/admin/promotion', {
-			templateUrl: 'views/promotion/promotions',
+			templateUrl: '/views/promotion/promotions',
 			controller: 'PromotionController',
 			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/promotion/create', {
-			templateUrl: 'views/promotion/create',
+			templateUrl: '/views/promotion/create',
 			controller: 'PromotionController',
 			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/promotion/update/:id' , {
-			templateUrl: 'views/promotion/update',
+			templateUrl: '/views/promotion/update',
 			controller: 'PromotionController',
 			resolve: routeUserChecks.authenticated,
 		})
 
 		// Images
-		.when('/gallery', {
-			templateUrl: 'views/images/imageGallery',
-			controller: 'ImageController',
-		})
 		.when('/admin/images' , {
-			templateUrl: 'views/images/addImage',
+			templateUrl: '/views/gallery/addImage',
 			controller: 'ImageController',
+			resolve: routeUserChecks.authenticated,
 			
 		})
 		.when('/admin/images/:id' , {
-			templateUrl: 'views/images/choiceHomePageImage',
+			templateUrl: '/views/gallery/choiceHomePageImage',
 			controller: 'ImageController',
+			resolve: routeUserChecks.authenticated,
 		})
 		// Information
 		.when('/admin/info' , {
-			templateUrl: 'views/info/info',
+			templateUrl: '/views/info/info',
 			controller: 'InfoController',
 			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/info/update', {
-			templateUrl: 'views/info/updateInfo',
+			templateUrl: '/views/info/updateInfo',
 			controller: 'InfoController',
 			resolve: routeUserChecks.authenticated,
 		})
 
 		// Tasks
 		.when('/admin/tasks', {
-			templateUrl: 'views/tasks/tasks',
+			templateUrl: '/views/tasks/tasks',
 			controller: 'TasksController',
 			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/tasks/create', {
-			templateUrl: 'views/tasks/create',
+			templateUrl: '/views/tasks/create',
 			controller: 'TasksController',
 			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/tasks/details/:id' , {
-			templateUrl: 'views/tasks/details', 
+			templateUrl: '/views/tasks/details', 
 			controller: 'TasksController',
 			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/tasks/update/:id' , {
-			templateUrl: 'views/tasks/update',
+			templateUrl: '/views/tasks/update',
 			controller: 'TasksController',
 			resolve: routeUserChecks.authenticated,
 		});

@@ -1,5 +1,4 @@
 var express = require('express'),
-	stylus = require('stylus'),
 	cookieParser = require('cookie-parser'),
 	bodyParser = require('body-parser'),
 	session = require('express-session'),
@@ -25,13 +24,6 @@ module.exports = function(app, config) {
 		saveUninitialized: true,
 	}));
 	
-
-	app.use(stylus.middleware({
-		src: config.rootPath + '/public',
-		compile: function(str, path) {
-			return stylus(str).set('filename', path);
-		}
-	}));
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.use(express.static(config.rootPath + '/public'));

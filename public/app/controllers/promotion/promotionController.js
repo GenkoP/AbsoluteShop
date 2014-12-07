@@ -2,90 +2,93 @@
 
 app.controller('PromotionController' , 
 
-	function($scope , $http , $routeParams, $location , notifier ,PromotionResource ){
+	 function($scope , $http , $routeParams, $location ,identity, notifier ,PromotionResource ){
 
-	$scope.promotions = PromotionResource.query();
+	// $scope.identity = identity;
 
-	$scope.promotion = PromotionResource.query().$promise.then(function(collection){
+	// $scope.promotions = PromotionResource.query();
 
-		collection.forEach(function(promotion){
+	// $scope.promotion = PromotionResource.query().$promise.then(function(collection){
 
-			if (promotion._id === $routeParams.id){
+	// 	collection.forEach(function(promotion){
 
-				$scope.promotion = promotion;
-			}
+	// 		if (promotion._id === $routeParams.id){
 
-		});
+	// 			$scope.promotion = promotion;
+	// 		}
 
-	});
+	// 	});
+
+	// });
 	
-	$scope.addNew = function(promotion){
+	// $scope.addNew = function(promotion){
 		
-		$http.post('/api/promotions' , promotion).success(function(response){
+	// 	$http.post('/api/promotions' , promotion).success(function(response){
 
-			if (response.isAdded === true) {
+	// 		if (response.isAdded === true) {
 				
-				$location.path('/admin/promotion');
+	// 			$location.path('/admin/promotion');
 
-				notifier.success('Promotion is added !');
+	// 			notifier.success('Promotion is added !');
 
-			}
-			else{
+	// 		}
+	// 		else{
 
-				notifier.error('Can not add this promotion');
-			}
+	// 			notifier.error('Can not add this promotion');
+	// 		}
 
-		});
-	};
+	// 	});
+	// };
 
-	$scope.update = function(promotion){
+	// $scope.update = function(promotion){
 
-		console.log(promotion);
+	// 	console.log(promotion);
 
-		$http.put('/api/promotions/'+ promotion._id , promotion).success(function(response){
+	// 	$http.put('/api/promotions/'+ promotion._id , promotion).success(function(response){
 
-			if (response.isUpdated === true) {
+	// 		if (response.isUpdated === true) {
 
-				$location.path('/admin/promotion');
+	// 			$location.path('/admin/promotion');
 
-				notifier.success('Promotion is change!');
+	// 			notifier.success('Promotion is change!');
 
-			}
-			else{
+	// 		}
+	// 		else{
 
-				notifier.error('Promotion is not change!');
-			}
+	// 			notifier.error('Promotion is not change!');
+	// 		}
 
-		});
+	// 	});
 
-	};
+	// };
 
-	$scope.remove = function(id){
+	// $scope.remove = function(id){
 
 
-		$http.delete('/api/promotions/' + id ).success(function(response){
+	// 	$http.delete('/api/promotions/' + id ).success(function(response){
 
-			if(response.isDeleted === true){
+	// 		if(response.isDeleted === true){
 
-				$scope.promotions = undefined;
+	// 			$scope.promotions = undefined;
 
-				$location.path('/admin/promotion');
+	// 			$location.path('/admin/promotion');
 
-				$scope.promotions = PromotionResource.query();
+	// 			$scope.promotions = PromotionResource.query();
 					
-				notifier.success('Promotion is deleted!');
+	// 			notifier.success('Promotion is deleted!');
 
-			}
-			else{
+	// 		}
+	// 		else{
 
-				notifier.eror('Can not delete this promotions!');
+	// 			notifier.eror('Can not delete this promotions!');
 
-			}
+	// 		}
 
-		});
+	// 	});
 
-	};
+	// };
 
+	$scope.hello = "Hello from Controller!";
 
 
 });

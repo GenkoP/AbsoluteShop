@@ -1,12 +1,17 @@
 .container
 	.row
-		h2.header Update promotion
-		a(href="#/admin/promotion/create") Create new promotion
-		.promotions
-			.row(ng-repeat="promotion in promotions")
-				a(href="#/admin/promotion/update/{{ promotion._id }}")
-					.col-md-3 {{ promotion.productName }}
-					.col-md-3 {{ promotion.price }}	
-				.col-md-3 
-					button(type="submit", ng-click="remove(promotion._id)" ) Delete
-					a(href="#/admin/promotion/update/{{ promotion._id }}") Update
+		//- .promotions(ng-show="identity.isAuthenticated()")
+		//- 	a(href="#/admin/promotion/create") Create new promotion
+		//- 	.row(ng-repeat="promotion in promotions")
+		//- 		a(href="#/admin/promotion/update/{{ promotion._id }}")
+		//- 			.col-md-3 {{ promotion.productName }}
+		//- 			.col-md-3 {{ promotion.price }}
+		//- 			.col-md-3
+		//- 				button(type="submit", ng-click="remove(promotion._id)" ) Delete
+		//- 				a(href="#/admin/promotion/update/{{ promotion._id }}") Update
+		//- .promotions(ng-hide="identity.isAuthenticated()")
+		//- 	.row(ng-repeat="promotion in promotions")
+		//- 		.col-md-3 {{ promotion.productName }}
+		//- 		.col-md-3 {{ promotion.price }}
+		div.
+			

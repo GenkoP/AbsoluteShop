@@ -1,6 +1,8 @@
 .conteiner
 	.row
 		div(ng-repeat="image in gallery")
-			.col-md-2
+			.col-md-2(ng-show="identity.isAuthenticated()")
 				a(href="#/admin/images/{{ image._id }}")
 					img(src="{{ image.url }}", alt="Image" height="200" , weight="200")
+			.col-md-2(ng-hide="identity.isAuthenticated()")
+				img(src="{{ image.url }}", alt="Image" height="200" , weight="200")

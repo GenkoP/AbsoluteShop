@@ -2,7 +2,9 @@
 
 'use strict';
 
-app.controller('ImageController', function($scope, $routeParams, images , ImageResource) {
+app.controller('ImageController', function($scope, $routeParams,identity, images , ImageResource) {
+
+    $scope.identity = identity;
 
     $scope.gallery = ImageResource.query();
 
