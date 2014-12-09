@@ -1,7 +1,7 @@
 /* global angular , toastr*/
 
 var app = angular.module('app' , 
-	[ 'ngRoute' , 'ngResource', 'google-maps'.ns() ])
+	['ngRoute' , 'ngResource','google-maps'.ns() ])
 		.value('toastr', toastr);
 
 app.config(function ($routeProvider) {
