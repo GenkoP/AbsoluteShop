@@ -1,15 +1,6 @@
 .container(ng-show="isVisibleCreateDiv")
 	.row
-		h2 New task
-		.col-md-2
-			p Description: {{ task.taskDescript }}
-		.col-md-2
-			p Priority: {{ task.priority }}
-		.col-md-2
-			p Date on create: {{ task.dateOnCreate }}
-		.col-md-2
-			p Date to finish: {{ task.dateToFinish }}
-	.row
+		h3 Create new task
 		.col-md-2
 			form.form-horizontal(name="createTask")
 				.form-group
@@ -26,21 +17,46 @@
 					input.form-control(type="text" , placeholder="Date to finish" ,  ng-model="task.dateToFinish" , name="dateToFinish" , required )
 
 					button.btn.btn-primary.btn-login(ng-click="create(task)" ,  ng-disabled="createTask.$invalid") Add Task
-			button(ng-click="closeCreateDiv()") Close
+			button.btn.btn-primary(ng-click="closeCreateDiv()") Close
+		h3 New task
+		.col-md-2
+			p Description: 
+				span {{ task.taskDescript }}
+			p Priority: 
+				span {{ task.priority }}
+			p Date on create: 
+				span {{ task.dateOnCreate }}
+			p Date to finish:
+				span {{ task.dateToFinish }}		
 .container
+	h2 All Tasks
+	button.btn.btn-primary(ng-click="openCreateDiv()") Create new task
 	.row
-		h2 Tasks
-		button(ng-click="openCreateDiv()") Create new task
-		div(ng-repeat="task in tasks")
-			a(href="/#/admin/tasks/update/{{ task._id }}")
-				.col-md-2
-					p Description: {{ task.taskDescript }}
-				.col-md-2
-					p Priority: {{ task.priority }}
-				.col-md-2
-					p Date on create: {{ task.dateOnCreate }}
-				.col-md-2
-					p Date to finish: {{ task.dateToFinish }}
+		.col-md-2
+			p
+				strong Description
+		.col-md-2
+			p
+				strong Priority
+		.col-md-2
+			p
+				strong Date on create
+		.col-md-2
+			p
+				strong Date to finish
+	.row(ng-repeat="task in tasks")
+		a(href="/#/admin/tasks/update/{{ task._id }}")
 			.col-md-2
-				button(type="submit", ng-click="remove(task._id)" ) Delete
-				a(href="/#/admin/tasks/update/{{ task._id }}") Update
+				p
+					strong {{ task.taskDescript }}
+			.col-md-2
+				p
+					strong {{ task.priority }}
+			.col-md-2
+				p
+					strong  {{ task.dateOnCreate }}
+			.col-md-2
+				p
+					strong {{ task.dateToFinish }}
+		button.btn.btn-primary(type="submit", ng-click="remove(task._id)" ) Delete
+		a.btn.btn-primary(href="/#/admin/tasks/update/{{ task._id }}") Update

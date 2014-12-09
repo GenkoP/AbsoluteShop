@@ -96,7 +96,9 @@ app.controller('TasksController',
 		$scope.isVisibleCreateDiv = true;
 
 	};
-	$scope.closeCreareDiv = function(){
+	$scope.closeCreateDiv = function(){
+
+		console.log('baba meca');
 
 		$scope.isVisibleCreateDiv = false;
 	};
