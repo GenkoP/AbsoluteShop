@@ -28,9 +28,16 @@ app.controller('TasksController',
 
 			if(isAdded){
 
-				$location.path('/admin/tasks');
+				clearScope();
+
+				$scope.task.taskDescript = "";
+				$scope.task.priority = "";
+				$scope.task.dateOnCreate = "";
+				$scope.task.dateToFinish = "";
 
 				notifier.success('The task is addded!');
+
+				$scope.isVisibleCreateDiv = false;
 
 			}else{
 
@@ -40,22 +47,6 @@ app.controller('TasksController',
 
 		});
 
-		// $http.post('/api/tasks', task).success(function(response){
-
-		// 	if (response.isAdded === true) {
-
-		// 		$location.path('/admin/tasks');
-
-		// 		notifier.success('The task is addded!');
-
-		// 	}
-		// 	else{
-
-
-		// 	}
-
-		// });
-
 	};
 
 	$scope.remove = function(id){
@@ -64,7 +55,7 @@ app.controller('TasksController',
 
 			if(isDeleted){
 
-				$location.path('/admin/tasks');
+				clearScope();
 
 				notifier.success('Task is removed!');
 
@@ -77,19 +68,7 @@ app.controller('TasksController',
 
 		});
 
-		// $http.delete('/api/tasks/' + id ).success(function(response){
 
-		// 	if (response.isDeleted === true) {
-
-		// 		$location.path('/admin/tasks');
-
-		// 		notifier.success('Task is removed!');
-
-		// 	}
-		// 	else{
-		// 		notifier.error('Can not remove this task!');
-		// 	}
-		// });
 	};
 
 	$scope.update = function(task){
@@ -108,22 +87,27 @@ app.controller('TasksController',
 
 			}
 		});
-
-		// $http.put('/api/tasks/' + task._id , task).success(function(response){
-
-		// 	if(response.isDeleted === true){
-
-		// 		$location.path('/admin/tasks');
-
-		// 		notifier.success('The task is updated!');
-		// 	}
-		// 	else{
-
-		// 		notifier.error('Can not remove this task!');
-
-		// 	}
-
-		// });
 	};
+
+	$scope.isVisibleCreateDiv = false;
+
+	$scope.openCreateDiv = function(){
+
+		$scope.isVisibleCreateDiv = true;
+
+	};
+	$scope.closeCreareDiv = function(){
+
+		$scope.isVisibleCreateDiv = false;
+	};
+
+	function clearScope(){
+
+		$scope.tasks = undefined;
+
+		$location.path('/admin/tasks');
+
+		$scope.tasks = TaskResource.query();
+	}
 
 });

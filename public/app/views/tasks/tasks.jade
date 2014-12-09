@@ -1,7 +1,36 @@
+.container(ng-show="isVisibleCreateDiv")
+	.row
+		h2 New task
+		.col-md-2
+			p Description: {{ task.taskDescript }}
+		.col-md-2
+			p Priority: {{ task.priority }}
+		.col-md-2
+			p Date on create: {{ task.dateOnCreate }}
+		.col-md-2
+			p Date to finish: {{ task.dateToFinish }}
+	.row
+		.col-md-2
+			form.form-horizontal(name="createTask")
+				.form-group
+					label(for="description") Description:
+					input.form-control(type="text" , placeholder="Description" ,  ng-model="task.taskDescript" , name="description" , required )
+
+					label(for="priority") Priority:
+					input.form-control(type="text" , placeholder="Priority" ,  ng-model="task.priority" , name="priority" , required )
+
+					label(for="dateOnCreate") Date on Create:
+					input.form-control(type="text" , placeholder="Date on create" ,  ng-model="task.dateOnCreate" , name="dateOnCreate" , required )
+
+					label(for="dateToFinish") Date to Finish:
+					input.form-control(type="text" , placeholder="Date to finish" ,  ng-model="task.dateToFinish" , name="dateToFinish" , required )
+
+					button.btn.btn-primary.btn-login(ng-click="create(task)" ,  ng-disabled="createTask.$invalid") Add Task
+			button(ng-click="closeCreateDiv()") Close
 .container
 	.row
 		h2 Tasks
-		a(href="#/admin/tasks/create") Create new task
+		button(ng-click="openCreateDiv()") Create new task
 		div(ng-repeat="task in tasks")
 			a(href="/#/admin/tasks/update/{{ task._id }}")
 				.col-md-2
