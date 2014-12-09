@@ -4,7 +4,7 @@
 
 app.controller('PromotionController' , 
 
-	 function($scope , $http , $routeParams, $location  ,identity, notifier ,PromotionResource ){
+	 function($scope, $routeParams, $location , ServerRequest, identity, notifier ,PromotionResource ){
 
 
 	$scope.identity = identity;
@@ -26,11 +26,9 @@ app.controller('PromotionController' ,
 	
 	$scope.addNew = function(promotion){
 
-		
-		$http.post('/api/promotions' , promotion).success(function(response){
+		ServerRequest.post('/api/promotions' , promotion).then(function(isAdded){
 
-
-			if (response.isAdded === true) {
+			if (isAdded) {
 				
 				$scope.promotions = undefined;
 
@@ -58,18 +56,17 @@ app.controller('PromotionController' ,
 
 	$scope.update = function(promotion){
 
-		console.log(promotion);
+		var requestUrl = '/api/promotions/' + promotion._id;
 
-		$http.put('/api/promotions/'+ promotion._id , promotion).success(function(response){
+		ServerRequest.put(requestUrl , promotion ).then(function(isUpdated){
 
-			if (response.isUpdated === true) {
+			if (isUpdated) {
 
 				$location.path('/admin/promotion');
 
 				notifier.success('Promotion is change!');
 
-			}
-			else{
+			}else{
 
 				notifier.error('Promotion is not change!');
 			}
@@ -80,10 +77,9 @@ app.controller('PromotionController' ,
 
 	$scope.remove = function(id){
 
+		ServerRequest.delete('/api/promotions/' + id).then(function(isDeleted){
 
-		$http.delete('/api/promotions/' + id ).success(function(response){
-
-			if(response.isDeleted === true){
+			if(isDeleted){
 
 				$scope.promotions = undefined;
 
@@ -96,7 +92,7 @@ app.controller('PromotionController' ,
 			}
 			else{
 
-				notifier.eror('Can not delete this promotions!');
+				notifier.error('Can not delete this promotions!');
 
 			}
 

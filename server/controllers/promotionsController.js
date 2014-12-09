@@ -78,6 +78,7 @@ module.exports = {
 			if (err) {
 
 				console.log('Can not update this promotion ! Error: ' + err );
+				res.send({isUpdated: false});
 			}
 			else{
 
@@ -90,8 +91,6 @@ module.exports = {
 	},
 
 	remove: function(req , res ){
-
-		console.log(req.params.id);
 
 		var deletedPromId = req.params.id;
 

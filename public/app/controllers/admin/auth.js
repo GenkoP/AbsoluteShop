@@ -32,8 +32,6 @@ app.factory('auth', function($http , $q , identity , AdminResource){
 					identity.currentUser = undefined;
 					
 					deferred.resolve();
-
-					
 			});
 
 			return deferred.promise;

@@ -2,7 +2,9 @@
 
 app.controller('TasksController', 
 
-	function($scope , $http , $routeParams, $location , notifier , TaskResource){
+	function($scope , ServerRequest , $routeParams, $location , notifier , TaskResource){
+
+	var requestUrl = '/api/tasks/';
 
 	$scope.tasks = TaskResource.query();
 
@@ -22,60 +24,106 @@ app.controller('TasksController',
 
 	$scope.create = function(task){
 
-		$http.post('/api/tasks', task).success(function(response){
+		ServerRequest.post(requestUrl , task).then(function(isAdded){
 
-			if (response.isAdded === true) {
+			if(isAdded){
 
 				$location.path('/admin/tasks');
 
 				notifier.success('The task is addded!');
 
-			}
-			else{
+			}else{
 
-				notifier.error('can not add this task!');
+				notifier.success('The task is addded!');
 
 			}
 
 		});
+
+		// $http.post('/api/tasks', task).success(function(response){
+
+		// 	if (response.isAdded === true) {
+
+		// 		$location.path('/admin/tasks');
+
+		// 		notifier.success('The task is addded!');
+
+		// 	}
+		// 	else{
+
+
+		// 	}
+
+		// });
 
 	};
 
 	$scope.remove = function(id){
 
-		$http.delete('/api/tasks/' + id ).success(function(response){
+		ServerRequest.delete(requestUrl + id).then(function(isDeleted){
 
-			if (response.isDeleted === true) {
+			if(isDeleted){
 
 				$location.path('/admin/tasks');
 
 				notifier.success('Task is removed!');
 
-			}
-			else{
+
+			}else{
+
 				notifier.error('Can not remove this task!');
+
 			}
+
 		});
+
+		// $http.delete('/api/tasks/' + id ).success(function(response){
+
+		// 	if (response.isDeleted === true) {
+
+		// 		$location.path('/admin/tasks');
+
+		// 		notifier.success('Task is removed!');
+
+		// 	}
+		// 	else{
+		// 		notifier.error('Can not remove this task!');
+		// 	}
+		// });
 	};
 
 	$scope.update = function(task){
 
+		ServerRequest.put(requestUrl + task._id , task).then(function(isUpdated){
 
-		$http.put('/api/tasks/' + task._id , task).success(function(response){
-
-			if(response.isDeleted === true){
+			if (isUpdated) {
 
 				$location.path('/admin/tasks');
 
 				notifier.success('The task is updated!');
-			}
-			else{
+
+			}else{
 
 				notifier.error('Can not remove this task!');
 
 			}
-
 		});
+
+		// $http.put('/api/tasks/' + task._id , task).success(function(response){
+
+		// 	if(response.isDeleted === true){
+
+		// 		$location.path('/admin/tasks');
+
+		// 		notifier.success('The task is updated!');
+		// 	}
+		// 	else{
+
+		// 		notifier.error('Can not remove this task!');
+
+		// 	}
+
+		// });
 	};
 
 });
