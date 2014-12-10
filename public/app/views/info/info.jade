@@ -1,9 +1,28 @@
 .container
 	.row
-		h1 Company Information
-		.col-md-2(ng-repeat="info in compInfo")
-			p Area:{{ info.dompanyArea }} <!-- dompanyArea wrong write must be comapnyArea -->
-			p Description: {{ info.description }}
-			p Address: {{ info.address }}
-			p Phone number: {{ info.phoneNumber }}
-			p Email: {{ info.email }}
+		.col-md-6
+			.well(ng-repeat="info in compInfo")
+				.panel.panel-primary
+					.panel-heading
+						h2.panel-title Company information
+					.panel-body
+						p 
+							strong Area: 
+							{{ info.dompanyArea }} <!-- dompanyArea wrong write must be comapnyArea -->
+						p
+							strong Description:
+							p  
+								{{ info.description }}
+						p
+							strong Address: 
+							{{ info.address }}
+						p
+							strong Phone number: 
+							{{ info.phoneNumber }}
+						p
+							strong Email: 
+							{{ info.email }}
+				button.btn.btn-primary.btn-block(ng-click="showUpdateForm()") Update
+
+		.col-md-6(ng-show="isVisible")
+			include updateInfo

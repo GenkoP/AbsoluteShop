@@ -29,7 +29,7 @@ module.exports = {
 		
 		companyInfoData.update(req.body._id , updatedFilds , function(){
 
-			res.send({success: true});
+			res.send({isUpdated: true});
 
 			console.log('Information is updated!');
 			

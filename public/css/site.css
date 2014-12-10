@@ -9,13 +9,23 @@ body {
 .login-form {
 	margin-top: 100px;
 	margin-bottom: 100px;
-
 }
 
-.btn-login {
-	margin-left: 125px;
+/*Input validete*/
+
+input.ng-valid:focus , textarea:focus{
+	box-shadow: 0 0 10px green;
+	border: 2px solid green
+}
+input.ng-invalid:focus , textarea:focus {
+	box-shadow: 0 0 10px red;
+	border: 2px solid red;
 }
 
+
+/*END input validate*/
+
+/*Styles for google maps*/
 .angular-google-map-container { 
 	height: 400px;
 }
@@ -38,24 +48,9 @@ body {
     font-size: 14px;
     font-weight: bold;
 }
+/*END Styles for google maps*/
+
 /* START Styles for addImage */
 
 
 /* END Styles for addImage */
-
-.modal-backdrop.am-fade {
-  opacity: .5;
-  transition: opacity .15s linear;
-  &.ng-enter {
-    opacity: 0;
-    &.ng-enter-active {
-      opacity: .5;
-    }
-  }
-  &.ng-leave {
-    opacity: .5;
-    &.ng-leave-active {
-      opacity: 0;
-    }
-  }
-}

@@ -1,11 +1,34 @@
-.container
+.well
+	.panel.panel-primary
+		.panel-heading
+			h2.panel-title Update Information
+		.panel-body
+			form.form-horizontal(name="updateInfoForm")
+				.col-md-12
+					.form-group
+						label.control-label(for="companyArea")
+							strong Area
+						input.form-control( type="text" ,id="companyArea" ng-model="info.dompanyArea" , placeholder="Area" )
+					.form-group
+						label.control-label
+							strong Phone number
+						input.form-control( type="text" , ng-model="info.phoneNumber" ,phone-number,name="phoneNumber" , placeholder="Phone number" )
+						//- div(ng-show="updateInfoForm.phoneNumber.$error.integer") This phone number format is invalid!
+					.form-group
+						label.control-label
+							strong Email
+						input.form-control(type="email", ng-model="info.email", email-is-valid, name="overwrittenEmail" placeholder="email@some.com" )
+						//- div(ng-show="updateInfoForm.overwrittenEmail.$error.email") This email format is invalid!	
+					.form-group
+						label.control-label
+							strong Description
+						textarea.form-control(ng-model="info.description" , placeholder="Company description..." )
+					.form-group
+						label.control-label
+							strong Company address
+						input.form-control( type="text" , ng-model="info.address" , placeholder="address" )
 	.row
-		form.form-horizontal(name="updateInfo")
-			.form-group
-				.col-md-2
-					input.form-control( type="text" , ng-model="info.dompanyArea" , placeholder="Area" )
-					input.form-control( type="text" , ng-model="info.description" , placeholder="description" )
-					input.form-control( type="text" , ng-model="info.address" , placeholder="address" )
-					input.form-control( type="text" , ng-model="info.phoneNumber" , placeholder="phoneNumber" )
-					input.form-control( type="text" , ng-model="info.email" , placeholder="email" )
-					button.btn.btn-primary.btn-login(ng-click="update(info)") Update
+		.col-md-6
+			button.btn.btn-primary.btn-block(ng-click="hideUpdateForm()") Cancel
+		.col-md-6
+			button.btn.btn-primary.btn-block(ng-click="update(info , updateInfoForm)") Update
