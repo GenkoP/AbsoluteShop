@@ -1,6 +1,9 @@
 body {
 	padding-top: 60px;
 }
+.list-group h2{
+	margin-top: 0;
+}
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
@@ -10,6 +13,40 @@ body {
 	margin-top: 100px;
 	margin-bottom: 100px;
 }
+
+/*Home page*/
+
+blockquote .description p{
+	text-indent: 1.5em;
+}
+
+blockquote .description{
+	margin-bottom: 10px;
+}
+
+.facebook-btns{
+	display: inline-block;
+	margin-left: 25rem;
+}
+.facebook-btns span {
+	margin:5px;
+}
+.be-here{
+	margin-left: 3.5rem;
+}
+.fb-image{
+	margin-bottom: 10px;
+}
+
+/* Promotions */
+
+.odd {
+	background-color: #f5f5f5;
+}
+
+/* END PRomotions */
+
+/*END Home page*/
 
 /*Input validete*/
 
@@ -27,7 +64,7 @@ input.ng-invalid:focus , textarea:focus {
 
 /*Styles for google maps*/
 .angular-google-map-container { 
-	height: 400px;
+	height: 350px;
 }
 
 .info-gmaps {
