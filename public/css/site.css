@@ -64,9 +64,27 @@ blockquote .description{
 	background-color: #f5f5f5;
 }
 
-/* END PRomotions */
+/* END Promotions */
 
+/*Styles for google maps*/
+.angular-google-map-container { 
+	height: 350px;
+}
 
+.info-gmaps {
+	padding-top: 20px;
+}
+
+.features {
+    float: right;
+    width: 300px;
+    padding-left: 20px;
+}
+.features .heading {
+    font-size: 14px;
+    font-weight: bold;
+}
+/*END Styles for google maps*/
 /*END Home page*/
 
 /*Input validete*/
@@ -80,35 +98,60 @@ input.ng-invalid:focus , textarea:focus {
 	border: 2px solid red;
 }
 
-
 /*END input validate*/
 
-/*Styles for google maps*/
-.angular-google-map-container { 
-	height: 350px;
+/*START Pomotion page*/
+
+.row.list-group-item.promotions:hover{
+	background-color:  #f5f5f5;
 }
 
-.info-gmaps {
-	padding-top: 20px;
+/*Create promotion*/
+#createPromotions{
+	background-color: #DFDFFF;
+	border-radius: 25px;
+	padding: 5px 20px;
 }
+
+#createPromotions .col-md-5 {
+	margin-left: 2%;
+	margin-top: 10px;
+}
+
+#createPromotions .crete-form{
+	margin-left: 8%;
+}
+
+#createPromotions p{
+	font-style: bold;
+	font-size: 1.8rem;
+}
+#createPromotions .panel-heading h4{
+	font-size: 2.2rem;
+}
+
+.crete-form .col-md-6{
+	padding: 5px 5px;
+}
+
+#date-btn{
+	position: absolute;
+	left: 143	px;
+	bottom: 5px;
+}
+
+#createPromotions form .row{
+	margin-bottom: 5px;
+}
+
+/* END Create promotion*/
 
 .promotions {
 	font-size:20px ;
 	font-style: bold;
 }
 
-.features {
-    float: right;
-    width: 300px;
-    padding-left: 20px;
-}
-.features .heading {
-    font-size: 14px;
-    font-weight: bold;
-}
-/*END Styles for google maps*/
+/*END Pomotion page*/
 
 /* START Styles for addImage */
-
-
 /* END Styles for addImage */

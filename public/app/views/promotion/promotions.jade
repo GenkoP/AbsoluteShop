@@ -1,42 +1,29 @@
+include create
 .container(ng-show="identity.isAuthenticated()")
-	#createPromotions.row(ng-show="promCreateDiv")
-		h2.header Create new promotion
-		.col-md-3
-			p
-				strong Product: {{ promotion.productName }}
-			p
-				strong Price: {{ promotion.price }}	
-		.col-md-3
-			form.form-horizontal(name="addPomotion")
-				.form-group
-					label(for="productName") Product name
-					input.form-control(type="text" , placeholder="Product name" ,name="productName" , ng-model="promotion.productName", required)
-				.form-group
-					label(for="price") Price
-					input.form-control(type="text" , placeholder="Price" , name="price" ,ng-model="promotion.price", required)
-				button.btn.btn-primary(ng-click="hideDivCreateProm()") Cancel
-				button.btn.btn-primary(ng-click="addNew(promotion)" , ng-disabled="addPomotion.$invalid") Add promotion
-	.row
-		.promotions
-			button.btn.btn-primary(ng-click="openCretePromDiv()") Create new promotion
-			.col-md-3
-				p.text-center Products
-			.col-md-3 
-				p.text-center Price
-			div(ng-repeat="promotion in promotions")
-				a(href="#/admin/promotion/update/{{ promotion._id }}")
-					.col-md-3 
-						p.text-center {{ promotion.productName }}
-					.col-md-3 
-						p.text-center {{ promotion.price }}
-				button.btn.btn-primary(type="submit", ng-click="remove(promotion._id)" ) Delete
-				a.btn.btn-primary(href="#/admin/promotion/update/{{ promotion._id }}") Update
+	.jumbotron
+		button.btn.btn-info.btn-lg(ng-click="isCollapsed = !isCollapsed") Create new promotio
+		h2 All promotions
+		.row.list-group-item.active
+			.col-md-2 #
+			.col-md-5 Products
+			.col-md-3 Price
+		.row.list-group-item.promotions(ng-repeat="promotion in promotions")
+			a(href="#/admin/promotion/update/{{ promotion._id }}")
+				.col-md-2 {{ $index + 1 }}
+				.col-md-5 {{ promotion.productName }}
+				.col-md-3 {{ promotion.price }}
+			button.btn.btn-primary(type="submit", ng-click="remove(promotion._id)" ) Delete
+			a.btn.btn-primary(href="#/admin/promotion/update/{{ promotion._id }}") Update
 
 .container(ng-hide="identity.isAuthenticated()")
-		.row
-			.col-md-3 Products
-			.col-md-3 Price
-		.promotions(ng-repeat="promotion in promotions")
-			.row
-				.col-md-3 {{ promotion.productName }}
-				.col-md-3 {{ promotion.price }}
+	.jumbotron
+		h2 All promotions
+		.row.list-group-item.active
+			.col-md-2 #
+			.col-md-5 Products
+			.col-md-5 Price
+		.promotions(ng-repeat="promotion in promotions", ng-class-odd="'odd'" )
+			.row.list-group-item
+				.col-md-2 {{ $index + 1 }}
+				.col-md-5 {{ promotion.productName }}
+				.col-md-5 {{ promotion.price }}

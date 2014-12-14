@@ -25,6 +25,7 @@ app.controller('HomeController',
         };
     // END Google maps options
 
+    // Image sleider
         $scope.myInterval = 5000;
 
         $scope.promotions = CashedPromotion.query();

@@ -4,7 +4,7 @@
 
 app.controller('PromotionController' , 
 
-	 function($scope, $routeParams, $location , ServerRequest, identity, notifier ,PromotionResource ){
+	 function($scope, $routeParams, $location ,$modal, ServerRequest, identity, notifier ,PromotionResource ){
 
 
 	$scope.identity = identity;
@@ -23,7 +23,25 @@ app.controller('PromotionController' ,
 		});
 
 	});
-	
+
+	$scope.isCollapsed = true;
+
+	$scope.dateOptions = {
+		formatYear: 'yy',
+		startingDay: 1
+	};
+
+	$scope.disabled = function(date, mode) {
+		return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
+	};
+
+	$scope.open = function($event) {
+		$event.preventDefault();
+		$event.stopPropagation();
+
+		$scope.opened = true;
+	};
+
 	$scope.addNew = function(promotion){
 
 		ServerRequest.post('/api/promotions' , promotion).then(function(isAdded){
@@ -38,11 +56,10 @@ app.controller('PromotionController' ,
 					
 				notifier.success('Promotion is added !');
 
-				$scope.promCreateDiv = false;
-
 				$scope.promotion.productName = '';
 			    $scope.promotion.price = '';
 
+			    $scope.isCollapsed = false;
 
 			}
 			else{
@@ -97,18 +114,6 @@ app.controller('PromotionController' ,
 			}
 
 		});
-
-	};
-
-	$scope.promCreateDiv = false;
-
-	$scope.openCretePromDiv = function(){
-
-		$scope.promCreateDiv = true;
-	};
-
-	$scope.hideDivCreateProm = function(){
-		$scope.promCreateDiv = false;
 
 	};
 

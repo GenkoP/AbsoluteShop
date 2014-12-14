@@ -15,11 +15,11 @@ block main-content
 				.navbar-right(ng-controller="LogInController")
 					div(ng-show="identity.isAuthenticated()")
 						ul.nav.navbar-nav.navbar-right
-							li.dropdown
-								a.dropdown-toggle(href="" , data-toggle="dropdown")
+							li.dropdown(dropdown)
+								a.dropdown-toggle( dropdown-toggle, ng-disabled="disabled")
 									| {{ identity.currentUser.firstName + ' ' + identity.currentUser.lastName }}
 									span.caret
-								ul.dropdown-menu
+								ul.dropdown-menu(role="menu")
 									li
 										a(href="#/admin/info") Information
 									li
@@ -28,6 +28,7 @@ block main-content
 										a(href="#/admin/promotion" ) Promotions
 									li
 										a(href="#/admin/tasks" ) Tasks
+									li.divider
 									li
 										a(href="#/" ng-click="logout()") Log out
 	section

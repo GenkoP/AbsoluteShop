@@ -1,10 +1,10 @@
-.container
-	#createPromotions.row
-		h2 Update promotion
+.container(ng-show="identity.isAuthenticated()")
+	#createPromotions.row(collapse="isCollapsed")
+		h3 Create new promotion
 		.col-md-5
 			.panel.panel-info
 				.panel-heading
-					h4.panel-title Updated promotion
+					h4.panel-title New promotion
 				.panel-body
 					p
 						strong Product: 
@@ -14,7 +14,8 @@
 						span.text-info {{ promotion.price }}
 					p
 						strong Date to end:
-						span.text-info {{ promotion.endDate }}	
+						span.text-info {{ promotion.endDate }}
+
 		.col-md-4.crete-form
 			form(name="addPomotion")
 				.row
@@ -30,4 +31,8 @@
 						span#date-btn
 							button.btn.btn-default(ng-click="open($event)")
 								i.glyphicon.glyphicon-calendar
-				button.btn.btn-primary.btn-block(ng-click="update(promotion)" , ng-disabled="updatePromotion.$invalid") Update
+			.row
+				.col-md-6
+					button.btn.btn-primary.btn-block(ng-click="isCollapsed = !isCollapsed") Cancel
+				.col-md-6
+					button.btn.btn-info.btn-block(ng-click="addNew(promotion)" , ng-disabled="addPomotion.$invalid") Add promotion
