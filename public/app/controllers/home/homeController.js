@@ -5,7 +5,7 @@
 app.controller('HomeController',
 
     function($scope, CashedPromotion, CashedImages, InfoResource) {
-
+    //  Google maps options
         $scope.map = {
             center: {
                 latitude: 43.214873,
@@ -23,6 +23,9 @@ app.controller('HomeController',
         $scope.options = {
             scrollwheel: false
         };
+    // END Google maps options
+
+        $scope.myInterval = 5000;
 
         $scope.promotions = CashedPromotion.query();
 

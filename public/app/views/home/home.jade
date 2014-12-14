@@ -1,19 +1,20 @@
 .container
 	.row
-		.col-md-6
-			.div(ng-repeat="homeimag in homeimage | filter:{isForHomePageImage: true} ")
-				img(src="{{ homeimag.url }}" , alt="Home page image" , weight=400 , height=400)
-		.col-md-6
-			.list-group
+		.col-md-7
+			carousel(interval="myInterval")
+				slide.img-slider(ng-repeat="homeimag in homeimage | filter:{isForHomePageImage: true}" active="slide.active")
+					img.img-thumbnail(src="{{ homeimag.url }}", height="500" width="500")
+		.col-md-5
+			.list-group.home-promotion
 				h2.list-group-item.active Promotions
 				.list-group-item(ng-repeat="promotion in promotions" , ng-class-odd="'odd'")
-						.row
-							.col-md-6 
-								p.text-info 
-									h4 {{ promotion.productName }}
-							.col-md-6 
-								p.text-center
-									strong {{ promotion.price }}
+					.row
+						p.col-md-1
+							span {{ $index + 1 }}
+						p.col-md-9.text-info
+							strong {{ promotion.productName }}
+						p.col-md-2.text-center
+							strong {{ promotion.price }}
 .container.info-gmaps
 	.row
 		.col-md-7
@@ -23,7 +24,7 @@
 						span.glyphicon.glyphicon-thumbs-up(ng-click="likeInFc()")
 						span.glyphicon.glyphicon-share(ng-click="shareInFc()")
 						a(href="https://www.facebook.com/MagazinAbsolut")
-							img.fb-image(src="/css/font-images/fb-btn.png" ,weight=35 , height=35)
+							img.fb-image(src="/css/font-images/fb-btn.png" ,width="35" , height="35")
 				div(ng-repeat="info in compInfo").
 					<p>
 						<strong class="text-primary" >Area: </strong> {{ info.dompanyArea }}
