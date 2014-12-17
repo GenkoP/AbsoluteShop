@@ -1,6 +1,9 @@
 <div>
-	<form id="formImageUpload" method="POST"  >
-		 <span ng-click="addnew()">Choice image</span>
+	<form id="formImageUpload" method="POST">
+		 <span class="btn btn-primary" ng-click="addnew()">Choice image</span>
+		 <input type="file" id="inputImage" name="inputImage" ng-hide="true" onchange="angular.element(this).scope().readURL(this)" accept="image/*" multiple >
 	</form>
-	<button id="btnUpload" ng-click="uploadFile()">Upload image</button> 
+	<button class="btn btn-warning" id="btnUpload" ng-click="uploadFile()">Upload image</button>
+	<button class="btn btn-danger" ng-click="clearAll()">Remove all</button>
+	<div id="imageVisibility"></div>
 </div>

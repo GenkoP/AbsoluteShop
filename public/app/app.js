@@ -64,7 +64,7 @@ app.config(function ($routeProvider) {
 		.when('/admin/images' , {
 			templateUrl: '/views/gallery/addImage',
 			controller: 'ImageController',
-			resolve: routeUserChecks.authenticated,
+			//resolve: routeUserChecks.authenticated,
 			
 		})
 		.when('/admin/images/:id' , {

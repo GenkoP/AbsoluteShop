@@ -19,7 +19,7 @@ module.exports = function(app) {
 	app.put('/api/promotions/:id' , auth.isInRole('admin'), controller.promotions.update);
 	app.delete('/api/promotions/:id'  , auth.isInRole('admin'), controller.promotions.remove);
 	
-	// Images
+	// Images TODI: auth.isInRole('admin')
 	app.get('/api/images' , controller.images.getAll);
 	app.post('/api/images' , controller.images.addNew);
 	app.put('/api/images/:id' , controller.images.update );

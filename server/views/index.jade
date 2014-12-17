@@ -7,11 +7,13 @@ block main-content
 			div.navbar-collapse.collapse
 				ul.nav.navbar-nav
 					li.dropdown
-						a.dropdown-toggle(href="#/") Home
+						a.dropdown-toggle(href="#/") Home 
 					li
 						a(href="#/gallery") Gallery
 					li
 						a(href="#/promotions") All promotions
+					li
+						a(href="#/admin/images") Add image
 				.navbar-right(ng-controller="LogInController")
 					div(ng-show="identity.isAuthenticated()")
 						ul.nav.navbar-nav.navbar-right

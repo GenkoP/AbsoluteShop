@@ -1,110 +1,109 @@
 /* global app , $  , FileReader , e */
 
-app.directive('imageUpload', ['$parse', function($parse) {
+'use strict';
+app.directive('imageUpload', ['$parse', '$compile', function($parse , $compile) {
 
 	return {
 		restrict: 'A',
 		templateUrl: '/app/directives/uploadImages.html',
 		replace: true,
 
-		link: function($scope, iElm, iAttrs, controller) {
+		link: function(scope, iElm, iAttrs, controller) {
 
-			var form = $('#formImageUpload');
+			var inputImage = $('#inputImage'),
+				imageVisibility = $('#imageVisibility'),
+				imageFiles = [],
+				numberImages = 0;
 
-			$scope.addnew = function() {
+			scope.addnew = function() {
 
-				var count = form.children('input[type="file"]').length,
-					inputName = 'n_' + count;
-
-				appendInputFileToForm(form , count , inputName);
-
-				$('#' + inputName).click();
+				inputImage.click();
 
 			};
 
-			$scope.readURL = function(input) {
+			scope.removeOne = function(numberImageToRemove) {
 
-				var fileCount = input.files.length,
-					reader = new FileReader();
+				$('.number_' + numberImageToRemove).remove();
 
-				appendFileToScope(input);
-
-				if (fileCount > 1) {
-
-
-					$(input.files).each(function() {
-						var reader = new FileReader();
-						reader.readAsDataURL(this);
-						reader.onload = function(e) {
-							appendImageTag(e);
-						};
-					});
+				imageFiles.splice(numberImageToRemove -1 , 1);
 				
+			};
 
+			scope.clearAll = function() {
 
-				} else {
+				imageFiles.splice(0 ,imageFiles.length);
+				numberImages = 0;
 
-					reader.onload = function (e){
-					 appendImageTag(e);
+				imageVisibility.children().remove();
+
+			};
+
+			scope.readURL = function(input) {
+
+				$(input.files).each(function() {
+
+					var fileImage = this;
+					// Push file to global files array
+					imageFiles.push(fileImage);
+					
+					// For visibility images from selected input
+					var reader = new FileReader();
+					reader.readAsDataURL(this);
+					reader.onload = function(e) {
+
+						numberImages += 1;
+						appendImageTag(e , fileImage , numberImages);
 					};
+				});
 
-					reader.readAsDataURL(input.files[0]);
-				}
+				appendFileToScope(imageFiles);
+
 			};
 
-			function appendInputFileToForm(form , count , inputName) {
-				
-				var newImgInput = $('<input multiple>')
-					.attr('type', 'file')
-					.attr('id', inputName)
-					.attr('onchange', 'angular.element(this).scope().readURL(this)')
-					.attr('name', inputName)
-					.attr('accept', 'image/*')
-					.hide();
+			function appendFileToScope(images) {
 
-				form.append(newImgInput);
-			}
-
-			function appendImageTag(e) {
-
-					var img = $('<img>')
-						.addClass('imgVisibility')
-						.attr('src', e.target.result)
-						.width(200)
-						.height(200);
-
-					$('#imageWrapper').append(img);
-			}
-
-			function appendFileToScope(input) {
-
-				var model = $parse(input.name);
+				var model = $parse('inputImage');
 				var modelSetter = model.assign;
 
+				if (images.length > 0) {
 
-				if (input.files.length === 1 && input.files.length > 0) {
+					scope.$apply(function() {
 
-					$scope.$apply(function() {
-
-						modelSetter($scope, input.files[0]);
-
-					});
-				} else {
-
-					var files = [];
-
-					for (var i = 0; i < input.files.length; i += 1) {
-
-						files.push(input.files[i]);
-					}
-
-					$scope.$apply(function() {
-
-						modelSetter($scope, files);
+						modelSetter(scope, images);
 
 					});
-
 				}
+
+			}
+
+			function appendImageTag(e , fileImage, numberImages) {
+
+				var img = $('<img>')
+					.addClass('thumbnail')
+					.attr('src', e.target.result)
+					.width(200)
+					.height(200);
+
+				var imageWrapper = $('<div>')
+					.addClass('number_' + numberImages)
+					.addClass('img-conteiner');
+
+				var removeBtn = $('<span>')
+					.attr('ng-click' , 'removeOne('+ numberImages +')')
+					.addClass('glyphicon glyphicon-remove-circle img-remove pull-right');
+
+				var name = $('<p>')
+					.addClass('img-remove')
+					.text(fileImage.name);
+
+				var size = $('<p>')
+					.text('Image size is: ' + fileImage.size );
+
+				$compile(removeBtn)(scope);
+
+				imageWrapper.append(name ,removeBtn, img, size);
+
+				imageVisibility.append(imageWrapper);
 
 			}
 

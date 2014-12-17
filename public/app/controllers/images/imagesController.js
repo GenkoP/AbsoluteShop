@@ -20,31 +20,29 @@ app.controller('ImageController', function($scope, $routeParams,identity, images
         });
 
     });
-    
 
     $scope.uploadFile = function() {
 
         var form = $('#formImageUpload'),
-            count = form.children('input[type="file"]').length,
-            uploadUrl = '/api/images';
+            //count = form.children('input[type="file"]').length,
+            uploadUrl = '/api/images',
+            file = $scope.inputImage;
+            
+            console.log(file);
 
-        for (var n = 0; n < count; n += 1) {
+            if (file.length !== 0) {
 
-            var file = $scope['n_' + n ];
-
-            if (file.length > 1) {
-
-                for (var i = 0; i < file.length; i += 1) {
+                for(var i = 0 ; i < file.length; i += 1 ){
 
                     images.uploadFileToUrl(file[i], uploadUrl);
 
                 }
 
-            } else {
-               
+            }else{
+
                 images.uploadFileToUrl(file, uploadUrl);
+
             }
-        }
 
     };
 
