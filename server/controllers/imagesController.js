@@ -94,7 +94,33 @@ module.exports = {
 			}
 
 		});
+	},
 
+	remove: function(req, res, next) {
+
+		var pathToRemoveFile = __dirname + '/../../public/';
+
+		var image = Images.findById(req.params.id, function(err, image) {
+			if (err) {
+				console.log('Can not find image whit this id!Error: ' + err);
+			} else {
+
+				fs.unlinkSync(pathToRemoveFile + image.url);
+
+				Images.remove(req.params.id, function(err) {
+
+					if (err) {
+						console.log('Can not delete this image!Error: ' + err);
+						res.send({isDeleted: false});
+						res.end();
+					} else {
+						res.send({isDeleted: true});
+					}
+
+				});
+
+			}
+		});
 
 	}
 };

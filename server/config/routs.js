@@ -23,6 +23,7 @@ module.exports = function(app) {
 	app.get('/api/images' , controller.images.getAll);
 	app.post('/api/images' , controller.images.addNew);
 	app.put('/api/images/:id' , controller.images.update );
+	app.delete('/api/images/:id' , controller.images.remove);
 	
 	
 	// Company Information

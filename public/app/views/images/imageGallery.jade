@@ -1,15 +1,15 @@
 .container
 	h2 Image gallery
-	div(ng-show="identity.isAuthenticated()")
-		.img-conteiner(ng-repeat="image in gallery")
+	div#galleryWrapper(ng-show="true")
+		.img-conteiner(ng-repeat="image in gallery" id="d_{{$index}}")
 			form
 				#btns-gallery
-					button.btn.btn-info.btn-sm(ng-click="updateHomeImage(image)" ng-show="image.isForHomePageImage" ) Home Image
-					button.btn.btn-danger.btn-sm(ng-click="updateHomeImage(image)" ng-show="!image.isForHomePageImage" ) Home Image
-					button.btn.btn-danger.btn-sm.btn-remove(ng-click="remocve()") Remove
+					button.btn.btn-info.btn-sm(ng-click="choiceHomeImage(image)" ng-show="image.isForHomePageImage" ) Home Image
+					button.btn.btn-danger.btn-sm(ng-click="choiceHomeImage(image)" ng-show="!image.isForHomePageImage" ) Home Image
+					button.btn.btn-danger.btn-sm.btn-remove(ng-click="remove(image , $index)") Remove
 				input(type="checkbox" ng-hide="true" ng-model="image.isForHomePageImage" )
 				input(type="hidden" ng-model="image._id" )
 				img.thumbnail.img-gallery(src="{{ image.url }}", alt="Image" height="200" , weight="200")
-	div(ng-hide="identity.isAuthenticated()")
+	div(ng-hide="true")
 		.img-conteiner(ng-repeat="image in gallery" ,ng-hide="identity.isAuthenticated()")
 			img.thumbnail.img-gallery(src="{{ image.url }}", alt="Image" height="200" , weight="200")

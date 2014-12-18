@@ -1,6 +1,6 @@
-/* global app */
+/* global app , FormData, angular */
 
-app.factory('ServerRequest', function($http , $q){
+app.factory('ServerRequest', function($http , $q , $location){
 
 	return {
 
@@ -64,7 +64,31 @@ app.factory('ServerRequest', function($http , $q){
 			});
 
 			return deferred.promise;
-		}
+		},
+		uploadFileToUrl: function(file, uploadUrl) {
+
+            var fd = new FormData();
+
+            fd.append('file', file);
+
+            $http.post(uploadUrl, fd, {
+                    transformRequest: angular.identity,
+                    headers: {'Content-Type': undefined }
+                })
+                .success(function(response) {
+
+                    if(response.isAdded === true){
+
+                        $location.path('/gallery');
+        
+                    }
+                })
+                .error(function() { 
+
+                    $location.path('/admin/images');
+
+                });
+        },
 
 	};
 });

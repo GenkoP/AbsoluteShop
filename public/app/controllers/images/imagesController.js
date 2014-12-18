@@ -2,7 +2,8 @@
 
 'use strict';
 
-app.controller('ImageController', function($scope, $routeParams,identity, images , ImageResource) {
+app.controller('ImageController',
+     function($scope, $http, $routeParams,$location, identity ,ServerRequest , ImageResource) {
 
     $scope.identity = identity;
 
@@ -18,26 +19,40 @@ app.controller('ImageController', function($scope, $routeParams,identity, images
 
             for(var i = 0 ; i < files.length; i += 1 ){
 
-                images.uploadFileToUrl(files[i], uploadUrl);
+                ServerRequest.uploadFileToUrl(files[i], uploadUrl);
 
             }
 
         }else{
 
-            images.uploadFileToUrl(files, uploadUrl);
+            ServerRequest.uploadFileToUrl(files, uploadUrl);
 
         }
 
     };
 
-     
+     $scope.choiceHomeImage = function(image){
+        
+        ServerRequest.put('/api/images/' + image.id , image).then(function(isAdded){
 
-     $scope.updateHomeImage = function(image){
+            image.isForHomePageImage = !image.isForHomePageImage;
 
-        image.isForHomePageImage = !image.isForHomePageImage;
-
-        images.choiceHomePageImage(image);
+        });
         
      };
+
+    $scope.remove = function(image , index){
+
+        ServerRequest.delete('/api/images/' + image._id).then(function(isDeleted){
+
+            if(isDeleted === true){
+
+                $('#d_' + index ).remove();
+
+            }
+
+        });
+
+    };
 
 });
