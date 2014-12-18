@@ -70,7 +70,7 @@ app.config(function ($routeProvider) {
 		.when('/admin/images/:id' , {
 			templateUrl: '/views/gallery/choiceHomePageImage',
 			controller: 'ImageController',
-			resolve: routeUserChecks.authenticated,
+			//resolve: routeUserChecks.authenticated,
 		})
 		// Information
 		.when('/admin/info' , {

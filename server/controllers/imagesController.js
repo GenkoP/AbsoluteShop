@@ -14,14 +14,12 @@ module.exports = {
 
 		req.busboy.on('file', function(fieldname, file, fileName) {
 
-			console.log(file);
-
-
 			fstream = fs.createWriteStream(imagePathTofoleder + fileName);
 			file.pipe(fstream);
 
 			image.url = 'images/' + fileName;
 
+			image.isForHomePageImage = false;
 
 			Images.addNew(image, function(err) {
 

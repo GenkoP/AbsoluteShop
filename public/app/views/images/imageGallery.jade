@@ -1,10 +1,15 @@
-.my-container
+.container
 	h2 Image gallery
-	.img-conteiner(ng-repeat="image in gallery")
-		div.img-remove Remove
-		div.img-remove.pull-right Update
-		div(ng-show="identity.isAuthenticated()")
-			a(href="#/admin/images/{{ image._id }}")
+	div(ng-show="identity.isAuthenticated()")
+		.img-conteiner(ng-repeat="image in gallery")
+			form
+				#btns-gallery
+					button.btn.btn-info.btn-sm(ng-click="updateHomeImage(image)" ng-show="image.isForHomePageImage" ) Home Image
+					button.btn.btn-danger.btn-sm(ng-click="updateHomeImage(image)" ng-show="!image.isForHomePageImage" ) Home Image
+					button.btn.btn-danger.btn-sm.btn-remove(ng-click="remocve()") Remove
+				input(type="checkbox" ng-hide="true" ng-model="image.isForHomePageImage" )
+				input(type="hidden" ng-model="image._id" )
 				img.thumbnail.img-gallery(src="{{ image.url }}", alt="Image" height="200" , weight="200")
-		div(ng-hide="identity.isAuthenticated()")
+	div(ng-hide="identity.isAuthenticated()")
+		.img-conteiner(ng-repeat="image in gallery" ,ng-hide="identity.isAuthenticated()")
 			img.thumbnail.img-gallery(src="{{ image.url }}", alt="Image" height="200" , weight="200")

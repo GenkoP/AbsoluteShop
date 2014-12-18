@@ -8,47 +8,33 @@ app.controller('ImageController', function($scope, $routeParams,identity, images
 
     $scope.gallery = ImageResource.query();
 
-    $scope.image = ImageResource.query().$promise.then(function(collection){
-
-        collection.forEach(function(image){
-
-            if (image._id === $routeParams.id){
-
-                $scope.image = image;
-            }
-
-        });
-
-    });
-
     $scope.uploadFile = function() {
 
         var form = $('#formImageUpload'),
-            //count = form.children('input[type="file"]').length,
             uploadUrl = '/api/images',
-            file = $scope.inputImage;
-            
-            console.log(file);
+            files = $scope.inputImage;
 
-            if (file.length !== 0) {
+        if (files.length !== 0) {
 
-                for(var i = 0 ; i < file.length; i += 1 ){
+            for(var i = 0 ; i < files.length; i += 1 ){
 
-                    images.uploadFileToUrl(file[i], uploadUrl);
-
-                }
-
-            }else{
-
-                images.uploadFileToUrl(file, uploadUrl);
+                images.uploadFileToUrl(files[i], uploadUrl);
 
             }
+
+        }else{
+
+            images.uploadFileToUrl(files, uploadUrl);
+
+        }
 
     };
 
      
 
      $scope.updateHomeImage = function(image){
+
+        image.isForHomePageImage = !image.isForHomePageImage;
 
         images.choiceHomePageImage(image);
         

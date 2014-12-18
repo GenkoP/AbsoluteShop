@@ -57,7 +57,7 @@ blockquote .description{
 
 .list-group-item .row p {
 	margin-bottom: 0;
-	font-size: 2.2rem;
+	font-size: 1.8rem;
 }
 
 .odd {
@@ -141,7 +141,7 @@ input.ng-invalid:focus , textarea:focus {
 
 #date-btn{
 	position: absolute;
-	left: 143	px;
+	left: 87%;
 	bottom: 5px;
 }
 
@@ -152,7 +152,7 @@ input.ng-invalid:focus , textarea:focus {
 /* END Create promotion*/
 /*END Pomotion page*/
 
-/* START Styles for addImage */
+/* START Styles for image gallery and addin images */
 
 .my-container{
 	padding: 0 10%;
@@ -167,8 +167,7 @@ input.ng-invalid:focus , textarea:focus {
 	padding-bottom: 20px;
 	padding-left: 10px;
 	padding-right: 10px;
-	width: 220px;
-	height: 260px;
+
 }
 .img-gallery{
 	width: 200px;
@@ -183,7 +182,22 @@ input.ng-invalid:focus , textarea:focus {
 	display: inline-block;
 }
 
+#btns-gallery{
+	margin-bottom: 5px;
+}
+#btns-gallery .btn-remove{
+	margin-left: 20%;
+
+}
 /* Upload images */
+
+.upload-images{
+	margin-top:20px;
+}
+
+.btns-group{
+	margin-top: 20px;
+}
 
 .img-conteiner .thumbnail{
 	margin-bottom: 0;
