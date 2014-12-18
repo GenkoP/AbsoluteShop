@@ -33,11 +33,9 @@ app.controller('ImageController',
 
      $scope.choiceHomeImage = function(image){
         
-        ServerRequest.put('/api/images/' + image.id , image).then(function(isAdded){
+        image.isForHomePageImage = !image.isForHomePageImage;
 
-            image.isForHomePageImage = !image.isForHomePageImage;
-
-        });
+        ServerRequest.put('/api/images/' + image.id , image);
         
      };
 

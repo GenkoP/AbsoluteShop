@@ -7,8 +7,10 @@ module.exports.init = function () {
 
 	var promoSchema = mongoose.Schema({
 
-		productName: String,
-		price: String 
+		productName: {type:String , require:'{PATH} is required '},
+		price: {type:Number , require:'{PATH} is required '},
+		dateOn: Date,
+		dateToEnd: Date,
 		
 	});
 
