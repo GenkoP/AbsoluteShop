@@ -5,13 +5,17 @@ include create
 		h2 All promotions
 		.row.list-group-item.active
 			.col-md-2 #
-			.col-md-5 Products
-			.col-md-3 Price
+			.col-md-2 Products
+			.col-md-2 Price
+			.col-md-2 Date to end 
+			.col-md-2 DateOn
 		.row.list-group-item.promotions(ng-repeat="promotion in promotions")
 			a(href="#/admin/promotion/update/{{ promotion._id }}")
 				.col-md-2 {{ $index + 1 }}
-				.col-md-5 {{ promotion.productName }}
-				.col-md-3 {{ promotion.price }}
+				.col-md-2 {{ promotion.productName }}
+				.col-md-2 {{ promotion.price }}
+				.col-md-2 {{ promotion.dateToEnd }}
+				.col-md-2 {{ promotion.dateOn }}
 			button.btn.btn-primary(type="submit", ng-click="remove(promotion._id)" ) Delete
 			a.btn.btn-primary(href="#/admin/promotion/update/{{ promotion._id }}") Update
 
@@ -20,10 +24,10 @@ include create
 		h2 All promotions
 		.row.list-group-item.active
 			.col-md-2 #
-			.col-md-5 Products
-			.col-md-5 Price
+			.col-md-2 Products
+			.col-md-2 Price
 		.promotions(ng-repeat="promotion in promotions", ng-class-odd="'odd'" )
 			.row.list-group-item
 				.col-md-2 {{ $index + 1 }}
-				.col-md-5 {{ promotion.productName }}
-				.col-md-5 {{ promotion.price }}
+				.col-md-2 {{ promotion.productName }}
+				.col-md-2 {{ promotion.price }}

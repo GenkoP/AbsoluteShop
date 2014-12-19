@@ -10,7 +10,7 @@ module.exports = {
 		var month = date.getMonth() + 1;
 		var year = date.getFullYear();
 
-		var currentDate = day + '/' + month + '/' + year;
+		var currentDate = month + '/' + day + '/' + year;
 
 		return currentDate;
 	}

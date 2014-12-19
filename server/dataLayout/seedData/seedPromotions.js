@@ -1,3 +1,5 @@
+var date = require('../../utilities/currentDate');
+
 
 module.exports.seedInitial = function(promotionModel) {
 
@@ -7,11 +9,16 @@ module.exports.seedInitial = function(promotionModel) {
 			return;
 		}
 
-		if(collection.length === 0){
+		// if(collection.length === 0){
+
+			var currentDate = date.currentDate;
+
+			var newDate = new Date(currentDate);
 
 			promotionModel.create({
 				productName: 'Jam Bean',
-				price: '20lv'
+				price: '20lv',
+				dateOn: newDate
 			});
 
 			promotionModel.create({
@@ -24,10 +31,17 @@ module.exports.seedInitial = function(promotionModel) {
 				price: '45lv'
 			});
 
-			console.log('Promotions is added! :) ');
+			console.log(newDate);
 
-		}
+			// promotionModel.remove({} , function(){
+
+			// 	console.log('Data is deleted!');
+			// });
+
+		// }
 
 	});
+
+	
 
 };

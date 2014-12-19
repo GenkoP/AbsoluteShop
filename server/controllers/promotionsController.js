@@ -34,11 +34,15 @@ module.exports = {
 	
 	addNew: function(req , res){
 
-		var currentDate = new Date(date.currentDate);
+
+
+		var currentDate = date.currentDate();
 		
 		var addNewPromotion = req.body;
 
 		addNewPromotion.dateOn = currentDate;
+
+		console.log(currentDate);
 
 		promo.createNew(addNewPromotion , function(err){
 
