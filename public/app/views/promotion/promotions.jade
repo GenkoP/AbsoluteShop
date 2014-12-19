@@ -1,5 +1,5 @@
 include create
-.container(ng-show="identity.isAuthenticated()")
+.container
 	.jumbotron
 		button.btn.btn-info.btn-lg(ng-click="isCollapsed = !isCollapsed") Create new promotio
 		h2 All promotions
@@ -16,10 +16,10 @@ include create
 				.col-md-2 {{ promotion.price }}
 				.col-md-2 {{ promotion.dateToEnd | date:'dd-MM-yyyy'}}
 				.col-md-2 {{ promotion.dateOn| date:'dd-MM-yyyy' }}
-			button.btn.btn-primary(type="submit", ng-click="remove(promotion._id)" ) Delete
+			button.btn.btn-danger(type="submit", ng-click="remove(promotion._id)" ) Delete
 			a.btn.btn-primary(href="#/admin/promotion/update/{{ promotion._id }}") Update
 
-.container(ng-hide="identity.isAuthenticated()")
+.container
 	.jumbotron
 		h2 All promotions
 		.row.list-group-item.active

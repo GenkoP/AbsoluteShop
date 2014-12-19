@@ -15,9 +15,9 @@ module.exports = function(app) {
 	// Promotions
 	app.get('/api/promotions', controller.promotions.getAll );
 	app.get('/api/promotions/:id' ,  controller.promotions.getById);
-	app.post('/api/promotions' , auth.isInRole('admin'), controller.promotions.addNew);
-	app.put('/api/promotions/:id' , auth.isInRole('admin'), controller.promotions.update);
-	app.delete('/api/promotions/:id'  , auth.isInRole('admin'), controller.promotions.remove);
+	app.post('/api/promotions' ,  controller.promotions.addNew);
+	app.put('/api/promotions/:id' ,  controller.promotions.update);
+	app.delete('/api/promotions/:id'  ,  controller.promotions.remove);
 	
 	// Images TODI: auth.isInRole('admin')
 	app.get('/api/images' , controller.images.getAll);
@@ -31,11 +31,11 @@ module.exports = function(app) {
 	app.put('/api/info',auth.isAuthenticated, controller.companyInfo.updateInfo);
 
 	// Tasks
-	app.get('/api/tasks' , auth.isInRole('admin'), controller.tasks.getAll );
-	app.get('/api/tasks/:id' , auth.isInRole('admin'), controller.tasks.getById);
-	app.post('/api/tasks' , auth.isInRole('admin') , controller.tasks.addNew);
-	app.put('/api/tasks/:id', auth.isInRole('admin') , controller.tasks.update);
-	app.delete('/api/tasks/:id' , auth.isInRole('admin') , controller.tasks.remove);
+	app.get('/api/tasks' ,  controller.tasks.getAll );
+	app.get('/api/tasks/:id' ,  controller.tasks.getById);
+	app.post('/api/tasks' ,  controller.tasks.addNew);
+	app.put('/api/tasks/:id',  controller.tasks.update);
+	app.delete('/api/tasks/:id' ,  controller.tasks.remove);
 
 
 	//Home page

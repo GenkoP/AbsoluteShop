@@ -138,11 +138,14 @@ input.ng-invalid:focus , textarea:focus {
 .crete-form .col-md-6{
 	padding: 5px 5px;
 }
+#date{
+	width:60%;
+}
 
 #date-btn{
-	position: absolute;
-	left: 87%;
-	bottom: 5px;
+	position:relative;
+	left: 58%;
+	bottom: 38px;
 }
 
 #createPromotions form .row{

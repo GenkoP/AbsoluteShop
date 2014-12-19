@@ -43,6 +43,10 @@ app.controller('PromotionController' ,
 		$scope.opened = true;
 	};
 
+	$scope.currentDate = new Date();
+
+
+	// Create new promotions
 	$scope.addNew = function(promotion){
 
 		ServerRequest.post('/api/promotions' , promotion).then(function(isAdded){

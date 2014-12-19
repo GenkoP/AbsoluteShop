@@ -1,20 +1,22 @@
 .container
 	.row
-		.col-md-7
+		.col-md-6
 			carousel(interval="myInterval")
 				slide.img-slider(ng-repeat="homeimag in homeimage | filter:{isForHomePageImage: true}" active="slide.active")
 					img.img-thumbnail(src="{{ homeimag.url }}", height="500" width="500")
-		.col-md-5
+		.col-md-6
 			.list-group.home-promotion
 				h2.list-group-item.active Promotions
 				.list-group-item(ng-repeat="promotion in promotions" , ng-class-odd="'odd'")
 					.row
 						p.col-md-1
 							span {{ $index + 1 }}
-						p.col-md-9.text-info
+						p.col-md-6.text-info
 							strong {{ promotion.productName }}
-						p.col-md-2.text-center
+						p.col-md-1.text-center
 							strong {{ promotion.price }}
+						p.col-md-3
+							strong.text-center {{ promotion.dateToEnd | date:'dd-MM-yyyy' }}
 .container.info-gmaps
 	.row
 		.col-md-7
