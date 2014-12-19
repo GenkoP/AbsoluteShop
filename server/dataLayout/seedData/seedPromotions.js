@@ -1,6 +1,3 @@
-var date = require('../../utilities/currentDate');
-
-
 module.exports.seedInitial = function(promotionModel) {
 
 	promotionModel.find({}).exec(function(err, collection){
@@ -9,16 +6,11 @@ module.exports.seedInitial = function(promotionModel) {
 			return;
 		}
 
-		// if(collection.length === 0){
-
-			var currentDate = date.currentDate;
-
-			var newDate = new Date(currentDate);
+		 if(collection.length === 0){
 
 			promotionModel.create({
 				productName: 'Jam Bean',
 				price: '20lv',
-				dateOn: newDate
 			});
 
 			promotionModel.create({
@@ -31,14 +23,10 @@ module.exports.seedInitial = function(promotionModel) {
 				price: '45lv'
 			});
 
-			console.log(newDate);
+			console.log("Promotions is created!");
 
-			// promotionModel.remove({} , function(){
 
-			// 	console.log('Data is deleted!');
-			// });
-
-		// }
+		 }
 
 	});
 

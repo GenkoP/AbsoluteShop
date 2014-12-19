@@ -4,7 +4,7 @@
 
 app.controller('PromotionController' , 
 
-	 function($scope, $routeParams, $location ,$modal, ServerRequest, identity, notifier ,PromotionResource ){
+	function($scope, $routeParams, $location ,$modal, ServerRequest, identity, notifier ,PromotionResource ){
 
 
 	$scope.identity = identity;
@@ -26,6 +26,7 @@ app.controller('PromotionController' ,
 
 	$scope.isCollapsed = true;
 
+	//For datepicker
 	$scope.dateOptions = {
 		formatYear: 'yy',
 		startingDay: 1

@@ -14,7 +14,7 @@
 						span.text-info {{ promotion.price }}
 					p
 						strong Date to end:
-						span.text-info {{ promotion.endDate }}	
+						span.text-info {{ promotion.dateToEnd | date:'dd-MM-yyyy' }}	
 		.col-md-4.crete-form
 			form(name="addPomotion")
 				.row
@@ -26,7 +26,7 @@
 						input#price.form-control(type="text" , placeholder="Price" , name="price" ,ng-model="promotion.price", phone-number, required)
 					.col-md-6
 						label(for="date") Date to end
-						input#date.form-control(type="text" , placeholder="Date" , name="date" ,datepicker-popup="dd.MM.yyyy" ng-model="promotion.endDate" is-open="opened" min-date="2014-06-22" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close")
+						input#date.form-control(type="text" , placeholder="Date" , name="date" ,datepicker-popup="dd.MM.yyyy" ng-model="promotion.dateToEnd" is-open="opened" min-date="2014-06-22" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close")
 						span#date-btn
 							button.btn.btn-default(ng-click="open($event)")
 								i.glyphicon.glyphicon-calendar

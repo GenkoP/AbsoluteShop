@@ -14,7 +14,7 @@
 						span.text-info {{ promotion.price }}
 					p
 						strong Date to end:
-						span.text-info {{ promotion.dateToEnd }}
+						span.text-info {{promotion.dateToEnd | date:'dd-MM-yyyy'}}
 
 		.col-md-4.crete-form
 			form(name="addPomotion")

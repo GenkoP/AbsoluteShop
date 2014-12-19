@@ -1,5 +1,4 @@
-var promo = require('../dataLayout/promotionData'),
-	date  = require('../utilities/currentDate');
+var promo = require('../dataLayout/promotionData');
 
 module.exports = {
 	
@@ -36,13 +35,11 @@ module.exports = {
 
 
 
-		var currentDate = date.currentDate();
+		var currentDate = new Date();
 		
 		var addNewPromotion = req.body;
 
 		addNewPromotion.dateOn = currentDate;
-
-		console.log(currentDate);
 
 		promo.createNew(addNewPromotion , function(err){
 

@@ -14,8 +14,8 @@ include create
 				.col-md-2 {{ $index + 1 }}
 				.col-md-2 {{ promotion.productName }}
 				.col-md-2 {{ promotion.price }}
-				.col-md-2 {{ promotion.dateToEnd }}
-				.col-md-2 {{ promotion.dateOn }}
+				.col-md-2 {{ promotion.dateToEnd | date:'dd-MM-yyyy'}}
+				.col-md-2 {{ promotion.dateOn| date:'dd-MM-yyyy' }}
 			button.btn.btn-primary(type="submit", ng-click="remove(promotion._id)" ) Delete
 			a.btn.btn-primary(href="#/admin/promotion/update/{{ promotion._id }}") Update
 
