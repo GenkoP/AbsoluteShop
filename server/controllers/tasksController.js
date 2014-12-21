@@ -41,8 +41,10 @@ module.exports = {
 
 	addNew: function(req , res){
 
+		var newTask = req.body,
+			currentDate = new Date();
 
-		var newTask = req.body;
+		newTask.dateOn = currentDate;
 
 		taskData.create(newTask , function(err){
 
@@ -61,20 +63,12 @@ module.exports = {
 
 	update: function(req , res , next){
 
-		console.log(req.body);
+		var updatedTask = req.body,
+			currentDate = new Date();
 
-		var updatedTask = req.body;
+			updatedTask.dateOn = currentDate;
 
-		var updatedFilds = {
-
-			taskDescript: updatedTask.taskDescript,
-			priority: updatedTask.priority,
-			dateOnCreate: updatedTask.dateOnCreate,
-			dateToFinish: updatedTask.dateToFinish,
-
-		};
-
-		taskData.update(updatedTask._id , updatedFilds , function(err){
+		taskData.update(updatedTask._id , updatedTask , function(err){
 
 			if(err){
 

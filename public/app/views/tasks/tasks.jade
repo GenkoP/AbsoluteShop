@@ -1,62 +1,26 @@
-.container(ng-show="isVisibleCreateDiv")
-	.row
-		h3 Create new task
-		.col-md-2
-			form.form-horizontal(name="createTask")
-				.form-group
-					label(for="description") Description:
-					input.form-control(type="text" , placeholder="Description" ,  ng-model="task.taskDescript" , name="description" , required )
+include create
 
-					label(for="priority") Priority:
-					input.form-control(type="text" , placeholder="Priority" ,  ng-model="task.priority" , name="priority" , required )
-
-					label(for="dateOnCreate") Date on Create:
-					input.form-control(type="text" , placeholder="Date on create" ,  ng-model="task.dateOnCreate" , name="dateOnCreate" , required )
-
-					label(for="dateToFinish") Date to Finish:
-					input.form-control(type="text" , placeholder="Date to finish" ,  ng-model="task.dateToFinish" , name="dateToFinish" , required )
-
-					button.btn.btn-primary.btn-login(ng-click="create(task)" ,  ng-disabled="createTask.$invalid") Add Task
-			button.btn.btn-primary(ng-click="closeCreateDiv()") Close
-		h3 New task
-		.col-md-2
-			p Description: 
-				span {{ task.taskDescript }}
-			p Priority: 
-				span {{ task.priority }}
-			p Date on create: 
-				span {{ task.dateOnCreate }}
-			p Date to finish:
-				span {{ task.dateToFinish }}		
 .container
-	h2 All Tasks
-	button.btn.btn-primary(ng-click="openCreateDiv()") Create new task
-	.row
-		.col-md-2
-			p
-				strong Description
-		.col-md-2
-			p
-				strong Priority
-		.col-md-2
-			p
-				strong Date on create
-		.col-md-2
-			p
-				strong Date to finish
-	.row(ng-repeat="task in tasks")
-		a(href="/#/admin/tasks/update/{{ task._id }}")
-			.col-md-2
-				p
-					strong {{ task.taskDescript }}
-			.col-md-2
-				p
-					strong {{ task.priority }}
-			.col-md-2
-				p
-					strong  {{ task.dateOnCreate }}
-			.col-md-2
-				p
-					strong {{ task.dateToFinish }}
-		button.btn.btn-primary(type="submit", ng-click="remove(task._id)" ) Delete
-		a.btn.btn-primary(href="/#/admin/tasks/update/{{ task._id }}") Update
+	.jumbotron
+		button.btn.btn-info.btn-lg(ng-click="isCollapsed = !isCollapsed") Create new task
+		h2 All Tasks
+		table.table.table-striped.table-hover
+			thead.table-head
+				tr
+					th #
+					th Description
+					th Priority
+					th Date on create
+					th Date to finish
+					th.text-center Options
+			tbody
+				tr(ng-repeat="task in tasks")
+					a(href="/#/admin/tasks/update/{{ task._id }}")
+						td.task-index {{ $index + 1 }}
+						td {{ task.description }}
+						td.task-priority {{ task.priority }}
+						td.task-date {{ task.dateOn | date:'dd-MM-yyyy' }}
+						td {{ task.dateToEnd | date:'dd-MM-yyyy' }}
+					td
+						button.btn.btn-danger( ng-click="remove(task._id , $index)" ) Delete
+						a.btn.btn-info.pull-right(href="/#/admin/tasks/update/{{ task._id }}") Update

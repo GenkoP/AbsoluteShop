@@ -4,10 +4,10 @@ module.exports.init = function(){
 
 	var taskSchema = mongoose.Schema({
 
-		taskDescript: String,
+		description: String,
 		priority: String,
-		dateOnCreate: Date,
-		dateToFinish: Date,
+		dateOn: Date,
+		dateToEnd: Date,
 
 	});
 

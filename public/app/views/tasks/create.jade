@@ -1,0 +1,42 @@
+.container(collapse="isCollapsed")
+	#createPromotions.row
+		h2 Create new tasks
+		.col-md-5
+			.panel.panel-info
+				.panel-heading
+					h2.panel-title New Task
+				.panel-body
+					p.desc.text-justify
+						strong Description: 
+						span {{ task.description }}
+					p 
+						strong Priority: 
+						span {{ task.priority }}
+					p
+						strong Date to end:
+						span {{ task.dateToEnd | date:'dd-MM-yyyy' }}
+		.col-md-4.crete-form
+			form(name="createTask")
+				.form-group
+					.row
+						label(for="description") Description:
+						textarea.form-control(placeholder="Description ...." ,rows="5" , ng-model="task.description" , name="description" , required )
+					.row
+						.col-md-6
+							label(for="priority") Priority:
+							select.form-control(ng-model="task.priority" ,  required )
+								option(value="" selected) Select priority
+								option(value="important") Important
+								option(value="low") Low
+						.col-md-6
+							label(for="dateToFinish") Date to Finish:
+							input#date.form-control(type="text" , placeholder="Date" , name="date" ,datepicker-popup="dd.MM.yyyy" ng-model="task.dateToEnd" is-open="opened" min-date="currentDate" max-date="'2080-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close")
+							span#date-btn
+								button.btn.btn-primary(ng-click="open($event)")
+									i.glyphicon.glyphicon-calendar
+				.row
+					.col-md-6
+						button.btn.btn-primary.btn-block(ng-click="isCollapsed = !isCollapsed") Close
+					.col-md-6
+						button.btn.btn-info.btn-login.btn-block(ng-click="create(task)" ,  ng-disabled="createTask.$invalid") Add Task
+		

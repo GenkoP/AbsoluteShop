@@ -24,7 +24,7 @@ app.controller('PromotionController' ,
 
 	});
 
-	$scope.isCollapsed = true;
+	$scope.isCollapsed = false;
 
 	//For datepicker
 	$scope.dateOptions = {

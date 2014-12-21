@@ -14,6 +14,8 @@ block main-content
 						a(href="#/promotions") All promotions
 					li
 						a(href="#/admin/images") Add image
+					li
+						a(href="#/admin/tasks") Tasks
 				.navbar-right(ng-controller="LogInController")
 					div(ng-show="identity.isAuthenticated()")
 						ul.nav.navbar-nav.navbar-right
@@ -35,5 +37,5 @@ block main-content
 										a(href="#/" ng-click="logout()") Log out
 	section
 		div(ng-view)
-	footer.text-center
+	footer
 		p &copy; Genko Petrov

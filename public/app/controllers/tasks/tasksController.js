@@ -22,22 +22,41 @@ app.controller('TasksController',
 
 	});
 
+	$scope.isCollapsed = false;
+
+	//For datepicker
+	$scope.dateOptions = {
+		formatYear: 'yy',
+		startingDay: 1
+	};
+
+	$scope.disabled = function(date, mode) {
+		return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
+	};
+
+	$scope.open = function($event) {
+		$event.preventDefault();
+		$event.stopPropagation();
+
+		$scope.opened = true;
+	};
+
+	$scope.currentDate = new Date();
+	// Create new task
 	$scope.create = function(task){
 
 		ServerRequest.post(requestUrl , task).then(function(isAdded){
 
 			if(isAdded){
 
+
 				clearScope();
 
-				$scope.task.taskDescript = "";
+				$scope.task.description = "";
 				$scope.task.priority = "";
-				$scope.task.dateOnCreate = "";
-				$scope.task.dateToFinish = "";
+				$scope.task.dateToEnd = "";
 
 				notifier.success('The task is addded!');
-
-				$scope.isVisibleCreateDiv = false;
 
 			}else{
 
@@ -49,13 +68,15 @@ app.controller('TasksController',
 
 	};
 
-	$scope.remove = function(id){
+	$scope.remove = function(id , index){
 
 		ServerRequest.delete(requestUrl + id).then(function(isDeleted){
 
 			if(isDeleted){
 
-				clearScope();
+				//clearScope();
+
+				$scope.tasks.splice(index,1);
 
 				notifier.success('Task is removed!');
 
@@ -89,19 +110,6 @@ app.controller('TasksController',
 		});
 	};
 
-	$scope.isVisibleCreateDiv = false;
-
-	$scope.openCreateDiv = function(){
-
-		$scope.isVisibleCreateDiv = true;
-
-	};
-	$scope.closeCreateDiv = function(){
-
-		console.log('baba meca');
-
-		$scope.isVisibleCreateDiv = false;
-	};
 
 	function clearScope(){
 

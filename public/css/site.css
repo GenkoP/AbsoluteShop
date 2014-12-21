@@ -1,4 +1,9 @@
 body {
+	background: url("/css/font-images/bimag.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	padding-top: 60px;
 }
 .list-group h2{
@@ -215,3 +220,26 @@ input.ng-invalid:focus , textarea:focus {
 /* END Upload images */
 
 /* END Styles for addImage */
+
+
+/* Start Tasks */
+
+.table-head, .task-index , .task-date{
+	background-color: #0584F5;
+	color: white;
+	
+}
+
+.table-head th{
+	border-left: 2px solid white;
+}
+td{
+	font-style: bold;
+	font-size:1.8rem;
+	padding-bottom: 5px;
+}
+td .btn{
+	margin-left:;
+}
+
+/*END Tasks*/

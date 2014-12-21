@@ -29,7 +29,7 @@
 						label(for="date") Date to end
 						input#date.form-control(type="text" , placeholder="Date" , name="date" ,datepicker-popup="dd.MM.yyyy" ng-model="promotion.dateToEnd" is-open="opened" min-date="currentDate" max-date="'2080-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close")
 						span#date-btn
-							button.btn.btn-default(ng-click="open($event)")
+							button.btn.btn-primary(ng-click="open($event)")
 								i.glyphicon.glyphicon-calendar
 			.row
 				.col-md-6
