@@ -13,7 +13,7 @@ module.exports = function(app) {
 	app.post('/login', auth.login);
 	app.get('/logout',auth.isAuthenticated, auth.logout);
 
-	// Promotions
+	// Promotions dad
 	app.get('/api/promotions', controller.promotions.getAll );
 	app.get('/api/promotions/active' , controller.promotions.active);
 	app.get('/api/promotions/completed', controller.promotions.completed);
