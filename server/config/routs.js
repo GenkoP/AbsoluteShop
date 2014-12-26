@@ -6,6 +6,7 @@ module.exports = function(app) {
 
 	// Admin
 	app.get('/api/admin' , auth.isInRole('admin'));
+	app.get('/api/users' , controller.users.getAll);
 	app.post('/api/users'  , controller.users.createUser);
 	app.put('/api/users' , auth.isAuthenticated , controller.users.updateUser);
 
@@ -14,6 +15,8 @@ module.exports = function(app) {
 
 	// Promotions
 	app.get('/api/promotions', controller.promotions.getAll );
+	app.get('/api/promotions/active' , controller.promotions.active);
+	app.get('/api/promotions/completed', controller.promotions.completed);
 	app.get('/api/promotions/:id' ,  controller.promotions.getById);
 	app.post('/api/promotions' ,  controller.promotions.addNew);
 	app.put('/api/promotions/:id' ,  controller.promotions.update);

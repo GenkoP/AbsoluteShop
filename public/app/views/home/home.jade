@@ -1,33 +1,48 @@
 .container
+	h1 Absolute shop 
 	.row
 		.col-md-6
 			carousel(interval="myInterval")
 				slide.img-slider(ng-repeat="homeimag in homeimage | filter:{isForHomePageImage: true}" active="slide.active")
 					img.img-thumbnail(src="{{ homeimag.url }}", height="500" width="500")
-		.col-md-6
-			.list-group.home-promotion
-				h2.list-group-item.active Promotions
-				.list-group-item(ng-repeat="promotion in promotions" , ng-class-odd="'odd'")
-					.row
-						p.col-md-1
-							span {{ $index + 1 }}
-						p.col-md-6.text-info
+		.col-md-6.home-promotions
+
+			h2 Active promotions
+			table.table.table-striped.table-hover
+				thead.table-head
+					tr
+						th #
+						th 
+							strong Products
+							input#search(type="text" ng-model="searchText" placeholder="  Search")
+						th( ng-click="sort = 'price';reverse = !reverse") 
+							strong Price
+							span.caret
+						th
+							strong(ng-click="sort = 'dateToEnd';reverse = !reverse;searchDay =''") Date
+							span.caret
+				tbody
+					tr(ng-repeat="promotion in promotions  | filter:searchDay | filter:searchText | orderBy: sort:reverse | limitTo:7 "  )
+						td.task-index
+							strong {{ $index + 1 }}
+						td
 							strong {{ promotion.productName }}
-						p.col-md-1.text-center
-							strong {{ promotion.price }}
-						p.col-md-3
-							strong.text-center {{ promotion.dateToEnd | date:'dd-MM-yyyy' }}
+						td
+							strong {{ promotion.price }}.lv
+						td.text-center
+							strong {{ promotion.dateToEnd | date:'dd.MM.yyyy' }}
+						td {{ promotion.dateIsCurrent }}
 .container.info-gmaps
 	.row
 		.col-md-7
 			blockquote
-				h2.page-header Infomation
+				h2 Infomation
 					.facebook-btns
 						span.glyphicon.glyphicon-thumbs-up(ng-click="likeInFc()")
 						span.glyphicon.glyphicon-share(ng-click="shareInFc()")
 						a(href="https://www.facebook.com/MagazinAbsolut")
 							img.fb-image(src="/css/font-images/fb-btn.png" ,width="35" , height="35")
-				div(ng-repeat="info in compInfo").
+				div.body-info(ng-repeat="info in compInfo").
 					<p>
 						<strong class="text-primary" >Area: </strong> {{ info.dompanyArea }}
 					</p>
@@ -52,12 +67,13 @@
 					</p>
 				div.fb-like(data-href="https://www.facebook.com/MagazinAbsolut" data-layout="standard" data-action="like" data-show-faces="true" data-share="true")
 		.col-md-5
-			h2.page-header We are here.
-				span.be-here.glyphicon.glyphicon-hand-down
-			div.
-				<ui-gmap-google-map center="map.center" zoom="map.zoom" >
-					<ui-gmap-marker idKey="marker.id" coords="marker.coords"></ui-gmap-marker>
-					</ui-gmap-google-map>
+			.google-map-wrap
+				h2 We are here.
+					span.be-here.glyphicon.glyphicon-hand-down
+				div.
+					<ui-gmap-google-map center="map.center" zoom="map.zoom" >
+						<ui-gmap-marker idKey="marker.id" coords="marker.coords"></ui-gmap-marker>
+						</ui-gmap-google-map>
 
 //- Facebook like and share
 div(ng-hide).

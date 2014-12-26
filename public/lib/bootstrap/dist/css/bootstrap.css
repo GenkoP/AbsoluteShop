@@ -212,7 +212,7 @@ th {
   }
   pre,
   blockquote {
-    border: 1px solid #999;
+    border: 1px solid;
     page-break-inside: avoid;
   }
   thead {
@@ -5435,8 +5435,8 @@ a.list-group-item-danger.active:focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .well blockquote {
-  border-color: #ddd;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: blue;
+  border-color: blue;
 }
 .well-lg {
   padding: 24px;

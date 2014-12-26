@@ -22,7 +22,7 @@ app.controller('TasksController',
 
 	});
 
-	$scope.isCollapsed = false;
+	$scope.isCollapsed = true;
 
 	//For datepicker
 	$scope.dateOptions = {
@@ -42,13 +42,13 @@ app.controller('TasksController',
 	};
 
 	$scope.currentDate = new Date();
+
 	// Create new task
 	$scope.create = function(task){
 
 		ServerRequest.post(requestUrl , task).then(function(isAdded){
 
 			if(isAdded){
-
 
 				clearScope();
 
@@ -73,8 +73,6 @@ app.controller('TasksController',
 		ServerRequest.delete(requestUrl + id).then(function(isDeleted){
 
 			if(isDeleted){
-
-				//clearScope();
 
 				$scope.tasks.splice(index,1);
 

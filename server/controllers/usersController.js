@@ -5,6 +5,16 @@ var users = require('../dataLayout/usersData');
 
 module.exports = {
 
+	getAll: function (req , res){
+
+		users.getAll().exec(function(err , collection){
+
+			res.send(collection);
+
+		});
+
+	},
+
 	createUser: function (req , res) {
 
 		var newUserData = req.body;

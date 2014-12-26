@@ -9,9 +9,9 @@ app.controller('PromotionController' ,
 
 	$scope.identity = identity;
 
-	$scope.promotions = PromotionResource.query();
+	$scope.promotions = PromotionResource.all().query();
 
-	$scope.promotion = PromotionResource.query().$promise.then(function(collection){
+	$scope.promotion = PromotionResource.all().query().$promise.then(function(collection){
 
 		collection.forEach(function(promotion){
 
@@ -24,7 +24,8 @@ app.controller('PromotionController' ,
 
 	});
 
-	$scope.isCollapsed = false;
+
+	$scope.isCollapsed = true;
 
 	//For datepicker
 	$scope.dateOptions = {
@@ -32,9 +33,6 @@ app.controller('PromotionController' ,
 		startingDay: 1
 	};
 
-	$scope.disabled = function(date, mode) {
-		return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
-	};
 
 	$scope.open = function($event) {
 		$event.preventDefault();
@@ -45,9 +43,28 @@ app.controller('PromotionController' ,
 
 	$scope.currentDate = new Date();
 
+	$scope.comleated = function(){
+
+		$scope.promotions = PromotionResource.completed().query();
+
+	};
+
+	$scope.active = function(){
+
+		$scope.promotions = PromotionResource.active().query();
+
+	};
+
+	$scope.all = function(){
+
+	$scope.promotions = PromotionResource.all().query();
+
+	};
 
 	// Create new promotions
 	$scope.addNew = function(promotion){
+
+		console.log(promotion.dateToEnd);
 
 		ServerRequest.post('/api/promotions' , promotion).then(function(isAdded){
 
@@ -62,9 +79,10 @@ app.controller('PromotionController' ,
 				notifier.success('Promotion is added !');
 
 				$scope.promotion.productName = '';
+				$scope.promotion.dateToEnd = '';
 			    $scope.promotion.price = '';
 
-			    $scope.isCollapsed = false;
+			    $scope.isCollapsed = !$scope.isCollapsed;
 
 			}
 			else{
@@ -97,18 +115,14 @@ app.controller('PromotionController' ,
 
 	};
 
-	$scope.remove = function(id){
+	$scope.remove = function(id, index){
 
 		ServerRequest.delete('/api/promotions/' + id).then(function(isDeleted){
 
 			if(isDeleted){
 
-				$scope.promotions = undefined;
+				$scope.promotions.splice(index , 1);
 
-				$location.path('/admin/promotion');
-
-				$scope.promotions = PromotionResource.query();
-					
 				notifier.success('Promotion is deleted!');
 
 			}

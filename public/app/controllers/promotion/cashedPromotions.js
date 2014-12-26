@@ -7,7 +7,7 @@ app.factory('CashedPromotion' , function(PromotionResource) {
 	return {
 		query: function() {
 			if (!cashedPromotion){
-				cashedPromotion = PromotionResource.query();
+				cashedPromotion = PromotionResource.active().query();
 			}
 
 			return cashedPromotion;

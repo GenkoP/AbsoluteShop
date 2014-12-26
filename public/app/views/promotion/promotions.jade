@@ -3,6 +3,9 @@ include create
 	.jumbotron
 		button.btn.btn-info.btn-lg(ng-click="isCollapsed = !isCollapsed") Create new promotio
 		h2 All promotions
+		button.btn.btn-primary(ng-click="all()") Show all promotions
+		button.btn.btn-primary(ng-click="active()") Active promotions
+		button.btn.btn-primary(ng-click="comleated()") Compleated promotions
 		.row.list-group-item.active
 			.col-md-1 #
 			.col-md-4 Products
@@ -16,18 +19,25 @@ include create
 				.col-md-1 {{ promotion.price }}
 				.col-md-2 {{ promotion.dateOn| date:'dd-MM-yyyy' }}
 				.col-md-2 {{ promotion.dateToEnd | date:'dd-MM-yyyy'}}
-			button.btn.btn-danger(type="submit", ng-click="remove(promotion._id)" ) Delete
-			a.btn.btn-primary(href="#/admin/promotion/update/{{ promotion._id }}") Update
+			button.btn.btn-danger(type="submit", ng-click="remove(promotion._id , $index)" ) Delete
+			a.btn.btn-primary.pull-right(href="#/admin/promotion/update/{{ promotion._id }}") Update
 
 .container
 	.jumbotron
 		h2 All promotions
+		button.btn.btn-primary(ng-click="all()") Show all promotions
+		button.btn.btn-primary(ng-click="active()") Active promotions
+		button.btn.btn-primary(ng-click="comleated()") Compleated promotions
 		.row.list-group-item.active
-			.col-md-2 #
-			.col-md-2 Products
-			.col-md-2 Price
+			.col-md-1 #
+			.col-md-4 Products
+			.col-md-1 Price
+			.col-md-2 DateOn
+			.col-md-2 Date to end 
 		.promotions(ng-repeat="promotion in promotions", ng-class-odd="'odd'" )
 			.row.list-group-item
-				.col-md-2 {{ $index + 1 }}
-				.col-md-2 {{ promotion.productName }}
-				.col-md-2 {{ promotion.price }}
+				.col-md-1 {{ $index + 1 }}
+				.col-md-4 {{ promotion.productName }}
+				.col-md-1 {{ promotion.price }}
+				.col-md-2 {{ promotion.dateOn| date:'dd-MM-yyyy' }}
+				.col-md-2 {{ promotion.dateToEnd | date:'dd-MM-yyyy'}}
