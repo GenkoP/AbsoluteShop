@@ -9,7 +9,18 @@
 					button.btn.btn-danger.btn-sm.btn-remove(ng-click="remove(image , $index)") Remove
 				input(type="checkbox" ng-hide="true" ng-model="image.isForHomePageImage" )
 				input(type="hidden" ng-model="image._id" )
-				img.thumbnail.img-gallery(src="{{ image.url }}", alt="Image" height="200" , weight="200")
+				img.thumbnail.img-gallery(src="{{ image.url }}", ng-click="open()", alt="Image" height="200" , weight="200")
 	div(ng-hide="true")
 		.img-conteiner(ng-repeat="image in gallery" ,ng-hide="identity.isAuthenticated()")
-			img.thumbnail.img-gallery(src="{{ image.url }}", alt="Image" height="200" , weight="200")
+			img.thumbnail.img-gallery(src="{{ image.url }}", ng-click="open()" alt="Image" height="200" , weight="200")
+	div.
+		<script type="text/ng-template" id="myModalContent.html">
+			<div class="modal-body">
+				<carousel interval="myInterval" >
+					<slide class="img-modal-slider" ng-repeat="image in gallery" active="slide.active" >
+						<img class="img-thumbnail" src="{{ image.url }}" alt="image" height="700" width="700" ></img
+					</slide>
+				</carousel>
+			</div>
+		</script>
+		 

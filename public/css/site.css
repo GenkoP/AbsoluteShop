@@ -23,6 +23,12 @@ body {
 
 /* Image slide */
 
+.img-modal-slider img{
+	padding: 5px;
+	width: 1000px;
+	height:700px;
+}
+
 .img-slider img{
 	padding: 5px;
 	width: 700px;

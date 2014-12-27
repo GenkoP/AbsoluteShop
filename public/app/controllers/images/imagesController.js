@@ -3,11 +3,22 @@
 'use strict';
 
 app.controller('ImageController',
-     function($scope, $http, $routeParams,$location, identity ,ServerRequest , ImageResource) {
+     function($scope, $http, $routeParams, $location, $modal, $log, identity ,ServerRequest , ImageResource) {
 
     $scope.identity = identity;
 
     $scope.gallery = ImageResource.query();
+
+    $scope.open = function() {
+
+        var modalInstance = $modal.open({
+            templateUrl: 'myModalContent.html',
+            controller: 'ModalInstanceCtrl',
+            size: 'lg',
+            
+        });
+
+    };
 
     $scope.uploadFile = function() {
 
@@ -52,5 +63,11 @@ app.controller('ImageController',
         });
 
     };
+
+});
+
+app.controller('ModalInstanceCtrl', function ($scope, ImageResource) {
+
+  $scope.gallery = ImageResource.query();
 
 });
