@@ -6,7 +6,6 @@ module.exports = function(app) {
 
 	// Admin
 	app.get('/api/admin' , auth.isInRole('admin'));
-	app.get('/api/users' , controller.users.getAll);
 	app.post('/api/users'  , controller.users.createUser);
 	app.put('/api/users' , auth.isAuthenticated , controller.users.updateUser);
 
@@ -18,15 +17,15 @@ module.exports = function(app) {
 	app.get('/api/promotions/active' , controller.promotions.active);
 	app.get('/api/promotions/completed', controller.promotions.completed);
 	app.get('/api/promotions/:id' ,  controller.promotions.getById);
-	app.post('/api/promotions' ,  controller.promotions.addNew);
-	app.put('/api/promotions/:id' ,  controller.promotions.update);
-	app.delete('/api/promotions/:id'  ,  controller.promotions.remove);
+	app.post('/api/promotions' ,auth.isAuthenticated,  controller.promotions.addNew);
+	app.put('/api/promotions/:id' ,auth.isAuthenticated,  controller.promotions.update);
+	app.delete('/api/promotions/:id'  ,auth.isAuthenticated,  controller.promotions.remove);
 	
 	// Images TODI: auth.isInRole('admin')
 	app.get('/api/images' , controller.images.getAll);
-	app.post('/api/images' , controller.images.addNew);
-	app.put('/api/images/:id' , controller.images.update );
-	app.delete('/api/images/:id' , controller.images.remove);
+	app.post('/api/images' ,auth.isAuthenticated, controller.images.addNew);
+	app.put('/api/images/:id' ,auth.isAuthenticated, controller.images.update );
+	app.delete('/api/images/:id' ,auth.isAuthenticated, controller.images.remove);
 	
 	
 	// Company Information
@@ -36,9 +35,9 @@ module.exports = function(app) {
 	// Tasks
 	app.get('/api/tasks' ,  controller.tasks.getAll );
 	app.get('/api/tasks/:id' ,  controller.tasks.getById);
-	app.post('/api/tasks' ,  controller.tasks.addNew);
-	app.put('/api/tasks/:id',  controller.tasks.update);
-	app.delete('/api/tasks/:id' ,  controller.tasks.remove);
+	app.post('/api/tasks' ,auth.isAuthenticated,  controller.tasks.addNew);
+	app.put('/api/tasks/:id',auth.isAuthenticated,  controller.tasks.update);
+	app.delete('/api/tasks/:id' ,auth.isAuthenticated,  controller.tasks.remove);
 
 
 	//Home page

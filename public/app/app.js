@@ -47,63 +47,63 @@ app.config(function ($routeProvider) {
 		.when('/admin/promotion', {
 			templateUrl: '/views/promotion/promotions',
 			controller: 'PromotionController',
-			//resolve: routeUserChecks.authenticated,
+			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/promotion/create', {
 			templateUrl: '/views/promotion/create',
 			controller: 'PromotionController',
-			//resolve: routeUserChecks.authenticated,
+			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/promotion/update/:id' , {
 			templateUrl: '/views/promotion/update',
 			controller: 'PromotionController',
-			//resolve: routeUserChecks.authenticated,
+			resolve: routeUserChecks.authenticated,
 		})
 
 		// Images
 		.when('/admin/images' , {
 			templateUrl: '/views/gallery/addImage',
 			controller: 'ImageController',
-			//resolve: routeUserChecks.authenticated,
+			resolve: routeUserChecks.authenticated,
 			
 		})
 		.when('/admin/images/:id' , {
 			templateUrl: '/views/gallery/choiceHomePageImage',
 			controller: 'ImageController',
-			//resolve: routeUserChecks.authenticated,
+			resolve: routeUserChecks.authenticated,
 		})
 		// Information
 		.when('/admin/info' , {
 			templateUrl: '/views/info/info',
 			controller: 'InfoController',
-			//resolve: routeUserChecks.authenticated,
+			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/info/update', {
 			templateUrl: '/views/info/updateInfo',
 			controller: 'InfoController',
-			//resolve: routeUserChecks.authenticated,
+			resolve: routeUserChecks.authenticated,
 		})
 
 		// Tasks
 		.when('/admin/tasks', {
 			templateUrl: '/views/tasks/tasks',
 			controller: 'TasksController',
-			//resolve: routeUserChecks.authenticated,
+			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/tasks/create', {
 			templateUrl: '/views/tasks/create',
 			controller: 'TasksController',
-			//resolve: routeUserChecks.authenticated,
+			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/tasks/details/:id' , {
 			templateUrl: '/views/tasks/details', 
 			controller: 'TasksController',
-			//resolve: routeUserChecks.authenticated,
+			resolve: routeUserChecks.authenticated,
 		})
 		.when('/admin/tasks/update/:id' , {
 			templateUrl: '/views/tasks/update',
 			controller: 'TasksController',
-			//resolve: routeUserChecks.authenticated,
+			resolve: routeUserChecks.authenticated,
 		});
 });
 
