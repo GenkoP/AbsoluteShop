@@ -1,14 +1,12 @@
-var promo = require('../dataLayout/promotionData'),
+var data = require('../dataLayout/data'),
 	dateTime = require('../config/dateTime');
-
-
 
 
 module.exports = {
 	
 	getAll: function (req , res){
 
-		promo.getAll({}).exec(function(err , collection){
+		data.promotions.getAll({}).exec(function(err , collection){
 			if (err) {
 
 				console.log('Fatal error in promotionsController  : ' + err );
@@ -46,7 +44,7 @@ module.exports = {
 
 		
 
-		promo.getAll(queryWhoIsActive).exec(function(err , collection){
+		data.promotions.getAll(queryWhoIsActive).exec(function(err , collection){
 
 			if (err) {
 
@@ -85,7 +83,7 @@ module.exports = {
 			}
 		};
 
-		promo.getAll(queryWhoIsCompleted).exec(function(err , collection){
+		data.promotions.getAll(queryWhoIsCompleted).exec(function(err , collection){
 
 			if (err) {
 				console.log('Can not find completed promotions.Error ' + err);
@@ -103,7 +101,7 @@ module.exports = {
 
 		var findedPromId = req.params.id;
 
-		promo.findById(findedPromId).exec(function(err){
+		data.promotions.findById(findedPromId).exec(function(err){
 
 			if(err){
 				console.log('Can not find promotion wiht this id ! Error ' + err );
@@ -122,7 +120,7 @@ module.exports = {
 		addNewPromotion.dateOn = today;
 		addNewPromotion.dateToEnd = dateTime.formatDate(req.body.dateToEnd);
 
-		promo.createNew(addNewPromotion , function(err){
+		data.promotions.createNew(addNewPromotion , function(err){
 
 			if (err) {
 
@@ -145,9 +143,6 @@ module.exports = {
 
 	update: function(req , res){
 		
-		console.log( 'Request body: ' +  req.body._id);
-		console.log( 'Id is: ' + req.params);
-
 		var updatePromotion = req.body,
 			updatePromotionId = req.params.id;
 
@@ -158,7 +153,7 @@ module.exports = {
 			dateToEnd: updatePromotion.dateToEnd,
 		};
 
-		promo.update(req.body._id , updatedfilds , function(err){
+		data.promotions.update(req.body._id , updatedfilds , function(err){
 
 			if (err) {
 
@@ -179,7 +174,7 @@ module.exports = {
 
 		var deletedPromId = req.params.id;
 
-		promo.remove(deletedPromId , function(err){
+		data.promotions.remove(deletedPromId , function(err){
 
 			if(err){
 

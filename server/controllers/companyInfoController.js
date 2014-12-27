@@ -1,9 +1,9 @@
-var  companyInfoData = require('../dataLayout/companyInfoData');
+var  data = require('../dataLayout/data');
 
 module.exports = {
 
 	getInfo: function(req , res){
-		companyInfoData.getInfo().exec(function(err , collection){
+		data.infos.getInfo().exec(function(err , collection){
 
 			if (err) {
 
@@ -27,7 +27,7 @@ module.exports = {
 
 		var updatedFilds = req.body;
 		
-		companyInfoData.update(req.body._id , updatedFilds , function(){
+		data.infos.update(req.body._id , updatedFilds , function(){
 
 			res.send({isUpdated: true});
 

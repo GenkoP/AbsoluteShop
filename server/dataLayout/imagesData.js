@@ -5,9 +5,9 @@ module.exports = {
 	addNew: function(image , callback){
 		Images.create(image , callback);
 	},
-	findById: function(id , fun){
+	findById: function(id , callback){
 
-		return Images.findOne({_id: id} , fun);
+		return Images.findOne({_id: id} , callback);
 
 	},
 

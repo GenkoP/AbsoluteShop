@@ -1,4 +1,4 @@
-var Images = require('../dataLayout/imagesData'),
+var data = require('../dataLayout/data'),
 	fs = require('fs');
 
 var imagePathTofoleder = __dirname + '/../../public/images/';
@@ -21,7 +21,7 @@ module.exports = {
 
 			image.isForHomePageImage = false;
 
-			Images.addNew(image, function(err) {
+			data.images.addNew(image, function(err) {
 
 				if (err) {
 
@@ -51,7 +51,7 @@ module.exports = {
 
 	getAll: function(req, res) {
 
-		Images.getAll().exec(function(err, collection) {
+		data.images.getAll().exec(function(err, collection) {
 
 			if (err) {
 
@@ -81,7 +81,7 @@ module.exports = {
 
 		};
 
-		Images.update(imageId , updatedfilds , function(err){
+		data.images.update(imageId , updatedfilds , function(err){
 
 			if (err) {
 
@@ -100,14 +100,14 @@ module.exports = {
 
 		var pathToRemoveFile = __dirname + '/../../public/';
 
-		var image = Images.findById(req.params.id, function(err, image) {
+		data.images.findById(req.params.id, function(err, image) {
 			if (err) {
 				console.log('Can not find image whit this id!Error: ' + err);
 			} else {
 
 				fs.unlinkSync(pathToRemoveFile + image.url);
 
-				Images.remove(req.params.id, function(err) {
+				data.images.remove(req.params.id, function(err) {
 
 					if (err) {
 						console.log('Can not delete this image!Error: ' + err);

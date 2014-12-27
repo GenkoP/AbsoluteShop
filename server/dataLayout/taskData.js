@@ -2,9 +2,9 @@ var Tasks = require('mongoose').model('Tasks');
 
 module.exports = {
 
-	getAll: function(){
+	find: function(query){
 
-		return Tasks.find({});
+		return Tasks.find(query);
 	},
 
 	getById:function(id){

@@ -1,11 +1,12 @@
-var taskData = require('../dataLayout/taskData');
+var data = require('../dataLayout/data'),
+	dateTime = require('../config/dateTime');
 
 
 module.exports = {
 
 	getAll: function(req , res){
 
-		taskData.getAll().exec(function(err , collection){
+		data.tasks.find({}).exec(function(err , collection){
 
 			if (err) {
 
@@ -20,10 +21,90 @@ module.exports = {
 		});
 
 	},
+
+	active: function(req, res, next) {
+
+		// Query object to find all promotion who is active
+			var queryWhoIsActive = {
+
+			// Function(IIFE) who runnitng in mongodb server 
+				$where: function() {
+
+					var today = (function() {
+
+						var newDate = new Date(),
+							day = newDate.getDate(),
+							month = newDate.getMonth(),
+							year = newDate.getFullYear();
+						return new Date(year, month, day);
+
+					}());
+
+
+					return today <= this.dateToEnd;
+				}
+			};
+
+		
+
+		data.tasks.find(queryWhoIsActive).exec(function(err , collection){
+
+			if (err) {
+
+				console.log('Can not find active promotion.Error: ' + err );
+
+				res.end();
+
+			}else{
+				res.send(collection);
+				console.log(collection);
+			}
+
+		});
+
+	},
+
+	completed: function(req, res, next){
+
+	// Query object to find all promotion who is active
+		var queryWhoIsCompleted = {
+
+		// Function(IIFE) who runnitng in mongodb server 
+			$where: function(){
+
+				var today = (function() {
+
+						var newDate = new Date(),
+							day = newDate.getDate(),
+							month = newDate.getMonth(),
+							year = newDate.getFullYear();
+						return new Date(year, month, day);
+
+					}());
+
+				return today > this.dateToEnd;
+			}
+		};
+
+		data.tasks.find(queryWhoIsCompleted).exec(function(err , collection){
+
+			if (err) {
+				console.log('Can not find completed promotions.Error ' + err);
+				res.end();
+			}else{
+				res.send(collection);
+				console.log(collection);
+			}
+
+		});
+
+	},
+
+
 	getById: function(req , res){
 
 
-		taskData.getById(req.params.id).exec(function(err , task ){
+		data.tasks.getById(req.params.id).exec(function(err , task ){
 
 			if (err) {
 				console.log('Can not find task with this id! Error: ' + err );
@@ -42,11 +123,12 @@ module.exports = {
 	addNew: function(req , res){
 
 		var newTask = req.body,
-			currentDate = new Date();
+			today = dateTime.now();
 
-		newTask.dateOn = currentDate;
+		newTask.dateOn = today;
+		newTask.dateToEnd = dateTime.formatDate(req.body.dateToEnd);
 
-		taskData.create(newTask , function(err){
+		data.tasks.create(newTask , function(err){
 
 			if (err) {
 
@@ -63,12 +145,9 @@ module.exports = {
 
 	update: function(req , res , next){
 
-		var updatedTask = req.body,
-			currentDate = new Date();
+		var updatedTask = req.body;
 
-			updatedTask.dateOn = currentDate;
-
-		taskData.update(updatedTask._id , updatedTask , function(err){
+		data.tasks.update(updatedTask._id , updatedTask , function(err){
 
 			if(err){
 
@@ -91,7 +170,7 @@ module.exports = {
 
 		var removedTaskId = req.params.id;
 
-		taskData.remove({ _id: removedTaskId } , function(err){
+		data.tasks.remove({ _id: removedTaskId } , function(err){
 
 			if(err){
 
