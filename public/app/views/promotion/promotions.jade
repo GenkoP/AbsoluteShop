@@ -1,10 +1,10 @@
 include create
-.container
+.container(ng-show="identity.isAuthenticated()")
 	.jumbotron
 		button.btn.btn-info.btn-lg(ng-click="isCollapsed = !isCollapsed") Create new promotio
-		h2 All promotions
-		button.btn.btn-primary(ng-click="all()") Show all promotions
-		button.btn.btn-primary(ng-click="active()") Active promotions
+		h1 All promotions
+		button.btn.btn-info(ng-click="all()") Show all promotions
+		button.btn.btn-danger(ng-click="active()") Active promotions
 		button.btn.btn-primary(ng-click="comleated()") Compleated promotions
 		.row.list-group-item.active
 			.col-md-1 #
@@ -22,12 +22,12 @@ include create
 			button.btn.btn-danger(type="submit", ng-click="remove(promotion._id , $index)" ) Delete
 			a.btn.btn-primary.pull-right(href="#/admin/promotion/update/{{ promotion._id }}") Update
 
-.container
+.container(ng-hide="identity.isAuthenticated()")
 	.jumbotron
-		h2 All promotions
-		button.btn.btn-primary(ng-click="all()") Show all promotions
-		button.btn.btn-primary(ng-click="active()") Active promotions
-		button.btn.btn-primary(ng-click="comleated()") Compleated promotions
+		h1 All promotions
+		button.btn.btn-info(ng-click="all()") Show all promotions
+		button.btn.btn-warning(ng-click="active()") Active promotions
+		button.btn.btn-danger(ng-click="comleated()") Compleated promotions
 		.row.list-group-item.active
 			.col-md-1 #
 			.col-md-4 Products

@@ -206,10 +206,14 @@ form input.ng-invalid:focus , textarea:focus {
 /* END Create promotion*/
 /*END Pomotion page*/
 
-/* START Styles for image gallery and addin images */
+/* START Styles for image gallery and adding images */
 
 .my-container{
 	padding: 0 10%;
+}
+
+.gallery{
+	margin-bottom: 20%;
 }
 
 .img-conteiner {
@@ -296,3 +300,20 @@ td .btn{
 }
 
 /*END Tasks*/
+
+/*FOOTER*/
+
+footer{
+	margin-top:50px;
+	margin-left:20px;
+	margin-right:20px;
+	padding: 20px;
+	background-color:silver;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	position: relative;
+	bottom: -1px;
+
+}
+
+/*END FOOTER*/

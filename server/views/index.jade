@@ -12,10 +12,7 @@ block main-content
 						a(href="#/gallery") Gallery
 					li
 						a(href="#/promotions") All promotions
-					li
-						a(href="#/admin/images") Add image
-					li
-						a(href="#/admin/tasks") Tasks
+					
 				.navbar-right(ng-controller="LogInController")
 					div(ng-show="identity.isAuthenticated()")
 						ul.nav.navbar-nav.navbar-right
@@ -38,4 +35,11 @@ block main-content
 	section
 		div(ng-view)
 	footer
-		p &copy; Genko Petrov
+		p
+			strong &copy; Genko Petrov
+		p
+			strong.text-info Email: 
+			strong genko_petrov@hotmail.com
+		p
+			strong.text-info  Phone number: 
+			strong 0896007290

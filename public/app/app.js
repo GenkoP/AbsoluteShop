@@ -34,7 +34,7 @@ app.config(function ($routeProvider) {
 			controller: 'PromotionController'
 		})
 			.when('/gallery', {
-			templateUrl: '/views/images/imageGallery',
+			templateUrl: '/views/gallery/imageGallery',
 			controller: 'ImageController',
 
 		})

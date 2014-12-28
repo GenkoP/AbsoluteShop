@@ -1,6 +1,6 @@
-.container
-	h2 Image gallery
-	div#galleryWrapper(ng-show="true")
+.container.gallery
+	h1 Image gallery
+	div#galleryWrapper(ng-show="identity.isAuthenticated()")
 		.img-conteiner(ng-repeat="image in gallery" id="d_{{$index}}")
 			form
 				#btns-gallery
@@ -10,7 +10,7 @@
 				input(type="checkbox" ng-hide="true" ng-model="image.isForHomePageImage" )
 				input(type="hidden" ng-model="image._id" )
 				img.thumbnail.img-gallery(src="{{ image.url }}", ng-click="open()", alt="Image" height="200" , weight="200")
-	div(ng-hide="true")
+	div(ng-hide="identity.isAuthenticated()")
 		.img-conteiner(ng-repeat="image in gallery" ,ng-hide="identity.isAuthenticated()")
 			img.thumbnail.img-gallery(src="{{ image.url }}", ng-click="open()" alt="Image" height="200" , weight="200")
 	div.
