@@ -54,7 +54,7 @@ module.exports = {
 
 			}else{
 				res.send(collection);
-				console.log(collection);
+				
 			}
 
 		});
@@ -90,7 +90,7 @@ module.exports = {
 				res.end();
 			}else{
 				res.send(collection);
-				console.log(collection);
+				
 			}
 
 		});

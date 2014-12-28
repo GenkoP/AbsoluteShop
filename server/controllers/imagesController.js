@@ -23,13 +23,13 @@ module.exports = {
 
 			data.images.addNew(image, function(err) {
 
-				if (err) {
+				if (!err) {
 
+					console.log('Images is added');
+
+				}else{
 					console.log('Can not add new image! Error: ' + err);
 
-					res.send({isAdded: false});
-
-					next();
 
 				}
 
