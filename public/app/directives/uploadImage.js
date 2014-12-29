@@ -17,6 +17,8 @@ app.directive('imageUpload', ['$parse', '$compile', function($parse , $compile) 
 
 			scope.addnew = function() {
 
+				console.log(scope.gallery);
+
 				inputImage.click();
 
 			};

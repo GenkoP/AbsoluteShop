@@ -95,11 +95,6 @@ app.config(function ($routeProvider) {
 			controller: 'TasksController',
 			resolve: routeUserChecks.authenticated,
 		})
-		.when('/admin/tasks/details/:id' , {
-			templateUrl: '/views/tasks/details', 
-			controller: 'TasksController',
-			resolve: routeUserChecks.authenticated,
-		})
 		.when('/admin/tasks/update/:id' , {
 			templateUrl: '/views/tasks/update',
 			controller: 'TasksController',

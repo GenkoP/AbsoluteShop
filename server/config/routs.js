@@ -21,11 +21,11 @@ module.exports = function(app) {
 	app.put('/api/promotions/:id' ,auth.isAuthenticated,  controller.promotions.update);
 	app.delete('/api/promotions/:id'  ,auth.isAuthenticated,  controller.promotions.remove);
 	
-	// Images TODI: auth.isInRole('admin')
+	// Images
 	app.get('/api/images' , controller.images.getAll);
 	app.post('/api/images' ,auth.isAuthenticated, controller.images.addNew);
-	app.put('/api/images/:id' ,auth.isAuthenticated, controller.images.update );
-	app.delete('/api/images/:id' ,auth.isAuthenticated, controller.images.remove);
+	app.put('/api/images/:id',auth.isAuthenticated, controller.images.update );
+	app.delete('/api/images/:id',auth.isAuthenticated, controller.images.remove);
 	
 	
 	// Company Information

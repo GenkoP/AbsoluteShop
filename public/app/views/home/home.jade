@@ -19,7 +19,7 @@
 							strong Price
 							span.caret
 						th
-							strong(ng-click="sort = 'dateToEnd';reverse = !reverse;searchDay =''") Date
+							strong(ng-click="sort = 'dateToEnd';reverse = !reverse;searchDay =''") Date to End
 							span.caret
 				tbody
 					tr(ng-repeat="promotion in promotions  | filter:searchDay | filter:searchText | orderBy: sort:reverse | limitTo:7 "  )
@@ -28,7 +28,7 @@
 						td
 							strong {{ promotion.productName }}
 						td
-							strong {{ promotion.price }}.lv
+							strong {{ promotion.price }} lv.
 						td.text-center
 							strong {{ promotion.dateToEnd | date:'dd.MM.yyyy' }}
 						td {{ promotion.dateIsCurrent }}

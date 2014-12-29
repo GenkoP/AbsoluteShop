@@ -3,9 +3,10 @@ include create
 	.jumbotron
 		button.btn.btn-info.btn-lg(ng-click="isCollapsed = !isCollapsed" ng-show="identity.isAuthenticated()") Create new promotio
 		h1 All promotions
-		button.btn.btn-info(ng-click="all()") Show all promotions
-		button.btn.btn-danger(ng-click="active()") Active promotions
-		button.btn.btn-primary(ng-click="comleated()") Compleated promotions
+		.btn-wrapper
+			button.btn.btn-info(ng-click="all()") Show all promotions
+			button.btn.btn-danger(ng-click="active()") Active promotions
+			button.btn.btn-primary(ng-click="comleated()") Compleated promotions
 		table.table.table-striped.table-hover
 			thead.table-head
 				tr
