@@ -1,6 +1,6 @@
 var data = require('../dataLayout/data'),
 	fs = require('fs');
-
+//file path
 var imagePathTofoleder = __dirname + '/../../public/images/';
 
 module.exports = {
