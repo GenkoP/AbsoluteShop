@@ -1,7 +1,7 @@
 var data = require('../dataLayout/data'),
 	fs = require('fs');
 //file path to uploaded images
-var imagePathTofoleder = __dirname + '../../public/images/';
+var imagePathTofoleder = __dirname + '/../../public/images/';
 
 module.exports = {
 
