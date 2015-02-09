@@ -8,6 +8,7 @@ module.exports.seedInitial = function (UserModel) {
 			return;	
 		}
 
+		// for first deploy
 		if (collection.length === 0) {
 
 			var salt;
