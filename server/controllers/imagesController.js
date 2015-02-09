@@ -13,8 +13,7 @@ module.exports = {
 		req.pipe(req.busboy);
 
 		req.busboy.on('file', function(fieldname, file, fileName) {
-			console.log('In controller');
-			console.log(imagePathTofoleder);
+			
 
 			fstream = fs.createWriteStream(imagePathTofoleder + fileName);
 			file.pipe(fstream);

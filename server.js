@@ -14,4 +14,3 @@ require('./server/config/routs')(app);
 app.listen(config.port);
 
 console.log('Server is runing on port: ' + config.port);
-console.log(__dirname);
